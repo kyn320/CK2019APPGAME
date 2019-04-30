@@ -24,7 +24,10 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
 
         if (!PhotonNetwork.OfflineMode)
         {
-            localPlayer = PhotonNetwork.Instantiate(PhotonNetwork.NickName + "Player"
+
+            print(PhotonNetwork.NickName);
+
+            localPlayer = PhotonNetwork.Instantiate(PhotonNetwork.LocalPlayer.CustomProperties["Type"] + "Player"
                 , new Vector3(0.0f, 5.0f, 0.0f)
                 , Quaternion.identity).GetComponent<UnitManager>();
         }
@@ -45,6 +48,8 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
 
     private void Update()
     {
+        print(PhotonNetwork.NickName);
+
         playTime -= Time.deltaTime;
         if (playTime < 0f)
         {

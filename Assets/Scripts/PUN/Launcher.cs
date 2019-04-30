@@ -75,8 +75,15 @@ namespace Resume.Network
             {
                 int randType = Random.Range(1, 3);
 
-                PhotonNetwork.CurrentRoom.GetPlayer(randType).NickName = "Red";
-                PhotonNetwork.CurrentRoom.GetPlayer(randType == 1 ? 2 : 1).NickName = "Blue";
+                ExitGames.Client.Photon.Hashtable table = new ExitGames.Client.Photon.Hashtable();
+
+                table["Type"] = "Red";
+
+                PhotonNetwork.CurrentRoom.GetPlayer(randType).SetCustomProperties(table);
+
+                table["Type"] = "Blue";
+
+                PhotonNetwork.CurrentRoom.GetPlayer(randType == 1 ? 2 : 1).SetCustomProperties(table);
 
                 PhotonNetwork.LoadLevel("GameScene");
             }
