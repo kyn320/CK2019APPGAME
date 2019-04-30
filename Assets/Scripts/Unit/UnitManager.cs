@@ -20,6 +20,7 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
     public UnitStateCode currentState = UnitStateCode.FALL;
     public MeshRenderer meshRenderer;
     public Rigidbody rigidbody;
+    public Animator animator;
 
     Dictionary<UnitStateCode, UnitState> states = new Dictionary<UnitStateCode, UnitState>();
 
@@ -42,6 +43,7 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
 
         meshRenderer = GetComponentInChildren<MeshRenderer>();
         rigidbody = GetComponent<Rigidbody>();
+        animator = GetComponentInChildren<Animator>();
         haveItem = false;
     }
 
@@ -73,6 +75,7 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
         currentState = stateCode;
         states[currentState].enabled = true;
         states[currentState].Enter();
+        animator.SetInteger("currentState", (int)currentState);
     }
 
     private void Update()
@@ -88,6 +91,8 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
         if (collision.gameObject.CompareTag("Player"))
         {
             UnitManager target = collision.gameObject.GetComponent<UnitManager>();
+            if (target.currentState != UnitStateCode.RUSH) return;
+
             rigidbody.velocity = target.rigidbody.velocity * 1.2f * (1 - stat.rollResistance.Value * 0.01f);
             Vector3 tv = Quaternion.LookRotation(transform.position - target.transform.position).eulerAngles;
             float trY = tv.y;
