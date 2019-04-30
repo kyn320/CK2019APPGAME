@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Text;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +17,7 @@ public class GameUITimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int time = (int)GameManager.instance.gameTime;
+        int time = (int)GameManager.Instance.GetPlayTime();
         text.text = "  " + (time / 60).ToString() + " : " + (time % 60 / 10).ToString() + (time % 60 % 10).ToString();
     }
 }

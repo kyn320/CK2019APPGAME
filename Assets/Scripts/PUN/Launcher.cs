@@ -28,7 +28,7 @@ namespace Resume.Network
         public void Connect()
         {
             isConnecting = true;
-            if(PhotonNetwork.IsConnected)
+            if (PhotonNetwork.IsConnected)
             {
                 PhotonNetwork.JoinRandomRoom();
             }
@@ -43,7 +43,7 @@ namespace Resume.Network
         {
             Debug.Log("OnConnectedToMaster");
 
-            if(isConnecting)
+            if (isConnecting)
             {
                 PhotonNetwork.JoinRandomRoom();
             }
@@ -65,23 +65,18 @@ namespace Resume.Network
         {
             Debug.Log("OnJoinedRoom()");
 
-            if(PhotonNetwork.CurrentRoom.PlayerCount == maxPlayersPerRoom)
-            {
-                PhotonNetwork.NickName = "Red";
-                Debug.Log("We load the 'GameScene'");
-
-                PhotonNetwork.LoadLevel("GameScene");
-            }
         }
 
         public override void OnPlayerEnteredRoom(Player newPlayer)
         {
             Debug.Log("OnPlayerEnteredRoom()");
 
-            if (PhotonNetwork.CurrentRoom.PlayerCount == maxPlayersPerRoom)
+            if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
-                PhotonNetwork.NickName = "Blue";
-                Debug.Log("We load the 'GameScene'");
+                int randType = Random.Range(1, 3);
+
+                PhotonNetwork.CurrentRoom.GetPlayer(randType).NickName = "Red";
+                PhotonNetwork.CurrentRoom.GetPlayer(randType == 1 ? 2 : 1).NickName = "Blue";
 
                 PhotonNetwork.LoadLevel("GameScene");
             }

@@ -9,7 +9,7 @@ public class GameUICamera : MonoBehaviour
 
     private void Awake()
     {
-        target = GameManager.instance.player.gameObject;
+        target = GameManager.Instance.localPlayer.gameObject;
         offset = transform.position;
     }
 

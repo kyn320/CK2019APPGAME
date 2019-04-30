@@ -5,36 +5,52 @@ using UnityEngine.SceneManagement;
 
 using Photon.Pun;
 using Photon.Realtime;
+using ExitGames.Client.Photon;
 
-public class GameManager : MonoBehaviourPunCallbacks
+public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakingCallbacks
 {
-    public static GameManager instance;
+    const float Min = 60f;
 
-    public UnitManager player;
-    public float gameTime = 3 * 60.0f;
+    public UnitManager localPlayer;
 
-    private void Awake()
+    [Header("플레이 시간(분)")]
+    public int maxPlayTime = 1;
+
+    private float playTime = Min * 1;
+
+    protected override void Awake()
     {
-        if (instance == null)
-            instance = this;
+        base.Awake();
 
-        player = PhotonNetwork.Instantiate(PhotonNetwork.NickName + "Player", new Vector3(0.0f, 5.0f, 0.0f), Quaternion.identity, 0).GetComponent<UnitManager>();
-        Camera.main.transform.parent = player.transform;
+        if (!PhotonNetwork.OfflineMode)
+        {
+            localPlayer = PhotonNetwork.Instantiate(PhotonNetwork.NickName + "Player"
+                , new Vector3(0.0f, 5.0f, 0.0f)
+                , Quaternion.identity).GetComponent<UnitManager>();
+        }
+        else
+        {
+            localPlayer = Instantiate(Resources.Load("RedPlayer") as GameObject
+                , new Vector3(0.0f, 5.0f, 0.0f)
+                , Quaternion.identity).GetComponent<UnitManager>();
+        }
+
+        Camera.main.transform.parent = localPlayer.transform;
     }
 
-    public override void OnLeftRoom()
+    void Start()
     {
-        SceneManager.LoadScene(0);
+        playTime = Min * maxPlayTime;
     }
 
-    public override void OnPlayerEnteredRoom(Player newPlayer)
+    private void Update()
     {
-        Debug.LogFormat("OnPlayerEnteredRoom() {0}", newPlayer.NickName);
-    }
-
-    public override void OnPlayerLeftRoom(Player otherPlayer)
-    {
-        Debug.LogFormat("OnPlayerLeftRoom() {0}", otherPlayer.NickName);
+        playTime -= Time.deltaTime;
+        if (playTime < 0f)
+        {
+            playTime = 0f;
+            Debug.Log("Game End");
+        }
     }
 
     public void LeaveRoom()
@@ -42,13 +58,73 @@ public class GameManager : MonoBehaviourPunCallbacks
         PhotonNetwork.LeaveRoom();
     }
 
-    private void Update()
-    {
-        gameTime -= Time.deltaTime;
-        if(gameTime < 0.0f)
-        {
-            gameTime = 0.0f;
-            Debug.Log("Game End");
-        }
+    public float GetPlayTime() {
+        return playTime;
     }
+
+    #region RoomCallback
+
+    public void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        Debug.LogFormat("OnPlayerEnteredRoom() {0}", newPlayer.NickName);
+    }
+
+    public void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        Debug.LogFormat("OnPlayerLeftRoom() {0}", otherPlayer.NickName);
+    }
+
+    #endregion
+
+    #region MatchingCallback
+    public void OnRoomPropertiesUpdate(ExitGames.Client.Photon.Hashtable propertiesThatChanged)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnMasterClientSwitched(Player newMasterClient)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnFriendListUpdate(List<FriendInfo> friendList)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnCreatedRoom()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnCreateRoomFailed(short returnCode, string message)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnJoinedRoom()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnLeftRoom()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void OnJoinRoomFailed(short returnCode, string message)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnJoinRandomFailed(short returnCode, string message)
+    {
+        throw new System.NotImplementedException();
+    }
+    #endregion
 }

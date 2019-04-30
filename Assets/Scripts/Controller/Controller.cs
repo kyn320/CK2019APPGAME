@@ -6,6 +6,6 @@ public class Controller : MonoBehaviour
 {
     public UnitManager GetTarget()
     {
-        return GameManager.instance.player;
+        return GameManager.Instance.localPlayer;
     }
 }
