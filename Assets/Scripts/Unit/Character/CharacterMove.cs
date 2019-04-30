@@ -39,7 +39,7 @@ public class CharacterMove : UnitMove
         transform.rotation = rotation;
 
         //rigidbody.rotation = Quaternion.Slerp(rigidbody.rotation, rotation, rotateSpeed * Time.deltaTime);
-        Vector3 moveVelocity = manager.moveSpeed * moveDir * manager.ctrlMoveDir.z;
+        Vector3 moveVelocity = manager.stat.moveSpeed.Value * moveDir * manager.ctrlMoveDir.z;
         moveVelocity.y = manager.rigidbody.velocity.y;
 
         manager.rigidbody.velocity = moveVelocity;

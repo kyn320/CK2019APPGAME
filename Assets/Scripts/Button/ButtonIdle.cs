@@ -26,16 +26,19 @@ public class ButtonIdle : ButtonState
         transform.position = vector;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        //manager.SetState(ButtonStateCode.WORK);
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name.Equals("GroundChecker"))
         {
             manager.target = other.GetComponentInParent<UnitManager>();
+            if (manager.occupationTarget)
+            {
+                if (manager.occupationTarget == manager.target)
+                    return;
+                if (!manager.occupationTarget.haveItem)
+                    return;
+            }
+            
             manager.SetState(ButtonStateCode.WORK);
         }
     }

@@ -22,6 +22,7 @@ public class ButtonManager : MonoBehaviour
     public float offsetY;
     public float occupationTime;
     public float occupationDepth;
+    public UnitBuff buff;
 
     private void Awake()
     {
@@ -31,6 +32,8 @@ public class ButtonManager : MonoBehaviour
 
         meshRenderer = GetComponent<MeshRenderer>();
         offsetY = transform.position.y;
+        target = null;
+        occupationTarget = null;
     }
 
     // Start is called before the first frame update

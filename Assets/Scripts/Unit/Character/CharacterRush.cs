@@ -17,7 +17,7 @@ public class CharacterRush : UnitRush
     {
         base.Enter();
         
-        manager.rigidbody.AddForce(manager.ctrlRushDir * manager.ctrlRushDistance * manager.rushPower, ForceMode.Impulse);
+        manager.rigidbody.AddForce(manager.ctrlRushDir * manager.ctrlRushDistance * manager.stat.rushPower.Value, ForceMode.Impulse);
 
         Vector3 v = manager.ctrlRushDir;
         v.y = -1.0f;

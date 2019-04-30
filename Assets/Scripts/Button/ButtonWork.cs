@@ -12,6 +12,13 @@ public class ButtonWork : ButtonState
     public override void Exit()
     {
         base.Exit();
+        manager.meshRenderer.material = manager.target.meshRenderer.material;
+        if (manager.occupationTarget && manager.target.haveItem)
+        {
+            manager.occupationTarget.GetComponent<ItemManager>().SetState(ItemStateCode.REMOVE);
+        }
+        manager.occupationTarget = manager.target;
+        manager.buff.Set(manager.occupationTarget.stat);
     }
 
     private void Update()
@@ -23,8 +30,6 @@ public class ButtonWork : ButtonState
         {
             vector.y = manager.offsetY;
             manager.SetState(ButtonStateCode.FINISH);
-            manager.meshRenderer.material = manager.target.meshRenderer.material;
-            manager.occupationTarget = manager.target;
         }
         transform.position = vector;
     }

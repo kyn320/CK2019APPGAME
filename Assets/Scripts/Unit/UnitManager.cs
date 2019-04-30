@@ -28,10 +28,8 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
     public Vector3 ctrlRushDir;
     public float ctrlRushDistance;
 
-    public float moveSpeed;
-    public float rushPower;
-    public float jumpPower;
-
+    public UnitStat stat;
+    public bool haveItem;
 
     private void Awake()
     {
@@ -44,6 +42,7 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
 
         meshRenderer = GetComponentInChildren<MeshRenderer>();
         rigidbody = GetComponent<Rigidbody>();
+        haveItem = false;
 
         //if (photonView.IsMine)
         //{
@@ -96,12 +95,9 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
         if (collision.gameObject.tag == "Player")
         {
             UnitManager target = collision.gameObject.GetComponent<UnitManager>();
-            //target.rigidbody.velocity = rigidbody.velocity * 1.2f;
-            rigidbody.velocity = target.rigidbody.velocity * 1.2f;
-            //Vector3 tv = Quaternion.LookRotation(target.transform.position - transform.position).eulerAngles;
+            rigidbody.velocity = target.rigidbody.velocity * 1.2f * (1 - stat.rollResistance.Value * 0.01f);
             Vector3 tv = Quaternion.LookRotation(transform.position - target.transform.position).eulerAngles;
             float trY = tv.y;
-            //float trY = target.transform.rotation.eulerAngles.y;
             float rY = transform.rotation.eulerAngles.y;
 
             if (rY < 0.0f) rY += 360.0f;

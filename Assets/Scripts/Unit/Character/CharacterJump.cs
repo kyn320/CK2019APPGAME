@@ -19,7 +19,7 @@ public class CharacterJump : UnitJump
     public override void Enter()
     {
         base.Enter();
-        manager.rigidbody.AddForce(Vector3.up * manager.jumpPower, ForceMode.Impulse);
+        manager.rigidbody.AddForce(Vector3.up * manager.stat.jumpPower.Value, ForceMode.Impulse);
     }
 
     public override void Exit()
@@ -29,7 +29,7 @@ public class CharacterJump : UnitJump
 
     private void FixedUpdate()
     {
-        Vector3 moveVelocity = manager.moveSpeed * manager.ctrlMoveDir * manager.ctrlMoveDistance;
+        Vector3 moveVelocity = manager.stat.moveSpeed.Value * manager.ctrlMoveDir * manager.ctrlMoveDistance;
         moveVelocity.y = manager.rigidbody.velocity.y;
 
         manager.rigidbody.velocity = moveVelocity;
