@@ -43,11 +43,6 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
         meshRenderer = GetComponentInChildren<MeshRenderer>();
         rigidbody = GetComponent<Rigidbody>();
         haveItem = false;
-
-        //if (photonView.IsMine)
-        //{
-        //    GameManager.instance.player = this;
-        //}
     }
 
     // Start is called before the first frame update
@@ -90,9 +85,7 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!enabled) return;
-        if (collision.gameObject == gameObject) return;
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             UnitManager target = collision.gameObject.GetComponent<UnitManager>();
             rigidbody.velocity = target.rigidbody.velocity * 1.2f * (1 - stat.rollResistance.Value * 0.01f);

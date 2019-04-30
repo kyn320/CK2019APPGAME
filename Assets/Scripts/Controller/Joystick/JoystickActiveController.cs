@@ -10,7 +10,7 @@ public class JoystickActiveController : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        target.gameObject.active = true;
+        target.gameObject.SetActive(true);
         target.transform.position = eventData.position;
         target.OnPointerDown(eventData);
     }

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4559981476745505392}
   - component: {fileID: 4559981476745505393}
   - component: {fileID: 4559981476745505391}
-  - component: {fileID: 4559981476745505390}
   m_Layer: 5
   m_Name: MoveJoystick
   m_TagString: Untagged
@@ -92,26 +91,6 @@ MonoBehaviour:
   stick: {fileID: 0}
   autoActive: 0
   joystickRadius: 0
---- !u!114 &4559981476745505390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4559981476745505395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!1 &4559981477059613545
 GameObject:
   m_ObjectHideFlags: 0

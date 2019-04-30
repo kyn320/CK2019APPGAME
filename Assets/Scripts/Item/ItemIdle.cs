@@ -20,7 +20,7 @@ public class ItemIdle : ItemState
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name.Equals("GroundChecker"))
+        if (other.gameObject.CompareTag("Player"))
         {
             manager.target = other.GetComponentInParent<UnitManager>();
 

@@ -405,6 +405,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIMoveJoystick
       objectReference: {fileID: 0}
+    - target: {fileID: 8483542266241836261, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8483542265758412330, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
         type: 3}
       propertyPath: m_Name
@@ -414,6 +419,71 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UIActionJoystick
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483542266980505177, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483542266241836260, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483542266241836260, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483542266241836260, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483542266241836260, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483542266980505176, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483542266980505176, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483542266980505176, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483542266980505176, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483542266200350206, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483542266200350206, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483542265959295266, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483542265959295266, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8ce531d2d14ff44cacaa6782b8d43c2, type: 3}
@@ -822,9 +892,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e9345be27e83f449823fe3703e07d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsDontDestroy: 1
+  IsDontDestroy: 0
   localPlayer: {fileID: 0}
-  maxPlayTime: 1
+  maxPlayTime: 3
 --- !u!4 &1915241527
 Transform:
   m_ObjectHideFlags: 0

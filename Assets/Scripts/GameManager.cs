@@ -24,9 +24,6 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
 
         if (!PhotonNetwork.OfflineMode)
         {
-
-            print(PhotonNetwork.NickName);
-
             localPlayer = PhotonNetwork.Instantiate(PhotonNetwork.LocalPlayer.CustomProperties["Type"] + "Player"
                 , new Vector3(0.0f, 5.0f, 0.0f)
                 , Quaternion.identity).GetComponent<UnitManager>();

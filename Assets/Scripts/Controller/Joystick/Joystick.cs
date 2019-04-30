@@ -7,16 +7,17 @@ using UnityEngine.EventSystems;
 
 public class Joystick : Controller, IPointerDownHandler
 {
-    public GameObject stick;
+    protected GameObject stick;
 
     public bool autoActive = true;
 
     int fingerId;
+
     public float joystickRadius;
 
     private void Awake()
     {
-        gameObject.active = autoActive;
+        gameObject.SetActive(autoActive);
         fingerId = -1;
 
         stick = transform.Find("stick").gameObject;
@@ -43,14 +44,18 @@ public class Joystick : Controller, IPointerDownHandler
 
     public virtual void OnJoystickEnter()
     {
+
     }
 
     public virtual void OnJoystickStay()
     {
         Touch touch = GetTouchToFingetId(fingerId);
         stick.transform.position = touch.position;
+
         Vector3 vector = stick.transform.localPosition;
+
         float distance = vector.sqrMagnitude;
+
         Vector3 dir = vector.normalized;
 
         if(distance > joystickRadius * joystickRadius)
@@ -64,7 +69,7 @@ public class Joystick : Controller, IPointerDownHandler
     public virtual void OnJoystickExit()
     {
         stick.transform.localPosition = Vector3.zero;
-        gameObject.active = autoActive;
+        gameObject.SetActive(autoActive);
     }
 
     public Touch GetTouchToFingetId(int fingerId)
