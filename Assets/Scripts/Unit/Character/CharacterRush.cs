@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CharacterRush : UnitRush
 {
+    [FMODUnity.EventRef]
+    public string eventPath;
+    public FMOD.Studio.EventInstance medieval;
+
     public override void Awake()
     {
         base.Awake();
@@ -11,6 +15,8 @@ public class CharacterRush : UnitRush
         linkStates.Add(UnitStateCode.IDLE);
         linkStates.Add(UnitStateCode.ROLL);
         linkStates.Add(UnitStateCode.FALL);
+
+        medieval = FMODUnity.RuntimeManager.CreateInstance(eventPath);
     }
 
     public override void Enter()
@@ -21,8 +27,8 @@ public class CharacterRush : UnitRush
 
         Vector3 v = manager.ctrlRushDir;
         v.y = -1.0f;
-        Quaternion rotation = Quaternion.LookRotation(v);
-        transform.rotation = rotation;
+
+        medieval.start();
     }
 
     public override void Exit()
@@ -34,9 +40,6 @@ public class CharacterRush : UnitRush
     {
         if(manager.rigidbody.velocity.sqrMagnitude <= 5.0f)
         {
-            Vector3 v = transform.rotation.eulerAngles;
-            v.x = 0.0f;
-            transform.rotation = Quaternion.Euler(v);
             manager.SetState(UnitStateCode.IDLE);
         }
     }

@@ -162,6 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   linkStates: 
+  eventPath: event:/SFX/SFX_walk
 --- !u!114 &6579502118363895853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +178,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   linkStates: 
   groundChecker: {fileID: 6579502119900014246}
+  eventPath: event:/SFX/SFX_jump
 --- !u!114 &6579502118363895890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   linkStates: 
+  eventPath: event:/SFX/SFX_rush
 --- !u!114 &6579502118363895891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   linkStates: 
+  eventPath: event:/SFX/SFX_attack
 --- !u!114 &2813298536168341356
 MonoBehaviour:
   m_ObjectHideFlags: 0

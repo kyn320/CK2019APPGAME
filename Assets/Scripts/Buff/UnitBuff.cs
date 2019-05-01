@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class UnitBuff
+public class UnitBuff : MonoBehaviour
 {
     UnitStat unitStat = null;
     Stat addStat;
@@ -11,6 +11,15 @@ public class UnitBuff
     UnitStatCode statCode;
     [SerializeField]
     float addValue;
+
+    [FMODUnity.EventRef]
+    public string eventPath;
+    public FMOD.Studio.EventInstance medieval;
+
+    private void Awake()
+    {
+        medieval = FMODUnity.RuntimeManager.CreateInstance(eventPath);
+    }
 
     public void Set(UnitStat stat)
     {
@@ -27,6 +36,7 @@ public class UnitBuff
     public void Begin()
     {
         addStat.add += addValue;
+        medieval.start();
     }
 
     public void End()

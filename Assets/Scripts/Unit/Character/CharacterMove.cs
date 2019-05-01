@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CharacterMove : UnitMove
 {
+    [FMODUnity.EventRef]
+    public string eventPath;
+    public FMOD.Studio.EventInstance medieval;
+
     public override void Awake()
     {
         base.Awake();
@@ -13,6 +17,8 @@ public class CharacterMove : UnitMove
         linkStates.Add(UnitStateCode.RUSH);
         linkStates.Add(UnitStateCode.ROLL);
         linkStates.Add(UnitStateCode.FALL);
+
+        medieval = FMODUnity.RuntimeManager.CreateInstance(eventPath);
     }
 
     public override void Enter()
@@ -27,7 +33,10 @@ public class CharacterMove : UnitMove
 
     private void Update()
     {
-
+        if (!medieval.isValid())
+        {
+            medieval.start();
+        }
         //dir.z = dir.y;
         //dir.y = 0.0f;
         //

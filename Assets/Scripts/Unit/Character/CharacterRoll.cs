@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class CharacterRoll : UnitRoll
 {
+    [FMODUnity.EventRef]
+    public string eventPath;
+    public FMOD.Studio.EventInstance medieval;
+
     public override void Awake()
     {
         base.Awake();
 
         linkStates.Add(UnitStateCode.IDLE);
         linkStates.Add(UnitStateCode.FALL);
+
+        medieval = FMODUnity.RuntimeManager.CreateInstance(eventPath);
     }
 
     public override void Enter()
     {
         base.Enter();
+
+        medieval.start();
     }
 
     public override void Exit()

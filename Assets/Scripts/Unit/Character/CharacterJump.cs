@@ -7,6 +7,10 @@ public class CharacterJump : UnitJump
     [SerializeField]
     private Transform groundChecker;
 
+    [FMODUnity.EventRef]
+    public string eventPath;
+    public FMOD.Studio.EventInstance medieval;
+
     public override void Awake()
     {
         base.Awake();
@@ -14,12 +18,15 @@ public class CharacterJump : UnitJump
         linkStates.Add(UnitStateCode.IDLE);
         linkStates.Add(UnitStateCode.ROLL);
         linkStates.Add(UnitStateCode.FALL);
+
+        medieval = FMODUnity.RuntimeManager.CreateInstance(eventPath);
     }
 
     public override void Enter()
     {
         base.Enter();
         manager.rigidbody.AddForce(Vector3.up * manager.stat.jumpPower.Value, ForceMode.Impulse);
+        medieval.start();
     }
 
     public override void Exit()
