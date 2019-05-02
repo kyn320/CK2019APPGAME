@@ -19,6 +19,7 @@ public class UnitBuff : MonoBehaviour
     private void Awake()
     {
         medieval = FMODUnity.RuntimeManager.CreateInstance(eventPath);
+        medieval.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.transform));
     }
 
     public void Set(UnitStat stat)

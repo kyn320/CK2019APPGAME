@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 5
   meshRenderer: {fileID: 0}
+  skinnedMeshRenderer: {fileID: 0}
   rigidbody: {fileID: 0}
   animator: {fileID: 0}
   ctrlMoveDir: {x: 0, y: 0, z: 0}
@@ -375,6 +376,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 310659a969bda2a478758139ffce6fd9, type: 2}
+    - target: {fileID: 13700000, guid: f98b9714641b29445b2601bdf8411a42, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8df98ad07f7886b4d9f89fb5bf535dff, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f98b9714641b29445b2601bdf8411a42, type: 3}
 --- !u!4 &8811553975428567905 stripped

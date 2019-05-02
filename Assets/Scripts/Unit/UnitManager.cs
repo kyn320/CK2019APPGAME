@@ -19,6 +19,7 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
     [SerializeField]
     public UnitStateCode currentState = UnitStateCode.FALL;
     public MeshRenderer meshRenderer;
+    public SkinnedMeshRenderer skinnedMeshRenderer;
     public Rigidbody rigidbody;
     public Animator animator;
 
@@ -42,6 +43,7 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
         states[UnitStateCode.FALL] = GetComponent<UnitFall>();
 
         meshRenderer = GetComponentInChildren<MeshRenderer>();
+        skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
         haveItem = false;

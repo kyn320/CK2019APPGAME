@@ -14,6 +14,7 @@ public class ButtonManager : MonoBehaviour
 {
     public ButtonStateCode currentState = ButtonStateCode.FINISH;
     public MeshRenderer meshRenderer;
+    public UnitBuff buff;
     public UnitManager target;
     public UnitManager occupationTarget;
 
@@ -22,7 +23,6 @@ public class ButtonManager : MonoBehaviour
     public float offsetY;
     public float occupationTime;
     public float occupationDepth;
-    public UnitBuff buff;
 
     private void Awake()
     {
@@ -31,6 +31,7 @@ public class ButtonManager : MonoBehaviour
         states[ButtonStateCode.FINISH] = GetComponent<ButtonFinish>();
 
         meshRenderer = GetComponent<MeshRenderer>();
+        buff = GetComponent<UnitBuff>();
         offsetY = transform.position.y;
         target = null;
         occupationTarget = null;

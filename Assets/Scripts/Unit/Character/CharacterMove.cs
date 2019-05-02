@@ -19,21 +19,26 @@ public class CharacterMove : UnitMove
         linkStates.Add(UnitStateCode.FALL);
 
         medieval = FMODUnity.RuntimeManager.CreateInstance(eventPath);
+        medieval.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.transform));
     }
 
     public override void Enter()
     {
         base.Enter();
+        medieval.start();
     }
 
     public override void Exit()
     {
         base.Exit();
+        medieval.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     private void Update()
     {
-        if (!medieval.isValid())
+        FMOD.Studio.PLAYBACK_STATE soundState;
+        medieval.getPlaybackState(out soundState);
+        if (soundState == FMOD.Studio.PLAYBACK_STATE.STOPPED)
         {
             medieval.start();
         }

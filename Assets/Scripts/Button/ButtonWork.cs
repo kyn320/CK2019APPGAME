@@ -12,7 +12,7 @@ public class ButtonWork : ButtonState
     public override void Exit()
     {
         base.Exit();
-        manager.meshRenderer.material = manager.target.meshRenderer.material;
+        manager.meshRenderer.material = manager.target.skinnedMeshRenderer.material;
         if (manager.occupationTarget && manager.target.haveItem)
         {
             manager.occupationTarget.GetComponent<ItemManager>().SetState(ItemStateCode.REMOVE);

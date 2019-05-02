@@ -16,6 +16,7 @@ public class CharacterRoll : UnitRoll
         linkStates.Add(UnitStateCode.FALL);
 
         medieval = FMODUnity.RuntimeManager.CreateInstance(eventPath);
+        medieval.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.transform));
     }
 
     public override void Enter()
