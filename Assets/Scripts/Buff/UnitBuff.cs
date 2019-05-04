@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class UnitBuff : MonoBehaviour
 {
-    UnitStat unitStat = null;
+    UnitManager target = null;
     Stat addStat;
     [SerializeField]
     UnitStatCode statCode;
@@ -22,14 +22,13 @@ public class UnitBuff : MonoBehaviour
         medieval.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.transform));
     }
 
-    public void Set(UnitStat stat)
+    public void Set(UnitManager unit)
     {
-        if(unitStat != null && unitStat != stat)
+        if(target != null && target != unit)
         {
             End();
         }
-        unitStat = stat;
-        unitStat.GetStat(statCode, addStat);
+        unit.stat.GetStat(statCode, ref addStat);
 
         Begin();
     }

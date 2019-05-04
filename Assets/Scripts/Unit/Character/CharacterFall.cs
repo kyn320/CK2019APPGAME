@@ -25,7 +25,7 @@ public class CharacterFall : UnitFall
     {
         if(transform.position.y < -50.0f)
         {
-            transform.position = new Vector3(0.0f, 50.0f, 0.0f);
+            transform.position = manager.spawnPosition;
             manager.rigidbody.velocity = Vector3.zero;
             manager.SetState(UnitStateCode.IDLE);
         }

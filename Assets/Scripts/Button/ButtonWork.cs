@@ -18,7 +18,7 @@ public class ButtonWork : ButtonState
             manager.occupationTarget.GetComponent<ItemManager>().SetState(ItemStateCode.REMOVE);
         }
         manager.occupationTarget = manager.target;
-        manager.buff.Set(manager.occupationTarget.stat);
+        manager.buff.Set(manager.occupationTarget);
     }
 
     private void Update()

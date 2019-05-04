@@ -42,7 +42,7 @@ public class UnitStat : MonoBehaviour
         manager = GetComponent<UnitManager>();
     }
 
-    public bool GetStat(UnitStatCode code, Stat stat)
+    public bool GetStat(UnitStatCode code, ref Stat stat)
     {
         bool isDone = true;
         switch (code)

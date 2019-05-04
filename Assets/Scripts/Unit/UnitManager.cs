@@ -22,6 +22,7 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
     public SkinnedMeshRenderer skinnedMeshRenderer;
     public Rigidbody rigidbody;
     public Animator animator;
+    public Vector3 spawnPosition;
 
     Dictionary<UnitStateCode, UnitState> states = new Dictionary<UnitStateCode, UnitState>();
 
@@ -58,7 +59,7 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
     public void SetState(UnitStateCode stateCode)
     {
         bool isLinked = false;
-        foreach(UnitStateCode state in states[currentState].linkStates)
+        foreach (UnitStateCode state in states[currentState].linkStates)
         {
             if (state == stateCode)
                 isLinked = true;
@@ -68,7 +69,7 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
 
         if (!isLinked) return;
 
-        foreach(UnitState state in states.Values)
+        foreach (UnitState state in states.Values)
         {
             state.enabled = false;
         }
@@ -88,37 +89,42 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void RollCheck(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        UnitManager target = collision.gameObject.GetComponent<UnitManager>();
+        if (target.currentState != UnitStateCode.RUSH) return;
+
+        rigidbody.velocity = target.rigidbody.velocity * 1.2f * (1 - stat.rollResistance.Value * 0.01f);
+        Vector3 tv = Quaternion.LookRotation(transform.position - target.transform.position).eulerAngles;
+        float trY = tv.y;
+        float rY = transform.rotation.eulerAngles.y;
+
+        if (rY < 0.0f) rY += 360.0f;
+        if (trY < 0.0f) trY += 360.0f;
+
+        //back
+        if (Mathf.Abs(rY - trY) > 90.0f)
         {
-            UnitManager target = collision.gameObject.GetComponent<UnitManager>();
-            if (target.currentState != UnitStateCode.RUSH) return;
-
-            rigidbody.velocity = target.rigidbody.velocity * 1.2f * (1 - stat.rollResistance.Value * 0.01f);
-            Vector3 tv = Quaternion.LookRotation(transform.position - target.transform.position).eulerAngles;
-            float trY = tv.y;
-            float rY = transform.rotation.eulerAngles.y;
-
-            if (rY < 0.0f) rY += 360.0f;
-            if (trY < 0.0f) trY += 360.0f;
-
-            //back
-            if (Mathf.Abs(rY - trY) > 90.0f)
-            {
-                Vector3 v = tv;
-                v.x = -45.0f;
-                target.transform.rotation = Quaternion.Euler(v);
-            }
-            //front
-            else
-            {
-                Vector3 v = tv;
-                v.x = 45.0f;
-                target.transform.rotation = Quaternion.Euler(v);
-            }
-            target.SetState(UnitStateCode.ROLL);
+            Vector3 v = tv;
+            v.y -= 180;
+            transform.rotation = Quaternion.Euler(v);
+            animator.SetBool("HitBack", true);
         }
+        //front
+        else
+        {
+            Vector3 v = tv;
+            transform.rotation = Quaternion.Euler(v);
+            animator.SetBool("HitBack", false);
+        }
+        SetState(UnitStateCode.ROLL);
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (currentState == UnitStateCode.ROLL) return;
+        if (!collision.gameObject.CompareTag("Player")) return;
+        RollCheck(collision);
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

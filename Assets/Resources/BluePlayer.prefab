@@ -100,6 +100,7 @@ MonoBehaviour:
   skinnedMeshRenderer: {fileID: 0}
   rigidbody: {fileID: 0}
   animator: {fileID: 0}
+  spawnPosition: {x: 0, y: 30, z: -15}
   ctrlMoveDir: {x: 0, y: 0, z: 0}
   ctrlMoveDistance: 0
   ctrlRushDir: {x: 0, y: 0, z: 0}
@@ -312,6 +313,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6579502118363895844}
     m_Modifications:
+    - target: {fileID: 100090, guid: f98b9714641b29445b2601bdf8411a42, type: 3}
+      propertyPath: m_Name
+      value: zeus
+      objectReference: {fileID: 0}
     - target: {fileID: 400090, guid: f98b9714641b29445b2601bdf8411a42, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -367,10 +372,6 @@ PrefabInstance:
     - target: {fileID: 400090, guid: f98b9714641b29445b2601bdf8411a42, type: 3}
       propertyPath: m_LocalScale.z
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 100090, guid: f98b9714641b29445b2601bdf8411a42, type: 3}
-      propertyPath: m_Name
-      value: zeus
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: f98b9714641b29445b2601bdf8411a42, type: 3}
       propertyPath: m_Controller

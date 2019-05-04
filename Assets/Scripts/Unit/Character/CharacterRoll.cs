@@ -34,7 +34,7 @@ public class CharacterRoll : UnitRoll
     // Update is called once per frame
     void Update()
     {
-        if (manager.rigidbody.velocity.sqrMagnitude <= 5.0f)
+        if (manager.rigidbody.velocity.sqrMagnitude <= 0.05f)
         {
             Vector3 v = transform.rotation.eulerAngles;
             v.x = 0.0f;
