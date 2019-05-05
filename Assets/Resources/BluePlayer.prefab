@@ -210,6 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   linkStates: 
+  groundChecker: {fileID: 6579502119900014246}
 --- !u!114 &8926968255025877162
 MonoBehaviour:
   m_ObjectHideFlags: 0

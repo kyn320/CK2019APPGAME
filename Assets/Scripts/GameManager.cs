@@ -37,6 +37,7 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
         }
 
         Camera.main.transform.parent = localPlayer.transform;
+        Camera.main.transform.localPosition += localPlayer.transform.position;
     }
 
     void Start()

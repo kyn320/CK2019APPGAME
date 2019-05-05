@@ -14,7 +14,7 @@ public enum UnitStateCode
     FALL
 }
 
-public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
+public class UnitManager : MonoBehaviourPunCallbacks
 {
     [SerializeField]
     public UnitStateCode currentState = UnitStateCode.FALL;
@@ -30,6 +30,7 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
     public float ctrlMoveDistance;
     public Vector3 ctrlRushDir;
     public float ctrlRushDistance;
+    bool isSetState;
 
     public UnitStat stat;
     public bool haveItem;
@@ -48,16 +49,27 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
         haveItem = false;
+
+        if (!photonView.IsMine)
+        {
+            rigidbody.useGravity = false;
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
         SetState(UnitStateCode.IDLE);
+        if (!photonView.IsMine)
+        {
+            states[currentState].enabled = false;
+        }
     }
 
     public void SetState(UnitStateCode stateCode)
     {
+        if (isSetState) return;
+
         bool isLinked = false;
         foreach (UnitStateCode state in states[currentState].linkStates)
         {
@@ -65,7 +77,7 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
                 isLinked = true;
         }
 
-        Debug.Log(photonView.Owner.NickName + " : " + isLinked);
+        //Debug.Log(photonView.Owner.NickName + " : " + isLinked);
 
         if (!isLinked) return;
 
@@ -79,10 +91,24 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
         states[currentState].enabled = true;
         states[currentState].Enter();
         animator.SetInteger("currentState", (int)currentState);
+
+        if (photonView.IsMine)
+        {
+            photonView.RPC("PunUnitSetState", RpcTarget.Others, currentState);
+        }
+        isSetState = true;
+    }
+
+    [PunRPC]
+    void PunUnitSetState(UnitStateCode stateCode)
+    {
+        currentState = stateCode;
+        animator.SetInteger("currentState", (int)currentState);
     }
 
     private void Update()
     {
+        isSetState = false;
         if (transform.position.y < -5.0f)
         {
             SetState(UnitStateCode.FALL);
@@ -122,20 +148,21 @@ public class UnitManager : MonoBehaviourPunCallbacks, IPunObservable
 
     private void OnCollisionStay(Collision collision)
     {
+        if (!photonView.IsMine) return;
         if (currentState == UnitStateCode.ROLL) return;
         if (!collision.gameObject.CompareTag("Player")) return;
         RollCheck(collision);
     }
 
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
-            stream.SendNext(currentState);
-        }
-        else
-        {
-            SetState((UnitStateCode)stream.ReceiveNext());
-        }
-    }
+    //public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    //{
+    //    if (stream.IsWriting && photonView.IsMine)
+    //    {
+    //        stream.SendNext(currentState);
+    //    }
+    //    else if(stream.IsReading && !photonView.IsMine)
+    //    {
+    //        SetState((UnitStateCode)stream.ReceiveNext());
+    //    }
+    //}
 }

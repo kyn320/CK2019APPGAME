@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CharacterFall : UnitFall
 {
+    [SerializeField]
+    private Transform groundChecker;
+
     public override void Awake()
     {
         base.Awake();
@@ -21,12 +24,16 @@ public class CharacterFall : UnitFall
         base.Exit();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(transform.position.y < -50.0f)
         {
             transform.position = manager.spawnPosition;
             manager.rigidbody.velocity = Vector3.zero;
+        }
+        Collider[] cols = Physics.OverlapSphere(groundChecker.position, 0.25f, LayerMask.GetMask("Ground"));
+        if (cols.Length > 0)
+        {
             manager.SetState(UnitStateCode.IDLE);
         }
     }

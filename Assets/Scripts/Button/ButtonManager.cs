@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using Photon.Pun;
 
 public enum ButtonStateCode
 {
@@ -55,5 +56,13 @@ public class ButtonManager : MonoBehaviour
         currentState = stateCode;
         states[currentState].enabled = true;
         states[currentState].Enter();
+        PhotonView photonView = PhotonView.Get(this);
+        photonView.RPC("PunButtonSetState", RpcTarget.Others, currentState);
+    }
+
+    [PunRPC]
+    public void PunButtonSetState(ButtonStateCode stateCode)
+    {
+        SetState(stateCode);
     }
 }

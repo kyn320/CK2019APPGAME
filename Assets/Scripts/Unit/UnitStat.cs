@@ -42,22 +42,22 @@ public class UnitStat : MonoBehaviour
         manager = GetComponent<UnitManager>();
     }
 
-    public bool GetStat(UnitStatCode code, ref Stat stat)
+    public bool AddStat(UnitStatCode code, float addValue)
     {
         bool isDone = true;
         switch (code)
         {
             case UnitStatCode.MOVE_SPEED:
-                stat = moveSpeed;
+                moveSpeed.add += addValue;
                 break;
             case UnitStatCode.JUMP_POWER:
-                stat = jumpPower;
+                jumpPower.add += addValue;
                 break;
             case UnitStatCode.RUSH_POWER:
-                stat = rushPower;
+                rushPower.add += addValue;
                 break;
             case UnitStatCode.ROLL_RESISTANCE:
-                stat = rollResistance;
+                rollResistance.add += addValue;
                 break;
             default:
                 isDone = false;

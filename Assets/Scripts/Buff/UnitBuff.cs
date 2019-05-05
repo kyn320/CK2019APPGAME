@@ -6,7 +6,6 @@ using UnityEngine;
 public class UnitBuff : MonoBehaviour
 {
     UnitManager target = null;
-    Stat addStat;
     [SerializeField]
     UnitStatCode statCode;
     [SerializeField]
@@ -28,19 +27,19 @@ public class UnitBuff : MonoBehaviour
         {
             End();
         }
-        unit.stat.GetStat(statCode, ref addStat);
+        target = unit;
 
         Begin();
     }
 
     public void Begin()
     {
-        addStat.add += addValue;
+        target.stat.AddStat(statCode, addValue);
         medieval.start();
     }
 
     public void End()
     {
-        addStat.add -= addValue;
+        target.stat.AddStat(statCode, -addValue);
     }
 }

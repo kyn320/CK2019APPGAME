@@ -35,10 +35,10 @@ public class ButtonIdle : ButtonState
             {
                 if (manager.occupationTarget == manager.target)
                     return;
-                if (!manager.occupationTarget.haveItem)
+                if (!manager.target.haveItem)
                     return;
             }
-            
+
             manager.SetState(ButtonStateCode.WORK);
         }
     }

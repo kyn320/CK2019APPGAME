@@ -7,6 +7,7 @@ public class ButtonFinish : ButtonState
     public override void Enter()
     {
         base.Enter();
+        OccupationSetting();
     }
 
     public override void Exit()
@@ -25,5 +26,16 @@ public class ButtonFinish : ButtonState
             manager.SetState(ButtonStateCode.IDLE);
         }
         transform.position = vector;
+    }
+
+    void OccupationSetting()
+    {
+        if (manager.occupationTarget && manager.target.haveItem)
+        {
+            manager.target.GetComponentInChildren<ItemManager>().SetState(ItemStateCode.REMOVE);
+        }
+        manager.meshRenderer.material = manager.target.skinnedMeshRenderer.material;
+        manager.occupationTarget = manager.target;
+        manager.buff.Set(manager.occupationTarget);
     }
 }
