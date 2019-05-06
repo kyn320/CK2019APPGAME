@@ -26,8 +26,8 @@ public class CharacterRush : UnitRush
         
         manager.rigidbody.AddForce(manager.ctrlRushDir * manager.ctrlRushDistance * manager.stat.rushPower.Value, ForceMode.Impulse);
 
-        Vector3 v = manager.ctrlRushDir;
-        v.y = -1.0f;
+        //Vector3 v = manager.ctrlRushDir;
+        //v.y = -1.0f;
 
         medieval.start();
     }

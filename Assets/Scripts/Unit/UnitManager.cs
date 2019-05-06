@@ -50,10 +50,10 @@ public class UnitManager : MonoBehaviourPunCallbacks
         animator = GetComponentInChildren<Animator>();
         haveItem = false;
 
-        if (!photonView.IsMine)
-        {
-            rigidbody.useGravity = false;
-        }
+        //if (!photonView.IsMine)
+        //{
+        //    //rigidbody.useGravity = false;
+        //}
     }
 
     // Start is called before the first frame update
@@ -62,12 +62,16 @@ public class UnitManager : MonoBehaviourPunCallbacks
         SetState(UnitStateCode.IDLE);
         if (!photonView.IsMine)
         {
-            states[currentState].enabled = false;
+            foreach (UnitState state in states.Values)
+            {
+                state.enabled = false;
+            }
         }
     }
 
     public void SetState(UnitStateCode stateCode)
     {
+        if (!photonView.IsMine) return;
         if (isSetState) return;
 
         bool isLinked = false;
@@ -120,7 +124,10 @@ public class UnitManager : MonoBehaviourPunCallbacks
         UnitManager target = collision.gameObject.GetComponent<UnitManager>();
         if (target.currentState != UnitStateCode.RUSH) return;
 
-        rigidbody.velocity = target.rigidbody.velocity * 1.2f * (1 - stat.rollResistance.Value * 0.01f);
+        rigidbody.AddForce(
+            (target.rigidbody.velocity.normalized * 8f +
+            target.rigidbody.velocity) * (1 - stat.rollResistance.Value * 0.01f), ForceMode.Impulse);
+        //rigidbody.velocity = target.rigidbody.velocity * 1.2f * (1 - stat.rollResistance.Value * 0.01f);
         Vector3 tv = Quaternion.LookRotation(transform.position - target.transform.position).eulerAngles;
         float trY = tv.y;
         float rY = transform.rotation.eulerAngles.y;

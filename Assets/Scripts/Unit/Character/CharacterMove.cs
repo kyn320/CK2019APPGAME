@@ -46,7 +46,7 @@ public class CharacterMove : UnitMove
         //dir.y = 0.0f;
         //
         Quaternion rotation = transform.rotation;
-        int t = (manager.ctrlMoveDir.z > 0) ? 1 : -1;
+        int t = (manager.ctrlMoveDir.z >= 0) ? 1 : -1;
         float angle = rotation.eulerAngles.y + manager.ctrlMoveDir.x * t;
         Vector3 moveDir = new Vector3(Mathf.Sin(Mathf.Deg2Rad * angle), 0.0f, Mathf.Cos(Mathf.Deg2Rad * angle));
         rotation = Quaternion.LookRotation(moveDir);
