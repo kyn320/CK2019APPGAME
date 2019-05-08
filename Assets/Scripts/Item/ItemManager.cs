@@ -20,6 +20,7 @@ public class ItemManager : MonoBehaviour
     Dictionary<ItemStateCode, ItemState> states = new Dictionary<ItemStateCode, ItemState>();
 
     public UnitManager target;
+    public Vector3 spawnPosition;
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class ItemManager : MonoBehaviour
 
         rigidbody = GetComponent<Rigidbody>();
         target = null;
+        spawnPosition = transform.position;
     }
 
     // Start is called before the first frame update

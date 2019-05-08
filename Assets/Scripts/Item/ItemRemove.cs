@@ -10,7 +10,8 @@ public class ItemRemove : ItemState
     {
         base.Enter();
 
-        gameObject.SetActive(false);
+        manager.GetComponent<MeshRenderer>().enabled = false;
+        //gameObject.SetActive(false);
         timer = 0.0f;
 
         if (manager.target)
@@ -26,7 +27,8 @@ public class ItemRemove : ItemState
     {
         base.Exit();
 
-        transform.position = new Vector3(0.0f, 1.0f, 0.0f);
+        transform.position = manager.spawnPosition;
+        manager.GetComponent<MeshRenderer>().enabled = true;
     }
 
     private void Update()

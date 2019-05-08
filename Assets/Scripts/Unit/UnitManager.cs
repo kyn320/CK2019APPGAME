@@ -23,6 +23,7 @@ public class UnitManager : MonoBehaviourPunCallbacks
     public Rigidbody rigidbody;
     public Animator animator;
     public Vector3 spawnPosition;
+    public Vector3 spawnRotation;
 
     Dictionary<UnitStateCode, UnitState> states = new Dictionary<UnitStateCode, UnitState>();
 

@@ -23,6 +23,7 @@ public class ItemIdle : ItemState
         if (other.gameObject.CompareTag("Player"))
         {
             manager.target = other.GetComponentInParent<UnitManager>();
+            if (manager.target.haveItem) return;
 
             manager.SetState(ItemStateCode.PICK);
         }

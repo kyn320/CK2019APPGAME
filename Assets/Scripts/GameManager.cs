@@ -17,17 +17,19 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
     public int maxPlayTime = 1;
 
     private float playTime = Min * 1;
+    public bool isBegin;
 
     protected override void Awake()
     {
         base.Awake();
+        isBegin = true;
 
         if (!PhotonNetwork.OfflineMode)
         {
             localPlayer = PhotonNetwork.Instantiate(PhotonNetwork.LocalPlayer.CustomProperties["Type"] + "Player"
                 , Vector3.zero
                 , Quaternion.identity).GetComponent<UnitManager>();
-            localPlayer.transform.position = localPlayer.spawnPosition;
+            localPlayer.transform.position = localPlayer.spawnPosition + Vector3.down * 25;
         }
         else
         {

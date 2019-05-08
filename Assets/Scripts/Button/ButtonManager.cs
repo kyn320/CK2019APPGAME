@@ -15,6 +15,8 @@ public class ButtonManager : MonoBehaviour
 {
     public ButtonStateCode currentState = ButtonStateCode.FINISH;
     public MeshRenderer meshRenderer;
+    public MeshRenderer tokenMeshRenderer;
+    public MeshRenderer crystalMeshRenderer;
     public UnitBuff buff;
     public UnitManager target;
     public UnitManager occupationTarget;
