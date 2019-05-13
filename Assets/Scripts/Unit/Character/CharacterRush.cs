@@ -39,9 +39,14 @@ public class CharacterRush : UnitRush
 
     private void Update()
     {
-        if(manager.rigidbody.velocity.sqrMagnitude <= 5.0f)
+        if (manager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
         {
+            Debug.Log(manager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
             manager.SetState(UnitStateCode.IDLE);
         }
+        //if(manager.rigidbody.velocity.sqrMagnitude <= 5.0f)
+        //{
+        //    manager.SetState(UnitStateCode.IDLE);
+        //}
     }
 }
