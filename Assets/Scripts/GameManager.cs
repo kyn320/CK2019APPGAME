@@ -57,13 +57,10 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
 
     private void Update()
     {
-        print(PhotonNetwork.NickName);
-
         playTime -= Time.deltaTime;
         if (playTime < 0f)
         {
             playTime = 0f;
-            Debug.Log("Game End");
         }
     }
 

@@ -26,31 +26,6 @@ public class ButtonIdle : ButtonState
         transform.position = vector;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        //if (manager.currentState != ButtonStateCode.IDLE) return;
-
-        int a = 8;
-        int b = 9;
-        int c = a + b;
-
-
-        Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.name.Equals("GroundChecker"))
-        {
-            manager.target = collision.gameObject.GetComponentInParent<UnitManager>();
-            if (manager.occupationTarget)
-            {
-                if (manager.occupationTarget == manager.target)
-                    return;
-                if (!manager.target.haveItem)
-                    return;
-            }
-
-            manager.SetState(ButtonStateCode.WORK);
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name.Equals("GroundChecker"))

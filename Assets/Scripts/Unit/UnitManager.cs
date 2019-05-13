@@ -73,7 +73,6 @@ public class UnitManager : MonoBehaviourPunCallbacks
     public void SetState(UnitStateCode stateCode)
     {
         if (!photonView.IsMine) return;
-        if (isSetState) return;
 
         bool isLinked = false;
         foreach (UnitStateCode state in states[currentState].linkStates)
@@ -97,7 +96,6 @@ public class UnitManager : MonoBehaviourPunCallbacks
         states[currentState].Enter();
         animator.SetInteger("currentState", (int)currentState);
         
-        isSetState = true;
         photonView.RPC("PunUnitSetState", RpcTarget.Others, currentState);
     }
 
@@ -110,11 +108,12 @@ public class UnitManager : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        isSetState = false;
         if (transform.position.y < -5.0f)
         {
             SetState(UnitStateCode.FALL);
         }
+
+        
     }
 
     void RollCheck(Collision collision)

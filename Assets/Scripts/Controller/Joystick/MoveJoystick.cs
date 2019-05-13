@@ -27,6 +27,7 @@ public class MoveJoystick : Joystick
         }
 
         GetTarget().ctrlMoveDir = dir;
+        
         if (dir.sqrMagnitude > 0.0f)
         {
             GetTarget().ctrlMoveDistance = 1f;

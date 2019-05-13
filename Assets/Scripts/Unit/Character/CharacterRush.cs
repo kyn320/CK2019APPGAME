@@ -24,11 +24,8 @@ public class CharacterRush : UnitRush
     {
         base.Enter();
         
-        manager.rigidbody.AddForce(manager.ctrlRushDir * manager.ctrlRushDistance * manager.stat.rushPower.Value, ForceMode.Impulse);
-
-        //Vector3 v = manager.ctrlRushDir;
-        //v.y = -1.0f;
-
+        manager.rigidbody.velocity = manager.ctrlRushDir * manager.ctrlRushDistance * manager.stat.rushPower.Value;
+        
         medieval.start();
     }
 
@@ -39,14 +36,20 @@ public class CharacterRush : UnitRush
 
     private void Update()
     {
-        if (manager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+
+        if (!manager.animator.GetCurrentAnimatorStateInfo(0).IsName("RUSH"))
+            return;
+
+        float animationTime = manager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime; // * manager.animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+
+        if (animationTime >= 1.0f)
         {
             Debug.Log(manager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
             manager.SetState(UnitStateCode.IDLE);
         }
-        //if(manager.rigidbody.velocity.sqrMagnitude <= 5.0f)
-        //{
-        //    manager.SetState(UnitStateCode.IDLE);
-        //}
+       //if(manager.rigidbody.velocity.sqrMagnitude <= 5.0f)
+       //{
+       //    manager.SetState(UnitStateCode.IDLE);
+       //}
     }
 }
