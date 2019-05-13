@@ -96,12 +96,9 @@ public class UnitManager : MonoBehaviourPunCallbacks
         states[currentState].enabled = true;
         states[currentState].Enter();
         animator.SetInteger("currentState", (int)currentState);
-
-        if (photonView.IsMine)
-        {
-            photonView.RPC("PunUnitSetState", RpcTarget.Others, currentState);
-        }
+        
         isSetState = true;
+        photonView.RPC("PunUnitSetState", RpcTarget.Others, currentState);
     }
 
     [PunRPC]

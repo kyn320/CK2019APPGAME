@@ -19,6 +19,12 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
     private float playTime = Min * 1;
     public bool isBegin;
 
+    public Camera backViewCamera;
+    public Camera quarterViewCamera;
+
+    public GameObject backViewController;
+    public GameObject quarterViewController;
+
     protected override void Awake()
     {
         base.Awake();
@@ -38,8 +44,10 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
                 , Quaternion.identity).GetComponent<UnitManager>();
         }
 
-        Camera.main.transform.parent = localPlayer.transform;
-        Camera.main.transform.localPosition += localPlayer.transform.position;
+        backViewCamera.transform.parent = localPlayer.transform;
+        backViewCamera.transform.localPosition += localPlayer.transform.position;
+        backViewCamera.enabled = true;
+        quarterViewCamera.enabled = false;
     }
 
     void Start()
@@ -66,6 +74,15 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
 
     public float GetPlayTime() {
         return playTime;
+    }
+
+    public void SwapCamera()
+    {
+        backViewCamera.enabled = !backViewCamera.enabled;
+        quarterViewCamera.enabled = !quarterViewCamera.enabled;
+
+        backViewController.SetActive(backViewCamera.enabled);
+        quarterViewController.SetActive(quarterViewCamera.enabled);
     }
 
     #region RoomCallback
