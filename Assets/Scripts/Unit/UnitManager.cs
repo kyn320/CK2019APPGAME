@@ -95,7 +95,7 @@ public class UnitManager : MonoBehaviourPunCallbacks
         states[currentState].enabled = true;
         states[currentState].Enter();
         animator.SetInteger("currentState", (int)currentState);
-        
+
         photonView.RPC("PunUnitSetState", RpcTarget.Others, currentState);
     }
 
@@ -113,7 +113,7 @@ public class UnitManager : MonoBehaviourPunCallbacks
             SetState(UnitStateCode.FALL);
         }
 
-        
+
     }
 
     void RollCheck(Collision collision)
@@ -148,6 +148,13 @@ public class UnitManager : MonoBehaviourPunCallbacks
             animator.SetBool("HitBack", false);
         }
         SetState(UnitStateCode.ROLL);
+    }
+
+    public void Respawn(Vector3 pos)
+    {
+        transform.position = spawnPosition + pos;
+        transform.localEulerAngles = spawnRotation;
+        rigidbody.velocity = Vector3.zero;
     }
 
     private void OnCollisionStay(Collision collision)

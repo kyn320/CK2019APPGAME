@@ -23,9 +23,9 @@ public class CharacterRush : UnitRush
     public override void Enter()
     {
         base.Enter();
-        
+
         manager.rigidbody.velocity = manager.ctrlRushDir * manager.ctrlRushDistance * manager.stat.rushPower.Value;
-        
+
         medieval.start();
     }
 
@@ -40,16 +40,12 @@ public class CharacterRush : UnitRush
         if (!manager.animator.GetCurrentAnimatorStateInfo(0).IsName("RUSH"))
             return;
 
-        float animationTime = manager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime; // * manager.animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+        float animationTime = manager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
 
         if (animationTime >= 1.0f)
         {
             Debug.Log(manager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
             manager.SetState(UnitStateCode.IDLE);
         }
-       //if(manager.rigidbody.velocity.sqrMagnitude <= 5.0f)
-       //{
-       //    manager.SetState(UnitStateCode.IDLE);
-       //}
     }
 }

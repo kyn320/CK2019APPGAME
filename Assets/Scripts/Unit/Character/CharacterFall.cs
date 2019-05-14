@@ -28,9 +28,7 @@ public class CharacterFall : UnitFall
     {
         if(transform.position.y < -50.0f)
         {
-            transform.position = manager.spawnPosition;
-            transform.rotation.SetEulerAngles(manager.spawnRotation);
-            manager.rigidbody.velocity = Vector3.zero;
+            manager.Respawn(Vector3.zero);
         }
         Collider[] cols = Physics.OverlapSphere(groundChecker.position, 0.25f, LayerMask.GetMask("Ground"));
         if (cols.Length > 0)

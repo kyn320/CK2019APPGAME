@@ -35,7 +35,7 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
             localPlayer = PhotonNetwork.Instantiate(PhotonNetwork.LocalPlayer.CustomProperties["Type"] + "Player"
                 , Vector3.zero
                 , Quaternion.identity).GetComponent<UnitManager>();
-            localPlayer.transform.position = localPlayer.spawnPosition + Vector3.down * 25;
+            localPlayer.Respawn(Vector3.down * 25);
         }
         else
         {
@@ -45,7 +45,9 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
         }
 
         backViewCamera.transform.parent = localPlayer.transform;
-        backViewCamera.transform.localPosition += localPlayer.transform.position;
+        //TODO :: 카메라 백뷰 위치 버그 있음
+        backViewCamera.transform.localPosition += localPlayer.transform.localPosition;// + new Vector3(0, 5, -2.5f);
+        backViewCamera.transform.eulerAngles += localPlayer.spawnRotation;
         backViewCamera.enabled = true;
         quarterViewCamera.enabled = false;
     }
@@ -69,7 +71,8 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
         PhotonNetwork.LeaveRoom();
     }
 
-    public float GetPlayTime() {
+    public float GetPlayTime()
+    {
         return playTime;
     }
 
