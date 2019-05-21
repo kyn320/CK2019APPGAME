@@ -38,12 +38,19 @@ public class ButtonFinish : ButtonState
         }
         manager.occupationTarget = manager.target;
         manager.buff.Set(manager.occupationTarget);
-        
-        Material material = Resources.Load<Material>(manager.target.photonView.Owner.CustomProperties["Type"] as string);
-        manager.meshRenderer.material = material;
 
-        if (manager.tokenMeshRenderer == null) return;
-        manager.tokenMeshRenderer.material = material;
-        manager.crystalMeshRenderer.material = material;
+        string path = manager.target.photonView.Owner.CustomProperties["Type"] as string;
+        if (manager.tokenMeshRenderer == null)
+        {
+            Material material = Resources.Load<Material>("Material/gold_button_" + path);
+            manager.meshRenderer.material = material;
+        }
+        else
+        {
+            Material material = Resources.Load<Material>("Material/button_" + path);
+            manager.meshRenderer.material = material;
+            manager.tokenMeshRenderer.material = material;
+            manager.crystalMeshRenderer.material = Resources.Load<Material>("Material/column_" + path);
+        }
     }
 }

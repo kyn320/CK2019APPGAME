@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class ObjectAniControl : MonoBehaviour
 {
-    public Vector3 pos;
-    public float dir;
+    public Vector3 originPos;
+    public float sinDir = 0.0f;
+    public float moveSpeed = 0.0f;
+    public float moveDistance = 0.0f;
+    public Vector3 rotationDir;
+    public float rotationSpeed = 0.0f;
+
+    private void Awake()
+    {
+        originPos = transform.position;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +25,10 @@ public class ObjectAniControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        sinDir = sinDir + Time.deltaTime * moveSpeed;
+        if (sinDir > Mathf.PI) sinDir -= Mathf.PI;
+        transform.position = originPos + Vector3.up * Mathf.Sin(sinDir) * moveDistance;
+
+        transform.rotation.SetEulerAngles(transform.rotation.eulerAngles + rotationDir * rotationSpeed * Time.deltaTime);
     }
 }

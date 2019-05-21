@@ -77,11 +77,11 @@ namespace Resume.Network
 
                 ExitGames.Client.Photon.Hashtable table = new ExitGames.Client.Photon.Hashtable();
 
-                table["Type"] = "Red";
+                table["Type"] = "hera";
 
                 PhotonNetwork.CurrentRoom.GetPlayer(randType).SetCustomProperties(table);
 
-                table["Type"] = "Blue";
+                table["Type"] = "zeus";
 
                 PhotonNetwork.CurrentRoom.GetPlayer(randType == 1 ? 2 : 1).SetCustomProperties(table);
 
