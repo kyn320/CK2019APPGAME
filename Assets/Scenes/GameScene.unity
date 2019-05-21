@@ -818,8 +818,9 @@ MonoBehaviour:
   target: {fileID: 0}
   occupationTarget: {fileID: 0}
   offsetY: 0
-  occupationTime: 2
+  occupationTime: 1
   occupationDepth: 0.3
+  reoccupationTime: 2
 --- !u!1 &300901016
 GameObject:
   m_ObjectHideFlags: 0
@@ -2456,8 +2457,9 @@ MonoBehaviour:
   target: {fileID: 0}
   occupationTarget: {fileID: 0}
   offsetY: 0
-  occupationTime: 10
+  occupationTime: 1
   occupationDepth: 0.3
+  reoccupationTime: 2
 --- !u!64 &823722792
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3481,8 +3483,9 @@ MonoBehaviour:
   target: {fileID: 0}
   occupationTarget: {fileID: 0}
   offsetY: 0
-  occupationTime: 2
+  occupationTime: 1
   occupationDepth: 0.3
+  reoccupationTime: 2
 --- !u!64 &1323557151
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3843,8 +3846,9 @@ MonoBehaviour:
   target: {fileID: 0}
   occupationTarget: {fileID: 0}
   offsetY: 0
-  occupationTime: 2
+  occupationTime: 1
   occupationDepth: 0.3
+  reoccupationTime: 2
 --- !u!64 &1443235054
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4049,8 +4053,9 @@ MonoBehaviour:
   target: {fileID: 0}
   occupationTarget: {fileID: 0}
   offsetY: 0
-  occupationTime: 2
+  occupationTime: 3
   occupationDepth: 0.3
+  reoccupationTime: 5
 --- !u!23 &1538827413
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4364,8 +4369,9 @@ MonoBehaviour:
   target: {fileID: 0}
   occupationTarget: {fileID: 0}
   offsetY: 0
-  occupationTime: 2
+  occupationTime: 1
   occupationDepth: 0.3
+  reoccupationTime: 2
 --- !u!64 &1573842691
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4755,8 +4761,9 @@ MonoBehaviour:
   target: {fileID: 0}
   occupationTarget: {fileID: 0}
   offsetY: 0
-  occupationTime: 2
+  occupationTime: 1
   occupationDepth: 0.3
+  reoccupationTime: 2
 --- !u!64 &1677548748
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5073,8 +5080,9 @@ MonoBehaviour:
   target: {fileID: 0}
   occupationTarget: {fileID: 0}
   offsetY: 0
-  occupationTime: 2
+  occupationTime: 1
   occupationDepth: 0.3
+  reoccupationTime: 2
 --- !u!1 &1807410219
 GameObject:
   m_ObjectHideFlags: 0
@@ -5872,8 +5880,9 @@ MonoBehaviour:
   target: {fileID: 0}
   occupationTarget: {fileID: 0}
   offsetY: 0
-  occupationTime: 2
+  occupationTime: 1
   occupationDepth: 0.3
+  reoccupationTime: 2
 --- !u!114 &2057156244
 MonoBehaviour:
   m_ObjectHideFlags: 0

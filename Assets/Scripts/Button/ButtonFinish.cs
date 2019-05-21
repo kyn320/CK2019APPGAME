@@ -37,6 +37,7 @@ public class ButtonFinish : ButtonState
             manager.target.GetComponentInChildren<ItemManager>().SetState(ItemStateCode.REMOVE);
         }
         manager.occupationTarget = manager.target;
+        manager.occupationTime = manager.reoccupationTime;
         manager.buff.Set(manager.occupationTarget);
 
         string path = manager.target.photonView.Owner.CustomProperties["Type"] as string;

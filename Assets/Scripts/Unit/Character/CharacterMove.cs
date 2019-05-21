@@ -42,9 +42,7 @@ public class CharacterMove : UnitMove
         {
             medieval.start();
         }
-        //dir.z = dir.y;
-        //dir.y = 0.0f;
-        //
+
         Quaternion rotation = transform.rotation;
         int t = (manager.ctrlMoveDir.z >= 0) ? 1 : -1;
         float angle = rotation.eulerAngles.y + manager.ctrlMoveDir.x * t;
@@ -52,7 +50,6 @@ public class CharacterMove : UnitMove
         rotation = Quaternion.LookRotation(moveDir);
         transform.rotation = rotation;
 
-        //rigidbody.rotation = Quaternion.Slerp(rigidbody.rotation, rotation, rotateSpeed * Time.deltaTime);
         Vector3 moveVelocity = manager.stat.moveSpeed.Value * moveDir * manager.ctrlMoveDir.z;
         moveVelocity.y = manager.rigidbody.velocity.y;
 

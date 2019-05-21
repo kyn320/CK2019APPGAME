@@ -8,7 +8,6 @@ public class ObjectAniControl : MonoBehaviour
     public float sinDir = 0.0f;
     public float moveSpeed = 0.0f;
     public float moveDistance = 0.0f;
-    public Vector3 rotationDir;
     public float rotationSpeed = 0.0f;
 
     private void Awake()
@@ -29,6 +28,6 @@ public class ObjectAniControl : MonoBehaviour
         if (sinDir > Mathf.PI) sinDir -= Mathf.PI;
         transform.position = originPos + Vector3.up * Mathf.Sin(sinDir) * moveDistance;
 
-        transform.rotation.SetEulerAngles(transform.rotation.eulerAngles + rotationDir * rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + Vector3.up * rotationSpeed * Time.deltaTime);
     }
 }

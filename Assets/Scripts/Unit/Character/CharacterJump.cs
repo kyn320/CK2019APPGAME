@@ -37,7 +37,8 @@ public class CharacterJump : UnitJump
 
     private void FixedUpdate()
     {
-        float rad = manager.transform.rotation.eulerAngles.y * Mathf.Deg2Rad;
+        int t = (manager.ctrlMoveDir.z >= 0) ? 1 : -1;
+        float rad = (manager.transform.rotation.eulerAngles.y + manager.ctrlMoveDir.x * t) * Mathf.Deg2Rad;
         Vector3 dir = new Vector3(Mathf.Sin(rad), 0.0f, Mathf.Cos(rad));
         Vector3 moveVelocity = manager.stat.moveSpeed.Value * dir * manager.ctrlMoveDistance;
         moveVelocity.y = manager.rigidbody.velocity.y;

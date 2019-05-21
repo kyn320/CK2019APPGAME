@@ -126,6 +126,8 @@ public class UnitManager : MonoBehaviourPunCallbacks
             target.rigidbody.velocity) * (1 - stat.rollResistance.Value * 0.01f), ForceMode.Impulse);
         //rigidbody.velocity = target.rigidbody.velocity * 1.2f * (1 - stat.rollResistance.Value * 0.01f);
         Vector3 tv = Quaternion.LookRotation(transform.position - target.transform.position).eulerAngles;
+        tv.x = 0.0f;
+        tv.z = 0.0f;
         float trY = tv.y;
         float rY = transform.rotation.eulerAngles.y;
 
@@ -164,16 +166,4 @@ public class UnitManager : MonoBehaviourPunCallbacks
         if (!collision.gameObject.CompareTag("Player")) return;
         RollCheck(collision);
     }
-
-    //public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    //{
-    //    if (stream.IsWriting && photonView.IsMine)
-    //    {
-    //        stream.SendNext(currentState);
-    //    }
-    //    else if(stream.IsReading && !photonView.IsMine)
-    //    {
-    //        SetState((UnitStateCode)stream.ReceiveNext());
-    //    }
-    //}
 }

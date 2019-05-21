@@ -27,6 +27,7 @@ public class ButtonManager : MonoBehaviour
     public float offsetY;
     public float occupationTime;
     public float occupationDepth;
+    public float reoccupationTime;
 
     private void Awake()
     {

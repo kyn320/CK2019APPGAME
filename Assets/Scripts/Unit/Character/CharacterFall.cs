@@ -7,21 +7,29 @@ public class CharacterFall : UnitFall
     [SerializeField]
     private Transform groundChecker;
 
+    private Collider collider;
+    private Collider groundCollider;
+
     public override void Awake()
     {
         base.Awake();
 
         linkStates.Add(UnitStateCode.IDLE);
+
+        collider = GetComponent<Collider>();
+        groundCollider = groundChecker.GetComponent<Collider>();
     }
 
     public override void Enter()
     {
         base.Enter();
+        groundCollider.material = collider.material;
     }
 
     public override void Exit()
     {
         base.Exit();
+        groundCollider.material = null;
     }
 
     private void FixedUpdate()
