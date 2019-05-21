@@ -10,8 +10,12 @@ public class MainUIEvent : MonoBehaviour
         SceneManager.LoadScene("MatchingScene");
     }
 
-    public void GoToMain()
-    {
-        SceneManager.LoadScene("MainScene");
+    public void GoToInfo() {
+        SceneManager.LoadScene("InfoScene");
     }
+
+    public void OnViewOption() {
+        //TODO :: 옵션 창 키기
+    }
+
 }
