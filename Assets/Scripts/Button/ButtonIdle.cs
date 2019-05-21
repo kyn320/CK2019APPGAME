@@ -27,22 +27,22 @@ public class ButtonIdle : ButtonState
     }
 
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.name.Equals("GroundChecker"))
-        {
-            manager.target = collision.gameObject.GetComponentInParent<UnitManager>();
-            if (manager.occupationTarget)
-            {
-                if (manager.occupationTarget == manager.target)
-                    return;
-                if (!manager.target.haveItem)
-                    return;
-            }
-
-            manager.SetState(ButtonStateCode.WORK);
-        }
-    }
+    //private void OnCollisionStay(Collision collision)
+    //{
+    //    if (manager.currentState != ButtonStateCode.IDLE) return;
+    //    if (collision.collider.name.Equals("GroundChecker"))
+    //    {
+    //        manager.target = collision.gameObject.GetComponentInParent<UnitManager>();
+    //        if (manager.occupationTarget)
+    //        {
+    //            if (manager.occupationTarget == manager.target)
+    //                return;
+    //            if (!manager.target.haveItem)
+    //                return;
+    //        }
+    //        manager.SetState(ButtonStateCode.WORK);
+    //    }
+    //}
 
 
 }

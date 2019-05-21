@@ -153,7 +153,7 @@ public class UnitManager : MonoBehaviourPunCallbacks
     public void Respawn(Vector3 pos)
     {
         transform.position = spawnPosition + pos;
-        transform.localEulerAngles = spawnRotation;
+        transform.eulerAngles = spawnRotation;
         rigidbody.velocity = Vector3.zero;
     }
 

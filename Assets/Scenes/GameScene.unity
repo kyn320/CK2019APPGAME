@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4484762, g: 0.49851632, b: 0.5756408, a: 1}
+  m_IndirectSpecularColor: {r: 0.44847643, g: 0.4985168, b: 0.57564163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -862,6 +862,7 @@ MonoBehaviour:
   tokenMeshRenderer: {fileID: 833765700}
   crystalMeshRenderer: {fileID: 1548630527}
   buff: {fileID: 0}
+  targetList: []
   target: {fileID: 0}
   occupationTarget: {fileID: 0}
   offsetY: 0
@@ -1026,6 +1027,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5706105840829151656}
     m_Modifications:
+    - target: {fileID: 5925687910219124569, guid: 272d9f49e2ea0894090ffc8d3be13892,
+        type: 3}
+      propertyPath: m_Name
+      value: asdf (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 5925687910219617145, guid: 272d9f49e2ea0894090ffc8d3be13892,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1080,11 +1086,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5925687910219124569, guid: 272d9f49e2ea0894090ffc8d3be13892,
-        type: 3}
-      propertyPath: m_Name
-      value: asdf (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 272d9f49e2ea0894090ffc8d3be13892, type: 3}
@@ -1242,7 +1243,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464226693}
   m_LocalRotation: {x: 0.309017, y: 0, z: 0, w: 0.95105654}
-  m_LocalPosition: {x: 0, y: 4, z: -5}
+  m_LocalPosition: {x: 0, y: 4, z: -18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2142,6 +2143,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8483542265870222986, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8483542265870222990, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2537,10 +2543,11 @@ MonoBehaviour:
   tokenMeshRenderer: {fileID: 1374273514}
   crystalMeshRenderer: {fileID: 581743047}
   buff: {fileID: 0}
+  targetList: []
   target: {fileID: 0}
   occupationTarget: {fileID: 0}
   offsetY: 0
-  occupationTime: 2
+  occupationTime: 10
   occupationDepth: 0.3
 --- !u!64 &823722792
 MeshCollider:
@@ -3709,6 +3716,7 @@ MonoBehaviour:
   tokenMeshRenderer: {fileID: 1442358317}
   crystalMeshRenderer: {fileID: 1740123499}
   buff: {fileID: 0}
+  targetList: []
   target: {fileID: 0}
   occupationTarget: {fileID: 0}
   offsetY: 0
@@ -4070,6 +4078,7 @@ MonoBehaviour:
   tokenMeshRenderer: {fileID: 2009622983}
   crystalMeshRenderer: {fileID: 2089749406}
   buff: {fileID: 0}
+  targetList: []
   target: {fileID: 0}
   occupationTarget: {fileID: 0}
   offsetY: 0
@@ -4275,6 +4284,7 @@ MonoBehaviour:
   tokenMeshRenderer: {fileID: 0}
   crystalMeshRenderer: {fileID: 0}
   buff: {fileID: 0}
+  targetList: []
   target: {fileID: 0}
   occupationTarget: {fileID: 0}
   offsetY: 0
@@ -4570,6 +4580,7 @@ MonoBehaviour:
   tokenMeshRenderer: {fileID: 1500721564}
   crystalMeshRenderer: {fileID: 14086621}
   buff: {fileID: 0}
+  targetList: []
   target: {fileID: 0}
   occupationTarget: {fileID: 0}
   offsetY: 0
@@ -4765,6 +4776,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5706105840829151656}
     m_Modifications:
+    - target: {fileID: 2079939281515345135, guid: 3ef9ade2b2d02e84ab1c4a6ee021d144,
+        type: 3}
+      propertyPath: m_Name
+      value: asdf
+      objectReference: {fileID: 0}
     - target: {fileID: 2079939281515571407, guid: 3ef9ade2b2d02e84ab1c4a6ee021d144,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4819,11 +4835,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2079939281515345135, guid: 3ef9ade2b2d02e84ab1c4a6ee021d144,
-        type: 3}
-      propertyPath: m_Name
-      value: asdf
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ef9ade2b2d02e84ab1c4a6ee021d144, type: 3}
@@ -5160,6 +5171,7 @@ MonoBehaviour:
   tokenMeshRenderer: {fileID: 642774384}
   crystalMeshRenderer: {fileID: 1190940277}
   buff: {fileID: 0}
+  targetList: []
   target: {fileID: 0}
   occupationTarget: {fileID: 0}
   offsetY: 0
@@ -5601,6 +5613,7 @@ MonoBehaviour:
   tokenMeshRenderer: {fileID: 123755337}
   crystalMeshRenderer: {fileID: 620960668}
   buff: {fileID: 0}
+  targetList: []
   target: {fileID: 0}
   occupationTarget: {fileID: 0}
   offsetY: 0
@@ -6466,6 +6479,7 @@ MonoBehaviour:
   tokenMeshRenderer: {fileID: 96051735}
   crystalMeshRenderer: {fileID: 1099815417}
   buff: {fileID: 0}
+  targetList: []
   target: {fileID: 0}
   occupationTarget: {fileID: 0}
   offsetY: 0
@@ -6993,7 +7007,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138233493}
   m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: 0, y: 2, z: -6}
+  m_LocalPosition: {x: 0, y: 2, z: -16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

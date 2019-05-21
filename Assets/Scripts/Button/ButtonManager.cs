@@ -18,6 +18,7 @@ public class ButtonManager : MonoBehaviour
     public MeshRenderer tokenMeshRenderer;
     public MeshRenderer crystalMeshRenderer;
     public UnitBuff buff;
+    public List<UnitManager> targetList = new List<UnitManager>();
     public UnitManager target;
     public UnitManager occupationTarget;
 
@@ -66,5 +67,47 @@ public class ButtonManager : MonoBehaviour
     public void PunButtonSetState(ButtonStateCode stateCode)
     {
         SetState(stateCode);
+    }
+
+    void UpdateState()
+    {
+        if(targetList.Count == 0)
+        {
+            SetState(ButtonStateCode.IDLE);
+        }
+        else if(targetList.Count == 1)
+        {
+            target = targetList[0];
+            if (occupationTarget)
+            {
+                if (occupationTarget == target)
+                    return;
+                if (!target.haveItem)
+                    return;
+            }
+            SetState(ButtonStateCode.WORK);
+        }
+        else
+        {
+            SetState(ButtonStateCode.IDLE);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.name.Equals("GroundChecker"))
+        {
+            targetList.Add(collision.gameObject.GetComponentInParent<UnitManager>());
+            UpdateState();
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.name.Equals("GroundChecker"))
+        {
+            targetList.Remove(collision.gameObject.GetComponentInParent<UnitManager>());
+            UpdateState();
+        }
     }
 }

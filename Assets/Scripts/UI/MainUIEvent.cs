@@ -9,4 +9,9 @@ public class MainUIEvent : MonoBehaviour
     {
         SceneManager.LoadScene("MatchingScene");
     }
+
+    public void GoToMain()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
 }

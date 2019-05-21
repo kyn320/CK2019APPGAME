@@ -28,11 +28,22 @@ public class ButtonWork : ButtonState
         transform.position = vector;
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.name.Equals("GroundChecker"))
-        {
-            manager.SetState(ButtonStateCode.IDLE);
-        }
-    }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (manager.currentState != ButtonStateCode.WORK) return;
+    //    if (collision.collider.name.Equals("GroundChecker"))
+    //    {
+    //        manager.SetState(ButtonStateCode.IDLE);
+    //    }
+    //}
+    //
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (manager.currentState != ButtonStateCode.WORK) return;
+    //    if (collision.collider.name.Equals("GroundChecker"))
+    //    {
+    //        manager.SetState(ButtonStateCode.IDLE);
+    //    }
+    //}
 }
