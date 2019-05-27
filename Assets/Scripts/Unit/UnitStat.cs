@@ -11,6 +11,12 @@ public struct Stat
     private float normal;
     public float add;
 
+    public void SetValue(float normal, float max)
+    {
+        this.normal = normal;
+        this.max = max;
+    }
+
     public float Value
     {
         get
@@ -25,7 +31,8 @@ public enum UnitStatCode
     MOVE_SPEED,
     RUSH_POWER,
     JUMP_POWER,
-    ROLL_RESISTANCE
+    ROLL_RESISTANCE,
+    SIZE
 }
 
 public class UnitStat : MonoBehaviour
@@ -40,6 +47,15 @@ public class UnitStat : MonoBehaviour
     private void Awake()
     {
         manager = GetComponent<UnitManager>();
+    }
+
+    private void Start()
+    {
+        Dictionary<UnitStatCode, float> stat = GameManager.Instance.standardStat;
+        moveSpeed.SetValue(stat[UnitStatCode.MOVE_SPEED], stat[UnitStatCode.MOVE_SPEED] * 1.5f);
+        rushPower.SetValue(stat[UnitStatCode.RUSH_POWER], stat[UnitStatCode.RUSH_POWER] * 2.0f);
+        jumpPower.SetValue(stat[UnitStatCode.JUMP_POWER], stat[UnitStatCode.JUMP_POWER]);
+        rollResistance.SetValue(0.0f, 100.0f);
     }
 
     public bool AddStat(UnitStatCode code, float addValue)

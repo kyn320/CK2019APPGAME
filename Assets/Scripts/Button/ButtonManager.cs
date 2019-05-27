@@ -45,6 +45,11 @@ public class ButtonManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        if (tokenMeshRenderer == null)
+        {
+            buff.isHidden();
+        }
         SetState(ButtonStateCode.IDLE);
     }
 

@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 6200338555782319204}
   - component: {fileID: 8930524600703327758}
   m_Layer: 0
-  m_Name: BluePlayer
+  m_Name: heraPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -6,10 +6,8 @@ public enum ItemStateCode
 {
     IDLE,
     PICK,
-    HOLD,
     DROP,
     REMOVE,
-    SPAWN,
 }
 
 public class ItemManager : MonoBehaviour
@@ -26,6 +24,7 @@ public class ItemManager : MonoBehaviour
     {
         states[ItemStateCode.IDLE] = GetComponent<ItemIdle>();
         states[ItemStateCode.PICK] = GetComponent<ItemPick>();
+        states[ItemStateCode.DROP] = GetComponent<ItemDrop>();
         states[ItemStateCode.REMOVE] = GetComponent<ItemRemove>();
 
         rigidbody = GetComponent<Rigidbody>();

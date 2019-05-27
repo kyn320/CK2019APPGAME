@@ -25,10 +25,17 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
     public GameObject backViewController;
     public GameObject quarterViewController;
 
+    public Dictionary<UnitStatCode, float> standardStat = new Dictionary<UnitStatCode, float>();
+
     protected override void Awake()
     {
         base.Awake();
         isBegin = true;
+
+        standardStat[UnitStatCode.MOVE_SPEED] = 3.0f;
+        standardStat[UnitStatCode.RUSH_POWER] = 10.0f;
+        standardStat[UnitStatCode.JUMP_POWER] = 6.0f;
+        standardStat[UnitStatCode.ROLL_RESISTANCE] = 100.0f;
 
         if (!PhotonNetwork.OfflineMode)
         {
@@ -49,8 +56,8 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
         //TODO :: 카메라 백뷰 위치 버그 있음
         //backViewCamera.transform.localPosition += localPlayer.transform.position;// + new Vector3(0, 5, -2.5f);
         //backViewCamera.transform.eulerAngles += localPlayer.spawnRotation;
-        backViewCamera.enabled = true;
-        quarterViewCamera.enabled = false;
+        backViewCamera.enabled = false;
+        quarterViewCamera.enabled = true;
     }
 
     void Start()

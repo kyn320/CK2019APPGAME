@@ -24,6 +24,10 @@ public class CharacterRoll : UnitRoll
         base.Enter();
 
         medieval.start();
+        if (manager.haveItem)
+        {
+            manager.GetComponentInChildren<ItemManager>().SetState(ItemStateCode.DROP);
+        }
     }
 
     public override void Exit()
