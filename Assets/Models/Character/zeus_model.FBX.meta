@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9e3808951774469499fe1823bc0395a0
+guid: 2371e3c195bb0fa4483da735ba7e8d06
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -48,6 +48,7 @@ ModelImporter:
     100084: Bip001 Spine1
     100086: ZEUS001
     100088: //RootNode
+    100090: Bip001 Footsteps
     400000: Bip001
     400002: Bip001 Head
     400004: Bip001 HeadNub
@@ -93,10 +94,10 @@ ModelImporter:
     400084: Bip001 Spine1
     400086: ZEUS001
     400088: //RootNode
+    400090: Bip001 Footsteps
     2100000: 01 - Default
     2100002: 02 - Default
     4300000: ZEUS001
-    7400000: Take 001
     9500000: //RootNode
     13700000: ZEUS001
   externalObjects: {}
@@ -151,7 +152,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.07
+    previousCalculatedGlobalScale: 0.08
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
@@ -161,7 +162,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

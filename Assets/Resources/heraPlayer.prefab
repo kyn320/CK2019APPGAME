@@ -295,6 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5743cfbb5dc6cb48b8cea4daaa8511a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterRenderer: {fileID: 0}
 --- !u!1 &6579502119900014247
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
       propertyPath: m_LocalRotation.y
@@ -372,11 +373,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
       propertyPath: m_RootOrder
@@ -402,6 +403,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: c5017c40aa700f44b984210d87a246e4, type: 2}
+    - target: {fileID: 13700000, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f18449e4df79f84e8869984c2402b62, type: 2}
+    - target: {fileID: 13700000, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1061d58586eb7054f84113df43bfbe16, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
 --- !u!4 &720090808854587594 stripped
