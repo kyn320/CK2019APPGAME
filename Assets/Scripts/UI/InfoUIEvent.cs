@@ -49,6 +49,9 @@ public class InfoUIEvent : MonoBehaviour
 
     public void OnTouchChange(PointerEventData eventData)
     {
+        if (currentIndex == 2)
+            return;
+
         models[currentIndex].GetComponent<FaceChanger>().ChangeFace(characterNames[currentIndex]
             , stateNames[Random.Range(0, 5)]);
     }
