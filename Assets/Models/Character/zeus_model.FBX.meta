@@ -49,6 +49,7 @@ ModelImporter:
     100086: ZEUS001
     100088: //RootNode
     100090: Bip001 Footsteps
+    100092: Object029
     400000: Bip001
     400002: Bip001 Head
     400004: Bip001 HeadNub
@@ -95,11 +96,14 @@ ModelImporter:
     400086: ZEUS001
     400088: //RootNode
     400090: Bip001 Footsteps
+    400092: Object029
     2100000: 01 - Default
     2100002: 02 - Default
     4300000: ZEUS001
+    4300002: Object029
     9500000: //RootNode
     13700000: ZEUS001
+    13700002: Object029
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -131,7 +135,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 8
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
