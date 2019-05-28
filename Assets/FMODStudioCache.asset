@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114944408150861486}
-  - {fileID: 114647488309021078}
-  - {fileID: 114545405849759644}
+  - {fileID: 114443784762569640}
+  - {fileID: 114634207211875432}
   EditorEvents:
   - {fileID: 114773143330638410}
   - {fileID: 114681012624544110}
@@ -28,10 +28,10 @@ MonoBehaviour:
   - {fileID: 114917072785920290}
   - {fileID: 114736511893342630}
   MasterBanks:
-  - {fileID: 114647488309021078}
+  - {fileID: 114443784762569640}
   StringsBanks:
   - {fileID: 114944408150861486}
-  stringsBankWriteTime: 636923385520000000
+  stringsBankWriteTime: 636934230888606904
   cacheVersion: 3
 --- !u!114 &114011043314970854
 MonoBehaviour:
@@ -176,7 +176,7 @@ MonoBehaviour:
   Path: event:/SFX/SFX_buff
   guid: 7fda7cb5c70eab458a95717c01e08fbc
   Banks:
-  - {fileID: 114545405849759644}
+  - {fileID: 114634207211875432}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -199,7 +199,7 @@ MonoBehaviour:
   Path: event:/Amb/Amb_cloud
   guid: 1eab03ba3173f34590b96f233a950aeb
   Banks:
-  - {fileID: 114545405849759644}
+  - {fileID: 114634207211875432}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -244,7 +244,7 @@ MonoBehaviour:
   Path: event:/SFX/SFX_attack
   guid: 2c7c23ec543b1741ad1556635c6e55a0
   Banks:
-  - {fileID: 114545405849759644}
+  - {fileID: 114634207211875432}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -273,6 +273,27 @@ MonoBehaviour:
   - Name: Mobile
     Value: 6533600
   Exists: 1
+--- !u!114 &114443784762569640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\211-28\Documents\CK2019APPGAME\Assets\FMOD\Desktop\Master Bank.bank
+  lastModified: 636934230888587235
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 12474
+  - Name: Mobile
+    Value: 12474
+  Exists: 1
 --- !u!114 &114510428727079848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,7 +309,7 @@ MonoBehaviour:
   Path: event:/BGM/BGM_main
   guid: abb16312b722b644b2b5128dfb780627
   Banks:
-  - {fileID: 114545405849759644}
+  - {fileID: 114634207211875432}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -380,6 +401,27 @@ MonoBehaviour:
   - Name: Mobile
     Value: 6533600
   Exists: 0
+--- !u!114 &114634207211875432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\211-28\Documents\CK2019APPGAME\Assets\FMOD\Desktop\build_first.bank
+  lastModified: 636934230888836565
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 3334272
+  - Name: Mobile
+    Value: 6533600
+  Exists: 1
 --- !u!114 &114647488309021078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,7 +458,7 @@ MonoBehaviour:
   Path: event:/SFX/SFX_gold
   guid: 1d56fd810e36d94dbe33912570253373
   Banks:
-  - {fileID: 114545405849759644}
+  - {fileID: 114634207211875432}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -439,7 +481,7 @@ MonoBehaviour:
   Path: event:/SFX/SFX_rush
   guid: e8fad09af0ca1642ba10ad9d43ef2232
   Banks:
-  - {fileID: 114545405849759644}
+  - {fileID: 114634207211875432}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -483,7 +525,7 @@ MonoBehaviour:
   Path: event:/SFX/SFX_jump
   guid: 09618eaa4a5ca4498b88c04026b30c44
   Banks:
-  - {fileID: 114545405849759644}
+  - {fileID: 114634207211875432}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -506,7 +548,7 @@ MonoBehaviour:
   Path: event:/Amb/Amb_wind
   guid: 9104d3ab1a8a724a97b1da3bf0ef6f4b
   Banks:
-  - {fileID: 114545405849759644}
+  - {fileID: 114634207211875432}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -593,7 +635,7 @@ MonoBehaviour:
   Path: event:/SFX/SFX_walk
   guid: dd634e8b963142499922f185786e018a
   Banks:
-  - {fileID: 114545405849759644}
+  - {fileID: 114634207211875432}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -614,7 +656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD\Desktop\Master Bank.strings.bank
-  lastModified: 636923385520000000
+  lastModified: 636934230888606904
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -658,7 +700,7 @@ MonoBehaviour:
   Path: event:/Amb/Amb_statue
   guid: 341d8b24848ef442992fe7281ebfbfd5
   Banks:
-  - {fileID: 114545405849759644}
+  - {fileID: 114634207211875432}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1

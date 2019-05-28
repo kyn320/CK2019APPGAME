@@ -15,16 +15,27 @@ public class InfoUIEvent : MonoBehaviour
     public EventTrigger eventTrigger;
     private Vector2 oldTouchPos = Vector2.zero;
 
+    string[] characterNames = {"Zeus", "Hera" };
+    string[] stateNames = { "Normal", "Cry", "Angry", "Run", "Victory" };
+
     private void Start()
     {
         currentIndex = PlayerPrefs.GetInt("ModelViewIndex", 0);
         OnChangeModel(currentIndex);
 
-        EventTrigger.Entry entry = new EventTrigger.Entry();
-        entry.eventID = EventTriggerType.Drag;
-        entry.callback.AddListener((data) => { OnDragRotate((PointerEventData)data); } );
-        eventTrigger.triggers.Add(entry);
+        EventTrigger.Entry touchEntry = new EventTrigger.Entry();
+        touchEntry.eventID = EventTriggerType.PointerDown;
+        touchEntry.callback.AddListener((data) => { OnTouchChange((PointerEventData)data); });
+
+        eventTrigger.triggers.Add(touchEntry);
+
+        EventTrigger.Entry dragEntry = new EventTrigger.Entry();
+        dragEntry.eventID = EventTriggerType.Drag;
+        dragEntry.callback.AddListener((data) => { OnDragRotate((PointerEventData)data); });
+
+        eventTrigger.triggers.Add(dragEntry);
     }
+
 
     public void OnChangeModel(int modelIndex)
     {
@@ -34,6 +45,12 @@ public class InfoUIEvent : MonoBehaviour
 
         currentIndex = modelIndex;
         models[currentIndex].SetActive(true);
+    }
+
+    public void OnTouchChange(PointerEventData eventData)
+    {
+        models[currentIndex].GetComponent<FaceChanger>().ChangeFace(characterNames[currentIndex]
+            , stateNames[Random.Range(0, 5)]);
     }
 
     public void OnDragRotate(PointerEventData eventData)
@@ -47,7 +64,8 @@ public class InfoUIEvent : MonoBehaviour
 
     }
 
-    public void GoToMain() {
+    public void GoToMain()
+    {
         SceneManager.LoadScene("MainScene");
     }
 
