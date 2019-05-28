@@ -13,6 +13,14 @@ public class GameUICamera : MonoBehaviour
         offset = transform.position;
     }
 
+    private void Start()
+    {
+        if(target.GetComponent<UnitManager>().spawnRotation.y > 100.0f)
+        {
+            offset.z *= -1.0f;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

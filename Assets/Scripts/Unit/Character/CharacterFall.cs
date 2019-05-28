@@ -37,6 +37,10 @@ public class CharacterFall : UnitFall
         if(transform.position.y < -50.0f)
         {
             manager.Respawn(Vector3.zero);
+            if (manager.haveItem)
+            {
+                manager.GetComponentInChildren<ItemManager>().SetState(ItemStateCode.REMOVE);
+            }
         }
         Collider[] cols = Physics.OverlapSphere(groundChecker.position, 0.25f, LayerMask.GetMask("Ground"));
         if (cols.Length > 0)

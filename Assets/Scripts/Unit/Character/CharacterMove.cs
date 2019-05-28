@@ -43,7 +43,8 @@ public class CharacterMove : UnitMove
             medieval.start();
         }
 
-        Vector3 moveDir = new Vector3(manager.ctrlMoveDir.x, 0.0f,manager.ctrlMoveDir.z);
+        int dir = (manager.spawnRotation.y > 100.0f)? -1 : 1;
+        Vector3 moveDir = new Vector3(manager.ctrlMoveDir.x, 0.0f,manager.ctrlMoveDir.z) * dir;
         transform.rotation = Quaternion.LookRotation(moveDir);
 
         Vector3 moveVelocity = manager.stat.moveSpeed.Value * moveDir * manager.ctrlMoveDistance;

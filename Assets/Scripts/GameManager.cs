@@ -59,6 +59,7 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
         //backViewCamera.transform.eulerAngles += localPlayer.spawnRotation;
         backViewCamera.enabled = false;
         quarterViewCamera.enabled = true;
+        quarterViewCamera.transform.eulerAngles += localPlayer.transform.eulerAngles;
     }
 
     void Start()
