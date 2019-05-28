@@ -43,14 +43,10 @@ public class CharacterMove : UnitMove
             medieval.start();
         }
 
-        Quaternion rotation = transform.rotation;
-        int t = (manager.ctrlMoveDir.z >= 0) ? 1 : -1;
-        float angle = rotation.eulerAngles.y + manager.ctrlMoveDir.x * t;
-        Vector3 moveDir = new Vector3(Mathf.Sin(Mathf.Deg2Rad * angle), 0.0f, Mathf.Cos(Mathf.Deg2Rad * angle));
-        rotation = Quaternion.LookRotation(moveDir);
-        transform.rotation = rotation;
+        Vector3 moveDir = new Vector3(manager.ctrlMoveDir.x, 0.0f,manager.ctrlMoveDir.z);
+        transform.rotation = Quaternion.LookRotation(moveDir);
 
-        Vector3 moveVelocity = manager.stat.moveSpeed.Value * moveDir * manager.ctrlMoveDir.z;
+        Vector3 moveVelocity = manager.stat.moveSpeed.Value * moveDir * manager.ctrlMoveDistance;
         moveVelocity.y = manager.rigidbody.velocity.y;
 
         manager.rigidbody.velocity = moveVelocity;

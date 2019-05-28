@@ -26,6 +26,7 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
     public GameObject quarterViewController;
 
     public Dictionary<UnitStatCode, float> standardStat = new Dictionary<UnitStatCode, float>();
+    public List<ButtonManager> buttons = new List<ButtonManager>();
 
     protected override void Awake()
     {

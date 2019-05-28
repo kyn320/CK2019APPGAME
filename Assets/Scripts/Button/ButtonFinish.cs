@@ -20,7 +20,7 @@ public class ButtonFinish : ButtonState
     private void Update()
     {
         Vector3 vector = transform.position;
-        vector.y += manager.occupationDepth / 0.5f * Time.deltaTime;
+        vector.y += manager.occupationDepth * 0.5f * Time.deltaTime;
 
         if(vector.y > manager.offsetY)
         {

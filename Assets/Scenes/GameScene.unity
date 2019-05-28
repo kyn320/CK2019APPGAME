@@ -2310,6 +2310,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuarterView Controller
       objectReference: {fileID: 0}
+    - target: {fileID: 8483542266241836281, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: autoActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483542266241836281, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8ce531d2d14ff44cacaa6782b8d43c2, type: 3}
 --- !u!224 &733469703 stripped
@@ -2898,7 +2908,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1143901687
 RectTransform:
   m_ObjectHideFlags: 0

@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class MoveJoystick : Joystick
 {
-    private void Update()
+    public void Update()
     {
+#if UNITY_ANDROID
+        base.Update();
+#endif
+
+#if UNITY_STANDALONE
         Vector3 dir = Vector3.zero;
 
         if (Input.GetKey(KeyCode.UpArrow))
@@ -51,6 +56,7 @@ public class MoveJoystick : Joystick
             GetTarget().ctrlRushDistance = 1f;
             GetTarget().SetState(UnitStateCode.RUSH);
         }
+#endif
     }
 
     public override void OnJoystickEnter()

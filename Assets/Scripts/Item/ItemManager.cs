@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using Photon.Pun;
+
 public enum ItemStateCode
 {
     IDLE,
@@ -50,5 +52,27 @@ public class ItemManager : MonoBehaviour
         currentState = stateCode;
         states[currentState].enabled = true;
         states[currentState].Enter();
+        PhotonView photonView = PhotonView.Get(GameManager.Instance.localPlayer);
+        photonView.RPC("PunItemSetState", RpcTarget.Others, currentState);
+    }
+
+    public void PunSetState(ItemStateCode stateCode)
+    {
+        if (currentState == stateCode) return;
+
+        foreach (ItemState state in states.Values)
+        {
+            state.enabled = false;
+        }
+        states[currentState].Exit();
+        currentState = stateCode;
+        states[currentState].enabled = true;
+        states[currentState].Enter();
+    }
+
+    [PunRPC]
+    public void PunItemSetState(ItemStateCode stateCode)
+    {
+        PunSetState(stateCode);
     }
 }

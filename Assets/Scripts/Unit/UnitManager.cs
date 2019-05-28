@@ -112,8 +112,6 @@ public class UnitManager : MonoBehaviourPunCallbacks
         {
             SetState(UnitStateCode.FALL);
         }
-
-
     }
 
     void RollCheck(Collision collision)
@@ -122,8 +120,8 @@ public class UnitManager : MonoBehaviourPunCallbacks
         if (target.currentState != UnitStateCode.RUSH) return;
 
         rigidbody.AddForce(
-            (target.rigidbody.velocity.normalized * 8f +
-            target.rigidbody.velocity) * (1 - stat.rollResistance.Value * 0.01f), ForceMode.Impulse);
+            (target.rigidbody.velocity.normalized * 8f + target.rigidbody.velocity) * 
+            (1 - stat.rollResistance.Value * 0.01f), ForceMode.Impulse);
         //rigidbody.velocity = target.rigidbody.velocity * 1.2f * (1 - stat.rollResistance.Value * 0.01f);
         Vector3 tv = Quaternion.LookRotation(transform.position - target.transform.position).eulerAngles;
         tv.x = 0.0f;

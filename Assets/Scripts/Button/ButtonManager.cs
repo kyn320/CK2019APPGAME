@@ -45,7 +45,7 @@ public class ButtonManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        GameManager.Instance.buttons.Add(this);
         if (tokenMeshRenderer == null)
         {
             buff.isHidden();
@@ -65,14 +65,28 @@ public class ButtonManager : MonoBehaviour
         currentState = stateCode;
         states[currentState].enabled = true;
         states[currentState].Enter();
-        PhotonView photonView = PhotonView.Get(this);
+        PhotonView photonView = PhotonView.Get(GameManager.Instance.localPlayer);
         photonView.RPC("PunButtonSetState", RpcTarget.Others, currentState);
+    }
+
+    public void PunSetState(ButtonStateCode stateCode)
+    {
+        if (currentState == stateCode) return;
+
+        foreach (ButtonState state in states.Values)
+        {
+            state.enabled = false;
+        }
+        states[currentState].Exit();
+        currentState = stateCode;
+        states[currentState].enabled = true;
+        states[currentState].Enter();
     }
 
     [PunRPC]
     public void PunButtonSetState(ButtonStateCode stateCode)
     {
-        SetState(stateCode);
+        PunSetState(stateCode);
     }
 
     void UpdateState()
