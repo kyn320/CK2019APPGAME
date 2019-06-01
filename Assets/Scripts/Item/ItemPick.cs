@@ -9,6 +9,14 @@ public class ItemPick : ItemState
 
     public float lerpTime = 1.0f;
 
+    public override void Enter()
+    {
+        base.Enter();
+
+        manager.transform.parent = manager.target.transform;
+        manager.target.haveItem = true;
+    }
+
     // Update is called once per frame
     void Update()
     {

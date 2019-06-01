@@ -11,7 +11,7 @@ public enum ButtonStateCode
     FINISH
 }
 
-public class ButtonManager : MonoBehaviour
+public class ButtonManager : MonoBehaviourPunCallbacks
 {
     public ButtonStateCode currentState = ButtonStateCode.FINISH;
     public MeshRenderer meshRenderer;
@@ -65,7 +65,7 @@ public class ButtonManager : MonoBehaviour
         currentState = stateCode;
         states[currentState].enabled = true;
         states[currentState].Enter();
-        PhotonView photonView = PhotonView.Get(GameManager.Instance.localPlayer);
+        //PhotonView photonView = PhotonView.Get(GameManager.Instance.localPlayer);
         photonView.RPC("PunButtonSetState", RpcTarget.Others, currentState);
     }
 

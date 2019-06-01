@@ -12,7 +12,7 @@ public enum ItemStateCode
     REMOVE,
 }
 
-public class ItemManager : MonoBehaviour
+public class ItemManager : MonoBehaviourPunCallbacks
 {
     public ItemStateCode currentState = ItemStateCode.IDLE;
     public Rigidbody rigidbody;
@@ -52,8 +52,14 @@ public class ItemManager : MonoBehaviour
         currentState = stateCode;
         states[currentState].enabled = true;
         states[currentState].Enter();
-        PhotonView photonView = PhotonView.Get(GameManager.Instance.localPlayer);
-        photonView.RPC("PunItemSetState", RpcTarget.Others, currentState);
+
+        int targetViewId = -1;
+
+        if (target)
+        {
+            targetViewId = target.photonView.ViewID;
+        }
+        photonView.RPC("PunItemSetState", RpcTarget.Others, currentState, targetViewId);
     }
 
     public void PunSetState(ItemStateCode stateCode)
@@ -71,8 +77,10 @@ public class ItemManager : MonoBehaviour
     }
 
     [PunRPC]
-    public void PunItemSetState(ItemStateCode stateCode)
+    public void PunItemSetState(ItemStateCode stateCode, int targetViewId)
     {
+        if(targetViewId >= 0)
+            target = PhotonView.Find(targetViewId).GetComponent<UnitManager>();
         PunSetState(stateCode);
     }
 }
