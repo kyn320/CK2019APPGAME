@@ -7,6 +7,8 @@ using Photon.Pun;
 using Photon.Realtime;
 using ExitGames.Client.Photon;
 
+using UnityEngine.UI;
+
 public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakingCallbacks
 {
     const float Min = 60f;
@@ -26,7 +28,10 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
     public GameObject quarterViewController;
 
     public Dictionary<UnitStatCode, float> standardStat = new Dictionary<UnitStatCode, float>();
+    public float[][] buffStatValue = new float[(int)UnitStatCode.SIZE][];
     public List<ButtonManager> buttons = new List<ButtonManager>();
+
+    public Text buffText;
 
     protected override void Awake()
     {

@@ -32,7 +32,7 @@ public class ButtonFinish : ButtonState
 
     void OccupationSetting()
     {
-        if (manager.occupationTarget && manager.target.haveItem)
+        if (manager.occupationTarget != null && manager.target.haveItem)
         {
             manager.target.GetComponentInChildren<ItemManager>().SetState(ItemStateCode.REMOVE);
         }

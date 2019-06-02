@@ -28,11 +28,11 @@ public struct Stat
 
 public enum UnitStatCode
 {
-    MOVE_SPEED,
+    MOVE_SPEED = 0,
     RUSH_POWER,
-    JUMP_POWER,
     ROLL_RESISTANCE,
-    SIZE
+    SIZE,
+    JUMP_POWER = 101,
 }
 
 public class UnitStat : MonoBehaviour

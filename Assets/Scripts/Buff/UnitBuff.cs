@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using Photon.Pun;
+
 [System.Serializable]
-public class UnitBuff : MonoBehaviour
+public class UnitBuff : MonoBehaviourPunCallbacks
 {
     UnitManager target = null;
     [SerializeField]
@@ -23,11 +25,24 @@ public class UnitBuff : MonoBehaviour
 
     private void Start()
     {
-        do
+        if (PhotonNetwork.IsMasterClient)
         {
-            statCode = (UnitStatCode)Random.Range(0, (int)UnitStatCode.SIZE);
-        } while (statCode == UnitStatCode.JUMP_POWER);
-        addValue = GameManager.Instance.standardStat[statCode] * (1 + Random.Range(0, 3) * 2) * 0.01f;
+            do
+            {
+                statCode = (UnitStatCode)Random.Range(0, (int)UnitStatCode.SIZE);
+            } while (statCode == UnitStatCode.JUMP_POWER);
+            addValue = GameManager.Instance.standardStat[statCode] * Random.Range(0, 3) * 0.01f;
+            GameManager.Instance.buffText.text += GetComponent<ButtonManager>().photonView.ToString() + " : [" + statCode + "] " + addValue.ToString() + "\n";
+            photonView.RPC("BuffSet", RpcTarget.Others, statCode, addValue);
+        }
+    }
+
+    [PunRPC]
+    public void BuffSet(UnitStatCode statCode, float addValue)
+    {
+        this.statCode = statCode;
+        this.addValue = addValue;
+        GameManager.Instance.buffText.text += GetComponent<ButtonManager>().photonView.ToString() + " : [" + statCode + "] " + addValue.ToString() + "\n";
     }
 
     public void Set(UnitManager unit)

@@ -66,7 +66,8 @@ public class ButtonManager : MonoBehaviourPunCallbacks
         states[currentState].enabled = true;
         states[currentState].Enter();
         //PhotonView photonView = PhotonView.Get(GameManager.Instance.localPlayer);
-        photonView.RPC("PunButtonSetState", RpcTarget.Others, currentState);
+        if(target && target.photonView.IsMine)
+            photonView.RPC("PunButtonSetState", RpcTarget.Others, currentState);
     }
 
     public void PunSetState(ButtonStateCode stateCode)
