@@ -21,8 +21,7 @@ public class ButtonWork : ButtonState
 
         if(vector.y <= -manager.occupationDepth + manager.offsetY)
         {
-            vector.y = manager.offsetY;
-            //OccupationSetting();
+            //vector.y = manager.offsetY;
             manager.SetState(ButtonStateCode.FINISH);
         }
         transform.position = vector;

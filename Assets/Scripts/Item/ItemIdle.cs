@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class ItemIdle : ItemState
 {
+    public override void Enter()
+    {
+        base.Enter();
+        manager.GetComponent<ObjectAniControl>().enabled = true;
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+        manager.GetComponent<ObjectAniControl>().enabled = false;
+    }
+
     // Update is called once per frame
     void Update()
     {

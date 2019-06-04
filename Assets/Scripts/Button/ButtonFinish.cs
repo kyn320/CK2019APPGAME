@@ -20,7 +20,7 @@ public class ButtonFinish : ButtonState
     private void Update()
     {
         Vector3 vector = transform.position;
-        vector.y += manager.occupationDepth * 0.5f * Time.deltaTime;
+        vector.y += manager.occupationDepth * 2.0f * Time.deltaTime;
 
         if(vector.y > manager.offsetY)
         {
@@ -40,7 +40,13 @@ public class ButtonFinish : ButtonState
         manager.occupationTime = manager.reoccupationTime;
         manager.buff.Set(manager.occupationTarget);
 
-        string path = manager.target.photonView.Owner.CustomProperties["Type"] as string;
+        string path;
+
+        if (PhotonNetwork.OfflineMode)
+            path = "zeus";
+        else
+            path = manager.target.photonView.Owner.CustomProperties["Type"] as string;
+
         if (manager.tokenMeshRenderer == null)
         {
             Material material = Resources.Load<Material>("Material/gold_button_" + path);

@@ -5,6 +5,12 @@ using UnityEngine;
 using Photon.Pun;
 
 [System.Serializable]
+public class BuffData
+{
+    public float[] addValue = new float[3];
+}
+
+[System.Serializable]
 public class UnitBuff : MonoBehaviourPunCallbacks
 {
     UnitManager target = null;
@@ -31,7 +37,7 @@ public class UnitBuff : MonoBehaviourPunCallbacks
             {
                 statCode = (UnitStatCode)Random.Range(0, (int)UnitStatCode.SIZE);
             } while (statCode == UnitStatCode.JUMP_POWER);
-            addValue = GameManager.Instance.standardStat[statCode] * Random.Range(0, 3) * 0.01f;
+            addValue = GameManager.Instance.standardStat[statCode] * GameManager.Instance.buffStatValue[(int)statCode].addValue[Random.Range(0, 3)] * 0.01f;
             GameManager.Instance.buffText.text += GetComponent<ButtonManager>().photonView.ToString() + " : [" + statCode + "] " + addValue.ToString() + "\n";
             photonView.RPC("BuffSet", RpcTarget.Others, statCode, addValue);
         }

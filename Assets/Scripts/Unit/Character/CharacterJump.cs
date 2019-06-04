@@ -37,13 +37,14 @@ public class CharacterJump : UnitJump
 
     private void FixedUpdate()
     {
-        Vector3 dir = new Vector3(manager.ctrlMoveDir.x, 0.0f, manager.ctrlMoveDir.z);
-        transform.rotation = Quaternion.LookRotation(dir);
-        Vector3 moveVelocity = manager.stat.moveSpeed.Value * dir * manager.ctrlMoveDistance;
+        int dir = (manager.spawnRotation.y > 100.0f)? -1 : 1;
+        Vector3 moveDir = new Vector3(manager.ctrlMoveDir.x, 0.0f, manager.ctrlMoveDir.z) * dir;
+        transform.rotation = Quaternion.LookRotation(moveDir);
+        Vector3 moveVelocity = manager.stat.moveSpeed.Value * moveDir * manager.ctrlMoveDistance;
         moveVelocity.y = manager.rigidbody.velocity.y;
 
         manager.rigidbody.velocity = moveVelocity;
-        if (manager.rigidbody.velocity.y < 0.0f)
+        if (manager.rigidbody.velocity.y <= 0.0f)
         {
 
             Collider[] cols = Physics.OverlapSphere(groundChecker.position, 0.25f, LayerMask.GetMask("Ground"));

@@ -13,6 +13,7 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
 {
     const float Min = 60f;
 
+    public bool offline = false;
     public UnitManager localPlayer;
 
     [Header("플레이 시간(분)")]
@@ -28,7 +29,7 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
     public GameObject quarterViewController;
 
     public Dictionary<UnitStatCode, float> standardStat = new Dictionary<UnitStatCode, float>();
-    public float[][] buffStatValue = new float[(int)UnitStatCode.SIZE][];
+    public BuffData[] buffStatValue = new BuffData[(int)UnitStatCode.SIZE];
     public List<ButtonManager> buttons = new List<ButtonManager>();
 
     public Text buffText;
@@ -43,6 +44,8 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
         standardStat[UnitStatCode.JUMP_POWER] = 6.0f;
         standardStat[UnitStatCode.ROLL_RESISTANCE] = 100.0f;
 
+        PhotonNetwork.OfflineMode = offline;
+
         if (!PhotonNetwork.OfflineMode)
         {
             localPlayer = PhotonNetwork.Instantiate(PhotonNetwork.LocalPlayer.CustomProperties["Type"] + "Player"
@@ -52,7 +55,7 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
         }
         else
         {
-            localPlayer = Instantiate(Resources.Load("RedPlayer") as GameObject
+            localPlayer = Instantiate(Resources.Load("zeusPlayer") as GameObject
                 , new Vector3(0.0f, 5.0f, 0.0f)
                 , Quaternion.identity).GetComponent<UnitManager>();
         }
