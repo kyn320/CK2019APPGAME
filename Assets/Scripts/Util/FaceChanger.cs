@@ -9,7 +9,8 @@ public class FaceChanger : MonoBehaviour
 
     private void Awake()
     {
-        characterRenderer = GetComponentInChildren<Renderer>();
+        if (characterRenderer == null)
+            characterRenderer = GetComponentInChildren<Renderer>();
     }
 
     /// <summary>
@@ -20,8 +21,12 @@ public class FaceChanger : MonoBehaviour
     public void ChangeFace(string name, string state)
     {
         Material[] materials = characterRenderer.materials;
+        int index = 1;
 
-        materials[1] = Resources.Load<Material>(new StringBuilder().Append("Character/Face/")
+        if (name.Equals("hera"))
+            index = 0;
+
+        materials[index] = Resources.Load<Material>(new StringBuilder().Append("Character/Face/")
         .Append(name)
         .Append("_Face_")
         .Append(state).ToString());

@@ -49,6 +49,9 @@ ModelImporter:
     100086: Bip001 Spine1
     100088: Object010
     100090: Bip001 Footsteps
+    100092: Hera_Body
+    100094: Hera_Head
+    100096: Necklace_alpha
     400000: //RootNode
     400002: Bip001
     400004: Bip001 Head
@@ -95,13 +98,22 @@ ModelImporter:
     400086: Bip001 Spine1
     400088: Object010
     400090: Bip001 Footsteps
+    400092: Hera_Body
+    400094: Hera_Head
+    400096: Necklace_alpha
     2100000: 02 - Default
     2100002: 03 - Default
     2300000: //RootNode
     3300000: //RootNode
     4300000: Object010
+    4300002: Hera_Body
+    4300004: Hera_Head
+    4300006: Necklace_alpha
     9500000: //RootNode
     13700000: Object010
+    13700002: Hera_Body
+    13700004: Hera_Head
+    13700006: Necklace_alpha
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -154,7 +166,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
+    previousCalculatedGlobalScale: 0.01
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60

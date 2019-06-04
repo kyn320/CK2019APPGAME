@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
@@ -11,11 +10,12 @@ public class InfoUIEvent : MonoBehaviour
 
     public Transform modelRotater;
     public GameObject[] models;
+    public MeshRenderer buttonGround;
 
     public EventTrigger eventTrigger;
     private Vector2 oldTouchPos = Vector2.zero;
 
-    string[] characterNames = {"Zeus", "Hera" };
+    string[] characterNames = { "zeus", "hera" };
     string[] stateNames = { "Normal", "Cry", "Angry", "Run", "Victory" };
 
     private void Start()
@@ -45,13 +45,27 @@ public class InfoUIEvent : MonoBehaviour
 
         currentIndex = modelIndex;
         models[currentIndex].SetActive(true);
+
+        if (currentIndex == 2)
+        {
+            buttonGround.material = Resources.Load<Material>(new StringBuilder().Append("Material/")
+            .Append("button")
+            .ToString());
+        }
+        else
+        {
+            buttonGround.material = Resources.Load<Material>(new StringBuilder().Append("Material/")
+            .Append("button_")
+            .Append(characterNames[currentIndex])
+            .ToString());
+        }
     }
 
     public void OnTouchChange(PointerEventData eventData)
     {
         if (currentIndex == 2)
             return;
-
+        
         models[currentIndex].GetComponent<FaceChanger>().ChangeFace(characterNames[currentIndex]
             , stateNames[Random.Range(0, 5)]);
     }
