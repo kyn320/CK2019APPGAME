@@ -34,7 +34,7 @@ public class ButtonFinish : ButtonState
     {
         if (manager.occupationTarget != null && manager.target.haveItem)
         {
-            manager.target.GetComponentInChildren<ItemManager>().SetState(ItemStateCode.REMOVE);
+            manager.target.haveItem.SetState(ItemStateCode.REMOVE);
         }
         manager.occupationTarget = manager.target;
         manager.occupationTime = manager.reoccupationTime;

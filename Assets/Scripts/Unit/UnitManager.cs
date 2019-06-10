@@ -34,7 +34,7 @@ public class UnitManager : MonoBehaviourPunCallbacks
     bool isSetState;
 
     public UnitStat stat;
-    public bool haveItem;
+    public ItemManager haveItem;
 
     private void Awake()
     {
@@ -49,7 +49,7 @@ public class UnitManager : MonoBehaviourPunCallbacks
         skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
-        haveItem = false;
+        haveItem = null;
 
         //if (!photonView.IsMine)
         //{

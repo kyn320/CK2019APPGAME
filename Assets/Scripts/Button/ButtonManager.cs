@@ -103,7 +103,7 @@ public class ButtonManager : MonoBehaviourPunCallbacks
             {
                 if (occupationTarget == target)
                     return;
-                if (!target.haveItem)
+                if (target.haveItem == null)
                     return;
             }
             SetState(ButtonStateCode.WORK);

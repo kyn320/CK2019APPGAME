@@ -12,7 +12,7 @@ public class ObjectAniControl : MonoBehaviour
 
     private void Awake()
     {
-        originPos = transform.position;
+        originPos = transform.localPosition;
     }
 
     // Start is called before the first frame update
@@ -26,7 +26,7 @@ public class ObjectAniControl : MonoBehaviour
     {
         sinDir = sinDir + Time.deltaTime * moveSpeed;
         if (sinDir > Mathf.PI) sinDir -= Mathf.PI;
-        transform.position = originPos + Vector3.up * Mathf.Sin(sinDir) * moveDistance;
+        transform.localPosition = originPos + Vector3.up * Mathf.Sin(sinDir) * moveDistance;
 
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + Vector3.up * rotationSpeed * Time.deltaTime);
     }

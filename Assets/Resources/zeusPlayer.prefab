@@ -109,7 +109,7 @@ MonoBehaviour:
   ctrlRushDir: {x: 0, y: 0, z: 0}
   ctrlRushDistance: 0
   stat: {fileID: 3765277642106180531}
-  haveItem: 0
+  haveItem: {fileID: 0}
 --- !u!114 &3765277642106180531
 MonoBehaviour:
   m_ObjectHideFlags: 0

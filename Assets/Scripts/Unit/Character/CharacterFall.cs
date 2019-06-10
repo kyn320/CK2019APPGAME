@@ -39,7 +39,7 @@ public class CharacterFall : UnitFall
             manager.Respawn(Vector3.zero);
             if (manager.haveItem)
             {
-                manager.GetComponentInChildren<ItemManager>().SetState(ItemStateCode.REMOVE);
+                manager.haveItem.SetState(ItemStateCode.REMOVE);
             }
         }
         Collider[] cols = Physics.OverlapSphere(groundChecker.position, 0.25f, LayerMask.GetMask("Ground"));

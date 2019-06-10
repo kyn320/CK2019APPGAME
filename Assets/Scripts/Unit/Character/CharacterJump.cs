@@ -44,10 +44,11 @@ public class CharacterJump : UnitJump
         moveVelocity.y = manager.rigidbody.velocity.y;
 
         manager.rigidbody.velocity = moveVelocity;
-        if (manager.rigidbody.velocity.y <= 0.0f)
+        if (manager.rigidbody.velocity.y < 0.0f)
         {
 
             Collider[] cols = Physics.OverlapSphere(groundChecker.position, 0.25f, LayerMask.GetMask("Ground"));
+            Debug.DrawLine(groundChecker.position, groundChecker.position + Vector3.down * 0.25f, Color.red);
             if (cols.Length > 0)
             {
                 manager.SetState(UnitStateCode.IDLE);

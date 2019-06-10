@@ -26,7 +26,7 @@ public class CharacterRoll : UnitRoll
         medieval.start();
         if (manager.haveItem)
         {
-            manager.GetComponentInChildren<ItemManager>().SetState(ItemStateCode.DROP);
+            manager.haveItem.SetState(ItemStateCode.DROP);
         }
     }
 

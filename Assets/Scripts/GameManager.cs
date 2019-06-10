@@ -31,6 +31,7 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
     public Dictionary<UnitStatCode, float> standardStat = new Dictionary<UnitStatCode, float>();
     public BuffData[] buffStatValue = new BuffData[(int)UnitStatCode.SIZE];
     public List<ButtonManager> buttons = new List<ButtonManager>();
+    public bool[] buffCheckFlag = new bool[(int)UnitStatCode.SIZE * 3];
 
     public Text buffText;
 

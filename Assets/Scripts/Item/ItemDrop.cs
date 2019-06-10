@@ -20,7 +20,7 @@ public class ItemDrop : ItemState
 
         if (manager.target)
         {
-            manager.target.haveItem = false;
+            manager.target.haveItem = null;
             manager.target = null;
         }
     }
@@ -30,8 +30,9 @@ public class ItemDrop : ItemState
     {
         jumpPower -= 9.8f * 9.8f * Time.deltaTime * 0.5f;
         manager.transform.position += new Vector3(dir.x, jumpPower, dir.z) * Time.deltaTime;
+        manager.transform.localScale = Vector3.Lerp(manager.transform.localScale, Vector3.one * 1.0f, Time.deltaTime * 5.0f);
 
-        if(jumpPower < 0.0f)
+        if (jumpPower < 0.0f)
         {
             RaycastHit hit;
             if(Physics.Raycast(transform.position, Vector3.down, out hit, 1.5f, LayerMask.GetMask("Ground")))

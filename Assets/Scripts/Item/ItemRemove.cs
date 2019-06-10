@@ -16,7 +16,7 @@ public class ItemRemove : ItemState
 
         if (manager.target)
         {
-            manager.target.haveItem = false;
+            manager.target.haveItem = null;
             manager.target = null;
         }
 

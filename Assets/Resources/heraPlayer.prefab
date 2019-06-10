@@ -109,7 +109,7 @@ MonoBehaviour:
   ctrlRushDir: {x: 0, y: 0, z: 0}
   ctrlRushDistance: 0
   stat: {fileID: 8843946088345168962}
-  haveItem: 0
+  haveItem: {fileID: 0}
 --- !u!114 &8843946088345168962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,6 +347,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6579502118363895844}
     m_Modifications:
+    - target: {fileID: 13700004, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c5017c40aa700f44b984210d87a246e4, type: 2}
     - target: {fileID: 100000, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
       propertyPath: m_Name
       value: hera_model
@@ -419,10 +423,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: df25451d11491354683918e99aedd022, type: 2}
-    - target: {fileID: 13700004, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c5017c40aa700f44b984210d87a246e4, type: 2}
     - target: {fileID: 13700000, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

@@ -7,7 +7,7 @@ using Photon.Pun;
 [System.Serializable]
 public class BuffData
 {
-    public float[] addValue = new float[3];
+    public float[] addValue = new float[4];
 }
 
 [System.Serializable]
@@ -33,11 +33,15 @@ public class UnitBuff : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.IsMasterClient)
         {
+            int code = 0;
             do
             {
-                statCode = (UnitStatCode)Random.Range(0, (int)UnitStatCode.SIZE);
-            } while (statCode == UnitStatCode.JUMP_POWER);
-            addValue = GameManager.Instance.standardStat[statCode] * GameManager.Instance.buffStatValue[(int)statCode].addValue[Random.Range(0, 3)] * 0.01f;
+                code = Random.Range(0, (int)UnitStatCode.SIZE * 3);
+                //statCode = (UnitStatCode)Random.Range(0, (int)UnitStatCode.SIZE);
+            } while (GameManager.Instance.buffCheckFlag[code]);
+            GameManager.Instance.buffCheckFlag[code] = true;
+            statCode = (UnitStatCode)(code / 3);
+            addValue = GameManager.Instance.standardStat[statCode] * GameManager.Instance.buffStatValue[(int)statCode].addValue[code % 3] * 0.01f;
             GameManager.Instance.buffText.text += GetComponent<ButtonManager>().photonView.ToString() + " : [" + statCode + "] " + addValue.ToString() + "\n";
             photonView.RPC("BuffSet", RpcTarget.Others, statCode, addValue);
         }
@@ -75,10 +79,11 @@ public class UnitBuff : MonoBehaviourPunCallbacks
 
     public void isHidden()
     {
-        addValue = GameManager.Instance.standardStat[statCode] * 0.2f;
+        addValue = GameManager.Instance.standardStat[statCode] * GameManager.Instance.buffStatValue[(int)statCode].addValue[3] * 0.01f;
         if(statCode == UnitStatCode.ROLL_RESISTANCE && Random.Range(0, 3) == 0)
         {
             addValue = 100.0f;
         }
+        GameManager.Instance.buffText.text += GetComponent<ButtonManager>().photonView.ToString() + " : [" + statCode + "] " + addValue.ToString() + "\n";
     }
 }

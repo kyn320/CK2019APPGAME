@@ -9,17 +9,33 @@ public class ItemPick : ItemState
 
     public float lerpTime = 1.0f;
 
+    private bool isHold = false;
+
     public override void Enter()
     {
         base.Enter();
 
-        manager.transform.parent = manager.target.transform;
-        manager.target.haveItem = true;
+        manager.target.haveItem = manager;
+        isHold = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        manager.transform.localPosition = Vector3.Lerp(manager.transform.localPosition, Vector3.up * pickHeight, lerpTime * Time.deltaTime);
+        if (!isHold)
+        {
+            manager.transform.localScale = Vector3.Lerp(manager.transform.localScale, Vector3.one * 0.5f, lerpTime * Time.deltaTime);
+            manager.transform.position = Vector3.Lerp(manager.transform.position, manager.target.transform.position + Vector3.up * pickHeight, lerpTime * Time.deltaTime);
+
+            if((manager.transform.position - manager.target.transform.position - Vector3.up * pickHeight).sqrMagnitude < 0.001f)
+            {
+                manager.transform.localScale = Vector3.one * 0.5f;
+                isHold = true;
+            }
+        }
+        else
+        {
+            manager.transform.position = manager.target.transform.position + Vector3.up * pickHeight;
+        }
     }
 }
