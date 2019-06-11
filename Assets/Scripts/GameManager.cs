@@ -78,12 +78,15 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
 
     private void Update()
     {
-        playTime -= Time.deltaTime;
-        if (playTime < 0f)
+        if (!isBegin)
         {
-            playTime = 0f;
-            LeaveRoom();
-            SceneManager.LoadScene("ResultScene");
+            playTime -= Time.deltaTime;
+            if (playTime < 0f)
+            {
+                playTime = 0f;
+                LeaveRoom();
+                SceneManager.LoadScene("ResultScene");
+            }
         }
     }
 
