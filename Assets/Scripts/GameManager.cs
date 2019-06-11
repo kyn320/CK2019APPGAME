@@ -57,15 +57,12 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
         else
         {
             localPlayer = Instantiate(Resources.Load("zeusPlayer") as GameObject
-                , new Vector3(0.0f, 5.0f, 0.0f)
+                , Vector3.zero
                 , Quaternion.identity).GetComponent<UnitManager>();
         }
 
         backViewCamera.transform.parent = localPlayer.transform;
         localPlayer.Respawn(Vector3.down * 25);
-        //TODO :: 카메라 백뷰 위치 버그 있음
-        //backViewCamera.transform.localPosition += localPlayer.transform.position;// + new Vector3(0, 5, -2.5f);
-        //backViewCamera.transform.eulerAngles += localPlayer.spawnRotation;
         backViewCamera.enabled = false;
         quarterViewCamera.enabled = true;
         quarterViewCamera.transform.eulerAngles += localPlayer.transform.eulerAngles;
@@ -112,7 +109,7 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
     public void OnApplicationQuit()
     {
         Debug.Log("OnApplicationQuit()");
-        PhotonNetwork.Disconnect();
+        //PhotonNetwork.Disconnect();
     }
 
     #region RoomCallback
