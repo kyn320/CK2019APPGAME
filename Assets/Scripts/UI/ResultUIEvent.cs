@@ -28,6 +28,10 @@ public class ResultUIEvent : MonoBehaviour
 
     public Sprite[] heraSprites, zeusSprites;
 
+    private void Start()
+    {
+        ViewResult();
+    }
 
     public void ViewResult()
     {
@@ -35,7 +39,7 @@ public class ResultUIEvent : MonoBehaviour
         int characterType = PlayerPrefs.GetInt("CharacterType", 0);
         int GameResult = PlayerPrefs.GetInt("GameResult", 0);
         int buttonCount = PlayerPrefs.GetInt("ButtonCount", 0);
-
+        
         if (characterType == 0)
             GoToMain();
 
@@ -48,11 +52,11 @@ public class ResultUIEvent : MonoBehaviour
             {
                 case 1:
                     ColorUtility.TryParseHtmlString(zeusColorHex, out color);
-                    illustSlot.sprite = heraSprites[GameResult];
+                    illustSlot.sprite = zeusSprites[GameResult];
                     break;
                 case 2:
                     ColorUtility.TryParseHtmlString(heraColorHex, out color);
-                    illustSlot.sprite = zeusSprites[GameResult];
+                    illustSlot.sprite = heraSprites[GameResult];
                     break;
             }
             illustSlot.SetNativeSize();
@@ -63,10 +67,10 @@ public class ResultUIEvent : MonoBehaviour
             switch (characterType)
             {
                 case 1:
-                    illustSlot.sprite = heraSprites[GameResult];
+                    illustSlot.sprite = zeusSprites[GameResult];
                     break;
                 case 2:
-                    illustSlot.sprite = zeusSprites[GameResult];
+                    illustSlot.sprite = heraSprites[GameResult];
                     break;
             }
 

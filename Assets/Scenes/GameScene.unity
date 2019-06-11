@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18171723, g: 0.22737847, b: 0.3074209, a: 1}
+  m_IndirectSpecularColor: {r: 0.18171698, g: 0.22737816, b: 0.3074202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1939,6 +1939,46 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1055502917349324854, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f19eb14757ce86f4da519cd366d00c34,
+        type: 3}
+    - target: {fileID: 2043882140873417652, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9448638812ef5ce4aa7897e301c706e6,
+        type: 3}
+    - target: {fileID: 409555847009147192, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_Name
+      value: UI_CharacterSlot_local
+      objectReference: {fileID: 0}
+    - target: {fileID: 409555847009147192, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_TagString
+      value: CharacterSlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 1010897393292565541, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d9a84b7d2c7d38549a18ab4bd9ef020e,
+        type: 3}
+    - target: {fileID: 1657415986867366903, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0de0b2209ce1de842a7b91f77316e4af,
+        type: 3}
+    - target: {fileID: 5285015384133071965, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f19eb14757ce86f4da519cd366d00c34,
+        type: 3}
     - target: {fileID: 8483542265870222990, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2057,7 +2097,7 @@ PrefabInstance:
     - target: {fileID: 8483542266241836261, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8483542265758412330, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
         type: 3}
@@ -2122,12 +2162,12 @@ PrefabInstance:
     - target: {fileID: 8483542266200350206, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 150
+      value: 94
       objectReference: {fileID: 0}
     - target: {fileID: 8483542266200350206, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 150
+      value: 94
       objectReference: {fileID: 0}
     - target: {fileID: 8483542265959295266, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
         type: 3}
@@ -2224,16 +2264,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DisplayBoard
-      objectReference: {fileID: 0}
-    - target: {fileID: 409555847009147192, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
-        type: 3}
-      propertyPath: m_Name
-      value: UI_CharacterSlot_local
-      objectReference: {fileID: 0}
-    - target: {fileID: 409555847009147192, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
-        type: 3}
-      propertyPath: m_TagString
-      value: CharacterSlot
       objectReference: {fileID: 0}
     - target: {fileID: 1028345991697495794, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
         type: 3}
@@ -2571,12 +2601,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: IllustSlot
       objectReference: {fileID: 0}
-    - target: {fileID: 2043882140873417652, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 9448638812ef5ce4aa7897e301c706e6,
-        type: 3}
     - target: {fileID: 8943196113191535389, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
         type: 3}
       propertyPath: m_Sprite
@@ -2659,25 +2683,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: RushIcon
       objectReference: {fileID: 0}
-    - target: {fileID: 1010897393292565541, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: d9a84b7d2c7d38549a18ab4bd9ef020e,
-        type: 3}
-    - target: {fileID: 1055502917349324854, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f19eb14757ce86f4da519cd366d00c34,
-        type: 3}
     - target: {fileID: 3438864348544420006, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 0de0b2209ce1de842a7b91f77316e4af,
-        type: 3}
-    - target: {fileID: 1657415986867366903, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
         type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2688,12 +2694,6 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: d9a84b7d2c7d38549a18ab4bd9ef020e,
-        type: 3}
-    - target: {fileID: 5285015384133071965, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f19eb14757ce86f4da519cd366d00c34,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8ce531d2d14ff44cacaa6782b8d43c2, type: 3}
