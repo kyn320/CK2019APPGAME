@@ -62,5 +62,7 @@ MonoBehaviour:
   MasterBanks:
   - Master Bank
   Banks:
-  - build_first
+  - SFX
+  - BGM
+  - Amb
   LiveUpdatePort: 9264
