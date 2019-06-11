@@ -9,7 +9,7 @@ using ExitGames.Client.Photon;
 
 using UnityEngine.UI;
 
-public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakingCallbacks
+public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakingCallbacks, IConnectionCallbacks
 {
     const float Min = 60f;
 
@@ -166,6 +166,40 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
     }
 
     public void OnJoinRandomFailed(short returnCode, string message)
+    {
+        throw new System.NotImplementedException();
+    }
+    #endregion
+
+    #region ConnectCallback
+
+    public void OnConnected()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnConnectedToMaster()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnDisconnected(DisconnectCause cause)
+    {
+        Debug.Log("OnDisconnected() cause : " + cause);
+        throw new System.NotImplementedException();
+    }
+
+    public void OnRegionListReceived(RegionHandler regionHandler)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnCustomAuthenticationResponse(Dictionary<string, object> data)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnCustomAuthenticationFailed(string debugMessage)
     {
         throw new System.NotImplementedException();
     }
