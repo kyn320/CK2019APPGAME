@@ -351,10 +351,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: hera_model
       objectReference: {fileID: 0}
-    - target: {fileID: 13700004, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c5017c40aa700f44b984210d87a246e4, type: 2}
     - target: {fileID: 400000, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -411,6 +407,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 13700004, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c5017c40aa700f44b984210d87a246e4, type: 2}
     - target: {fileID: 9500000, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
       propertyPath: m_Controller
       value: 
