@@ -7229,12 +7229,24 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 494426577, guid: 1666252930c88234487df11bfe6a396c, type: 3}
+      propertyPath: workingTime.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 494426577, guid: 1666252930c88234487df11bfe6a396c, type: 3}
+      propertyPath: workingSpeed.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 494426577, guid: 1666252930c88234487df11bfe6a396c, type: 3}
+      propertyPath: workingTemperature.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 494426577, guid: 1666252930c88234487df11bfe6a396c, type: 3}
       propertyPath: workingTemperature
-      value: 27
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 494426577, guid: 1666252930c88234487df11bfe6a396c, type: 3}
       propertyPath: workingSpeed
-      value: 5
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 494426577, guid: 1666252930c88234487df11bfe6a396c, type: 3}
       propertyPath: camera
@@ -7242,7 +7254,31 @@ PrefabInstance:
       objectReference: {fileID: 1271318263}
     - target: {fileID: 494426577, guid: 1666252930c88234487df11bfe6a396c, type: 3}
       propertyPath: workingTime
-      value: 170
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 494426577, guid: 1666252930c88234487df11bfe6a396c, type: 3}
+      propertyPath: workingTime.Array.data[0]
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 494426577, guid: 1666252930c88234487df11bfe6a396c, type: 3}
+      propertyPath: workingTime.Array.data[1]
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 494426577, guid: 1666252930c88234487df11bfe6a396c, type: 3}
+      propertyPath: workingTemperature.Array.data[1]
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 494426577, guid: 1666252930c88234487df11bfe6a396c, type: 3}
+      propertyPath: workingTemperature.Array.data[0]
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 494426577, guid: 1666252930c88234487df11bfe6a396c, type: 3}
+      propertyPath: workingSpeed.Array.data[1]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 494426577, guid: 1666252930c88234487df11bfe6a396c, type: 3}
+      propertyPath: workingSpeed.Array.data[0]
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1666252930c88234487df11bfe6a396c, type: 3}

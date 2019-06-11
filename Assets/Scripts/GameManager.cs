@@ -82,14 +82,35 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
             {
                 playTime = 0f;
                 LeaveRoom();
-                SceneManager.LoadScene("ResultScene");
             }
         }
     }
 
     public void LeaveRoom()
     {
+        int characterType = (PhotonNetwork.LocalPlayer.CustomProperties["Type"] == "zeus")? 0 : 1;
+        int gameResult = 0;
+        int buttonCount = 0;
+        int otherCount = 0;
+
+        foreach(ButtonManager button in buttons)
+        {
+            if(button.target == localPlayer)
+            {
+                buttonCount++;
+            }
+            else if(button.target != null)
+            {
+                otherCount++;
+            }
+        }
+        if (buttonCount > otherCount) gameResult = 1;
+
+        PlayerPrefs.SetInt("CharacterType", characterType);
+        PlayerPrefs.SetInt("GameResult", gameResult);
+        PlayerPrefs.SetInt("ButtonCount", buttonCount);
         PhotonNetwork.LeaveRoom();
+        SceneManager.LoadScene("ResultScene");
     }
 
     public float GetPlayTime()

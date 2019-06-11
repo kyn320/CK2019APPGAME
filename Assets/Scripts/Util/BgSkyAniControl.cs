@@ -8,10 +8,12 @@ public class BgSkyAniControl : MonoBehaviour
 {
     public Camera camera;
     public ColorGrading cg;
-    public bool isWorking = true;
-    public float workingTime;
-    public float workingSpeed;
-    public float workingTemperature;
+    public int currentWorking = 0;
+    public const int workingCnt = 2;
+    [Header("플레이 남은 시간(분)")]
+    public float[] workingTime;
+    public float[] workingSpeed;
+    public float[] workingTemperature;
 
     private void Awake()
     {
@@ -21,14 +23,14 @@ public class BgSkyAniControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isWorking && !GameManager.Instance.isBegin) {
-            if (workingTime >= GameManager.Instance.GetPlayTime())
+        if (currentWorking < workingCnt) {
+            if (workingTime[currentWorking] >= GameManager.Instance.GetPlayTime())
             {
-                cg.temperature.value += workingSpeed * Time.deltaTime;
-                if(cg.temperature.value > workingTemperature)
+                cg.temperature.value += workingSpeed[currentWorking] * Time.deltaTime;
+                if(cg.temperature.value > workingTemperature[currentWorking])
                 {
-                    cg.temperature.value = 27.0f;
-                    isWorking = false;
+                    cg.temperature.value = workingTemperature[currentWorking];
+                    currentWorking++;
                 }
             }
         }
