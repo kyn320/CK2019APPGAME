@@ -82,6 +82,7 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
         if (playTime < 0f)
         {
             playTime = 0f;
+            LeaveRoom();
             SceneManager.LoadScene("ResultScene");
         }
     }
