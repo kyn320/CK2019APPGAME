@@ -68,6 +68,8 @@ public class InfoUIEvent : MonoBehaviour
         
         models[currentIndex].GetComponent<FaceChanger>().ChangeFace(characterNames[currentIndex]
             , stateNames[Random.Range(0, 5)]);
+
+        oldTouchPos = eventData.position;
     }
 
     public void OnDragRotate(PointerEventData eventData)

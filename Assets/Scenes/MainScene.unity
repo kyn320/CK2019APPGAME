@@ -3303,7 +3303,7 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
-  m_inputSource: 3
+  m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
@@ -5738,7 +5738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8973ab09562367049b040790e822d391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiOption: {fileID: 1594384841}
+  optoinPanal: {fileID: 1594384841}
 --- !u!1 &2078076304
 GameObject:
   m_ObjectHideFlags: 0
