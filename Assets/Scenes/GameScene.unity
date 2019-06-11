@@ -1740,6 +1740,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Effect_Map_Circle
       objectReference: {fileID: 0}
+    - target: {fileID: 1116314010669870356, guid: 7b71a5b9f7012ed4d9d91d537e90a26e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1116314010669773108, guid: 7b71a5b9f7012ed4d9d91d537e90a26e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3513,6 +3518,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Effect_Map_Cloud
       objectReference: {fileID: 0}
+    - target: {fileID: 6211478671317612643, guid: 7369857a410d8ee4193518754f2e2524,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6211478671317443651, guid: 7369857a410d8ee4193518754f2e2524,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4214,7 +4224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1293615238
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5111,6 +5121,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Effect_Map_Center
       objectReference: {fileID: 0}
+    - target: {fileID: 8082258385933322368, guid: 86279e5610e270344a404d7354efd12d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2336177969453265087, guid: 86279e5610e270344a404d7354efd12d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5990,9 +6005,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsDontDestroy: 0
-  offline: 0
+  offline: 1
   localPlayer: {fileID: 0}
-  maxPlayTime: 30
+  maxPlayTime: 3
   isBegin: 0
   backViewCamera: {fileID: 2138233495}
   quarterViewCamera: {fileID: 2055581807}
@@ -6277,6 +6292,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3494248176643558228, guid: 52fa8b08d6d1a2c4fa4110cff20255ec,
         type: 3}
+<<<<<<< HEAD
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+=======
       propertyPath: m_Depth
       value: -1
       objectReference: {fileID: 0}
@@ -6295,6 +6315,7 @@ PrefabInstance:
       propertyPath: m_RenderingPath
       value: 3
       objectReference: {fileID: 0}
+>>>>>>> 41dd5b73a662283bdad413e4d5f75a1b40748112
     - target: {fileID: 3494248177759481207, guid: 52fa8b08d6d1a2c4fa4110cff20255ec,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6360,9 +6381,15 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+    - target: {fileID: 3494248176643558233, guid: 52fa8b08d6d1a2c4fa4110cff20255ec,
+        type: 3}
+      propertyPath: m_IsActive
+=======
     - target: {fileID: 3494248177759481205, guid: 52fa8b08d6d1a2c4fa4110cff20255ec,
         type: 3}
       propertyPath: m_Enabled
+>>>>>>> 41dd5b73a662283bdad413e4d5f75a1b40748112
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3494248176643558230, guid: 52fa8b08d6d1a2c4fa4110cff20255ec,
@@ -6375,6 +6402,9 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+    m_RemovedComponents: []
+=======
     - target: {fileID: 3494248177759481208, guid: 52fa8b08d6d1a2c4fa4110cff20255ec,
         type: 3}
       propertyPath: m_Depth
@@ -6432,6 +6462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3494248176643558229, guid: 52fa8b08d6d1a2c4fa4110cff20255ec, type: 3}
+>>>>>>> 41dd5b73a662283bdad413e4d5f75a1b40748112
   m_SourcePrefab: {fileID: 100100000, guid: 52fa8b08d6d1a2c4fa4110cff20255ec, type: 3}
 --- !u!20 &2055581807 stripped
 Camera:
@@ -6801,7 +6832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &2138233494
 AudioListener:
   m_ObjectHideFlags: 0
