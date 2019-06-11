@@ -53,7 +53,7 @@ public class GameUIScore : MonoBehaviour
             {
                 if (!nonTarget)
                 {
-                    otherIndex--;
+                    otherIndex++;
                     scores[otherIndex].sprite = nonSprite;
                 }
                 scores[localIndex].sprite = localSprite;
