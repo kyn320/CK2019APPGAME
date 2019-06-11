@@ -106,11 +106,11 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
 
         foreach(ButtonManager button in buttons)
         {
-            if(button.target == localPlayer)
+            if(button.occupationTarget == localPlayer)
             {
                 buttonCount++;
             }
-            else if(button.target != null)
+            else if(button.occupationTarget != null)
             {
                 otherCount++;
             }
