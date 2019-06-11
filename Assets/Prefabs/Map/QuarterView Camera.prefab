@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3494248176643558232}
   - component: {fileID: 3494248176643558228}
-  - component: {fileID: 3494248176643558229}
   - component: {fileID: 3494248176643558230}
   - component: {fileID: 3494248176643558231}
   m_Layer: 10
@@ -65,25 +64,17 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 1024
-  m_RenderingPath: -1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
+  m_HDR: 0
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 1
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &3494248176643558229
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3494248176643558233}
-  m_Enabled: 1
 --- !u!114 &3494248176643558230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,12 +220,12 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 823
-  m_RenderingPath: -1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 1
   m_OcclusionCulling: 1
