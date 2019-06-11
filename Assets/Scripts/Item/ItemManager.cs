@@ -21,6 +21,7 @@ public class ItemManager : MonoBehaviourPunCallbacks
 
     public UnitManager target;
     public Vector3 spawnPosition;
+    public float respawnTimer;
 
     private void Awake()
     {

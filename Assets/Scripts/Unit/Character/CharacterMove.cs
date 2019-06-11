@@ -45,7 +45,7 @@ public class CharacterMove : UnitMove
 
         int dir = (manager.spawnRotation.y > 100.0f)? -1 : 1;
         Vector3 moveDir = new Vector3(manager.ctrlMoveDir.x, 0.0f,manager.ctrlMoveDir.z) * dir;
-        transform.rotation = Quaternion.LookRotation(moveDir);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(moveDir), 20.0f * Time.deltaTime);
 
         Vector3 moveVelocity = manager.stat.moveSpeed.Value * moveDir * manager.ctrlMoveDistance;
         moveVelocity.y = manager.rigidbody.velocity.y;

@@ -11,6 +11,8 @@ public class CharacterJump : UnitJump
     public string eventPath;
     public FMOD.Studio.EventInstance medieval;
 
+    bool isJump;
+
     public override void Awake()
     {
         base.Awake();
@@ -28,6 +30,7 @@ public class CharacterJump : UnitJump
         base.Enter();
         manager.rigidbody.AddForce(Vector3.up * manager.stat.jumpPower.Value, ForceMode.Impulse);
         medieval.start();
+        isJump = false;
     }
 
     public override void Exit()
@@ -39,12 +42,16 @@ public class CharacterJump : UnitJump
     {
         int dir = (manager.spawnRotation.y > 100.0f)? -1 : 1;
         Vector3 moveDir = new Vector3(manager.ctrlMoveDir.x, 0.0f, manager.ctrlMoveDir.z) * dir;
-        transform.rotation = Quaternion.LookRotation(moveDir);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(moveDir), 20.0f * Time.deltaTime);
         Vector3 moveVelocity = manager.stat.moveSpeed.Value * moveDir * manager.ctrlMoveDistance;
         moveVelocity.y = manager.rigidbody.velocity.y;
 
         manager.rigidbody.velocity = moveVelocity;
-        if (manager.rigidbody.velocity.y < 0.0f)
+        if (!isJump)
+        {
+            if (manager.rigidbody.velocity.y > 0.0f) isJump = true;
+        }
+        else if (manager.rigidbody.velocity.y <= 0.0f)
         {
 
             Collider[] cols = Physics.OverlapSphere(groundChecker.position, 0.25f, LayerMask.GetMask("Ground"));

@@ -16,12 +16,16 @@ public class ItemDrop : ItemState
         //jumpPower = Random.Range(2.0f, 4.0f);
         //dir = new Vector2(Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f));
         jumpPower = 8.0f;
-        dir = manager.target.rigidbody.velocity;
 
         if (manager.target)
         {
+            dir = manager.target.rigidbody.velocity;
             manager.target.haveItem = null;
             manager.target = null;
+        }
+        else
+        {
+            dir = Vector3.zero;
         }
     }
 

@@ -34,9 +34,9 @@ public class ItemRemove : ItemState
     private void Update()
     {
         timer += Time.deltaTime;
-        if(timer >= 3.0f)
+        if(timer >= manager.respawnTimer)
         {
-            manager.SetState(ItemStateCode.IDLE);
+            manager.SetState(ItemStateCode.DROP);
         }
     }
 }
