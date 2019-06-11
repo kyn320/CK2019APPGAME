@@ -17,6 +17,7 @@ public class ButtonManager : MonoBehaviourPunCallbacks
     public MeshRenderer meshRenderer;
     public MeshRenderer tokenMeshRenderer;
     public MeshRenderer crystalMeshRenderer;
+    public MeshRenderer columnMeshRenderer;
     public UnitBuff buff;
     public List<UnitManager> targetList = new List<UnitManager>();
     public UnitManager target;

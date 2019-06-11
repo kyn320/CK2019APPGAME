@@ -43,7 +43,7 @@ public class ButtonFinish : ButtonState
         string path;
 
         if (PhotonNetwork.OfflineMode)
-            path = "zeus";
+            path = "hera";
         else
             path = manager.target.photonView.Owner.CustomProperties["Type"] as string;
 
@@ -57,7 +57,9 @@ public class ButtonFinish : ButtonState
             Material material = Resources.Load<Material>("Material/button_" + path);
             manager.meshRenderer.material = material;
             manager.tokenMeshRenderer.material = material;
-            manager.crystalMeshRenderer.material = Resources.Load<Material>("Material/column_" + path);
+            manager.columnMeshRenderer.material = Resources.Load<Material>("Material/column_" + path);
+            manager.crystalMeshRenderer.material = Resources.Load<Material>("Material/crystal_" + path);
+            manager.crystalMeshRenderer.gameObject.GetComponent<ObjectAniControl>().enabled = true;
         }
     }
 }

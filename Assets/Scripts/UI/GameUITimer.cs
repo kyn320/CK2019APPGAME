@@ -17,7 +17,6 @@ public class GameUITimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.Instance.isBegin) return;
         int time = (int)GameManager.Instance.GetPlayTime();
         text.text = "  " + (time / 60).ToString() + " : " + (time % 60 / 10).ToString() + (time % 60 % 10).ToString();
     }

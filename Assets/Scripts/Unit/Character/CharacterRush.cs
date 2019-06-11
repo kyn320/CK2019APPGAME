@@ -44,7 +44,6 @@ public class CharacterRush : UnitRush
 
         if (animationTime >= 1.0f)
         {
-            Debug.Log(manager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
             manager.SetState(UnitStateCode.IDLE);
         }
     }
