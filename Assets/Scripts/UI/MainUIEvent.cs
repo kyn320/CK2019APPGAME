@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainUIEvent : MonoBehaviour
 {
+
+    public GameObject uiOption;
+
     public void GameStart()
     {
         SceneManager.LoadScene("MatchingScene");
@@ -16,6 +19,7 @@ public class MainUIEvent : MonoBehaviour
 
     public void OnViewOption() {
         //TODO :: 옵션 창 키기
+        uiOption.SetActive(true);
     }
 
 }
