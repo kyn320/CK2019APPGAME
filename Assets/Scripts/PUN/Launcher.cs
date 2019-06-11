@@ -85,6 +85,7 @@ namespace Resume.Network
 
                 PhotonNetwork.CurrentRoom.GetPlayer(randType == 1 ? 2 : 1).SetCustomProperties(table);
 
+                PhotonNetwork.CurrentRoom.IsOpen = false;
                 PhotonNetwork.LoadLevel("GameScene");
             }
         }

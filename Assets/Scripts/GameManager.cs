@@ -109,6 +109,12 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
         quarterViewController.SetActive(quarterViewCamera.enabled);
     }
 
+    public void OnApplicationQuit()
+    {
+        Debug.Log("OnApplicationQuit()");
+        PhotonNetwork.Disconnect();
+    }
+
     #region RoomCallback
 
     public void OnPlayerEnteredRoom(Player newPlayer)
