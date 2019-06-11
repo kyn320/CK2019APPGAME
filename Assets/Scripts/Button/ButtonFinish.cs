@@ -40,6 +40,8 @@ public class ButtonFinish : ButtonState
         }
         manager.occupationTarget = manager.target;
         manager.occupationTime = manager.reoccupationTime;
+        manager.buff.Set(manager.occupationTarget);
+        GameObject.FindWithTag("DisplayBoard").GetComponent<GameUIScore>().UpdateScore(manager, nonTarget);
 
         string path;
 
@@ -62,7 +64,5 @@ public class ButtonFinish : ButtonState
             manager.crystalMeshRenderer.material = Resources.Load<Material>("Material/crystal_" + path);
             manager.crystalMeshRenderer.gameObject.GetComponent<ObjectAniControl>().enabled = true;
         }
-        GameObject.FindWithTag("DisplayBoard").GetComponent<GameUIScore>().UpdateScore(manager, nonTarget);
-        manager.buff.Set(manager.occupationTarget);
     }
 }

@@ -99,7 +99,7 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
 
     public void LeaveRoom()
     {
-        int characterType = (PhotonNetwork.LocalPlayer.CustomProperties["Type"] == "zeus")? 1 : 2;
+        int characterType = (PhotonNetwork.LocalPlayer.CustomProperties["Type"].Equals("zeus"))? 1 : 2;
         int gameResult = 0;
         int buttonCount = 0;
         int otherCount = 0;

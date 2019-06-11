@@ -51,23 +51,23 @@ public class GameUIScore : MonoBehaviour
         {
             if(changeButton.occupationTarget == GameManager.Instance.localPlayer)
             {
-                scores[localIndex].sprite = localSprite;
-                localIndex++;
                 if (!nonTarget)
                 {
                     otherIndex--;
                     scores[otherIndex].sprite = nonSprite;
                 }
+                scores[localIndex].sprite = localSprite;
+                localIndex++;
             }
             else
             {
-                scores[otherIndex].sprite = otherSprite;
-                otherIndex--;
-                if(!nonTarget)
+                if (!nonTarget)
                 {
                     localIndex--;
                     scores[localIndex].sprite = nonSprite;
                 }
+                scores[otherIndex].sprite = otherSprite;
+                otherIndex--;
             }
         }
     }
