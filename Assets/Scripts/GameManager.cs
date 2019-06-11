@@ -15,6 +15,7 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
 
     public bool offline = false;
     public UnitManager localPlayer;
+    public UnitManager otherPlayer;
 
     [Header("플레이 시간(분)")]
     public int maxPlayTime = 1;
@@ -32,9 +33,7 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
     public BuffData[] buffStatValue = new BuffData[(int)UnitStatCode.SIZE];
     public List<ButtonManager> buttons = new List<ButtonManager>();
     public bool[] buffCheckFlag = new bool[(int)UnitStatCode.SIZE * 3];
-
-    public Text buffText;
-
+    
     protected override void Awake()
     {
         base.Awake();
@@ -73,6 +72,18 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
         playTime = Min * maxPlayTime;
     }
 
+    public void Init()
+    {
+        foreach (GameObject unit in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            if (unit.GetComponent<UnitManager>() != localPlayer)
+            {
+                otherPlayer = unit.GetComponent<UnitManager>();
+            }
+            Debug.Log("asdf : " + unit);
+        }
+    }
+
     private void Update()
     {
         if (!isBegin)
@@ -88,7 +99,7 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
 
     public void LeaveRoom()
     {
-        int characterType = (PhotonNetwork.LocalPlayer.CustomProperties["Type"] == "zeus")? 0 : 1;
+        int characterType = (PhotonNetwork.LocalPlayer.CustomProperties["Type"] == "zeus")? 1 : 2;
         int gameResult = 0;
         int buttonCount = 0;
         int otherCount = 0;

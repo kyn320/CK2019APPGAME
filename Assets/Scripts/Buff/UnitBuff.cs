@@ -42,7 +42,6 @@ public class UnitBuff : MonoBehaviourPunCallbacks
             GameManager.Instance.buffCheckFlag[code] = true;
             statCode = (UnitStatCode)(code / 3);
             addValue = GameManager.Instance.standardStat[statCode] * GameManager.Instance.buffStatValue[(int)statCode].addValue[code % 3] * 0.01f;
-            GameManager.Instance.buffText.text += GetComponent<ButtonManager>().photonView.ToString() + " : [" + statCode + "] " + addValue.ToString() + "\n";
             photonView.RPC("BuffSet", RpcTarget.Others, statCode, addValue);
         }
     }
@@ -52,7 +51,6 @@ public class UnitBuff : MonoBehaviourPunCallbacks
     {
         this.statCode = statCode;
         this.addValue = addValue;
-        GameManager.Instance.buffText.text += GetComponent<ButtonManager>().photonView.ToString() + " : [" + statCode + "] " + addValue.ToString() + "\n";
     }
 
     public void Set(UnitManager unit)
@@ -84,6 +82,5 @@ public class UnitBuff : MonoBehaviourPunCallbacks
         {
             addValue = 100.0f;
         }
-        GameManager.Instance.buffText.text += GetComponent<ButtonManager>().photonView.ToString() + " : [" + statCode + "] " + addValue.ToString() + "\n";
     }
 }

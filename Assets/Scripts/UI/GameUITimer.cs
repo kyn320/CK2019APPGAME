@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.UI;
+using TMPro;
 
 public class GameUITimer : MonoBehaviour
 {
-    Text text;
+    TextMeshProUGUI text;
 
     private void Awake()
     {
-        text = GetComponent<Text>();
+        text = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame

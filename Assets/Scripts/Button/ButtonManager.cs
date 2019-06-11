@@ -29,6 +29,7 @@ public class ButtonManager : MonoBehaviourPunCallbacks
     public float occupationTime;
     public float occupationDepth;
     public float reoccupationTime;
+    public bool isHidden = false;
 
     private void Awake()
     {
@@ -50,6 +51,7 @@ public class ButtonManager : MonoBehaviourPunCallbacks
         if (tokenMeshRenderer == null)
         {
             buff.isHidden();
+            isHidden = true;
         }
         SetState(ButtonStateCode.IDLE);
     }
@@ -66,7 +68,6 @@ public class ButtonManager : MonoBehaviourPunCallbacks
         currentState = stateCode;
         states[currentState].enabled = true;
         states[currentState].Enter();
-        //PhotonView photonView = PhotonView.Get(GameManager.Instance.localPlayer);
         if(target && target.photonView.IsMine)
             photonView.RPC("PunButtonSetState", RpcTarget.Others, currentState);
     }

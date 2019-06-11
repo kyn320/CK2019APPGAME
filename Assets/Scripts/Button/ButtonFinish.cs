@@ -32,18 +32,19 @@ public class ButtonFinish : ButtonState
 
     void OccupationSetting()
     {
+        bool nonTarget = true;
         if (manager.occupationTarget != null && manager.target.haveItem)
         {
+            nonTarget = false;
             manager.target.haveItem.SetState(ItemStateCode.REMOVE);
         }
         manager.occupationTarget = manager.target;
         manager.occupationTime = manager.reoccupationTime;
-        manager.buff.Set(manager.occupationTarget);
 
         string path;
 
         if (PhotonNetwork.OfflineMode)
-            path = "hera";
+            path = "zeus";
         else
             path = manager.target.photonView.Owner.CustomProperties["Type"] as string;
 
@@ -61,5 +62,7 @@ public class ButtonFinish : ButtonState
             manager.crystalMeshRenderer.material = Resources.Load<Material>("Material/crystal_" + path);
             manager.crystalMeshRenderer.gameObject.GetComponent<ObjectAniControl>().enabled = true;
         }
+        GameObject.FindWithTag("DisplayBoard").GetComponent<GameUIScore>().UpdateScore(manager, nonTarget);
+        manager.buff.Set(manager.occupationTarget);
     }
 }

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bottom
   - FxTemporaire
+  - DisplayBoard
+  - CharacterSlot
   layers:
   - Default
   - TransparentFX
