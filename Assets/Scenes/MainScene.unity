@@ -1225,6 +1225,7 @@ GameObject:
   - component: {fileID: 319689496}
   - component: {fileID: 319689495}
   - component: {fileID: 319689494}
+  - component: {fileID: 319689497}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -1303,6 +1304,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2098958481}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: event:/SFX/UI/SFX_touch
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &319689495
@@ -1342,6 +1354,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319689492}
   m_CullTransparentMesh: 0
+--- !u!114 &319689497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319689492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!1 &338377908
 GameObject:
   m_ObjectHideFlags: 0
@@ -2211,6 +2237,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2098958481}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: event:/SFX/UI/SFX_touch
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2098958481}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: event:/SFX/UI/SFX_change
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &539361700
@@ -3068,6 +3116,7 @@ GameObject:
   - component: {fileID: 1007954280}
   - component: {fileID: 1007954279}
   - component: {fileID: 1007954278}
+  - component: {fileID: 1007954281}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3139,6 +3188,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1007954281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007954277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca232134a0a6e1b4faee2262a41a0a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 0.5
+  parameter: 0
+  useLifeTime: 0
+  randomLifeTime: 0
+  lifeTime: 0
+  minLifeTime: 0
+  maxLifeTime: 0
+  eventPath: event:/BGM/All/BGM_main
 --- !u!1 &1019177009
 GameObject:
   m_ObjectHideFlags: 0
@@ -5384,6 +5453,7 @@ GameObject:
   - component: {fileID: 1781552122}
   - component: {fileID: 1781552121}
   - component: {fileID: 1781552124}
+  - component: {fileID: 1781552125}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -5463,6 +5533,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2098958481}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: event:/SFX/UI/SFX_touch
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2098958481}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: event:/SFX/UI/SFX_change
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1781552122
@@ -5521,6 +5613,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1781552125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781552119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9cd488900341f545b9ae36808a6e275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 0.3
+  parameter: 0
+  useLifeTime: 0
+  randomLifeTime: 0
+  lifeTime: 0
+  minLifeTime: 0
+  maxLifeTime: 0
+  eventPath: event:/Amb/Unknow/Amb_unknow
 --- !u!1 &1902923775
 GameObject:
   m_ObjectHideFlags: 0
@@ -5800,6 +5912,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2098958479}
   - component: {fileID: 2098958480}
+  - component: {fileID: 2098958481}
   m_Layer: 5
   m_Name: UI_Buttons
   m_TagString: Untagged
@@ -5852,6 +5965,26 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
+--- !u!114 &2098958481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098958478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb98ff3d5838a3946a15bdc0c2a438c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 0.5
+  parameter: 0
+  useLifeTime: 0
+  randomLifeTime: 0
+  lifeTime: 0
+  minLifeTime: 0
+  maxLifeTime: 0
+  eventPath: event:/SFX/UI/SFX_change
 --- !u!1001 &1928130896042252031
 PrefabInstance:
   m_ObjectHideFlags: 0
