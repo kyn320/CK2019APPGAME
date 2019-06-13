@@ -61,7 +61,6 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
                 , Vector3.zero
                 , Quaternion.identity).GetComponent<UnitManager>();
         }
-        bgm.eventPath = localPlayer.bgmPath;
         backViewCamera.transform.parent = localPlayer.transform;
         localPlayer.Respawn(Vector3.down * 25);
         backViewCamera.enabled = false;
@@ -71,6 +70,7 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
 
     void Start()
     {
+        //bgm.eventPath = localPlayer.bgmPath;
         playTime = Min * maxPlayTime;
     }
 

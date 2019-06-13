@@ -2097,7 +2097,7 @@ PrefabInstance:
     - target: {fileID: 8483542266241836261, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8483542265758412330, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
         type: 3}
@@ -6091,7 +6091,6 @@ GameObject:
   - component: {fileID: 1915241527}
   - component: {fileID: 1915241526}
   - component: {fileID: 1915241528}
-  - component: {fileID: 1915241529}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -6112,7 +6111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsDontDestroy: 0
-  offline: 1
+  offline: 0
   localPlayer: {fileID: 0}
   otherPlayer: {fileID: 0}
   maxPlayTime: 3
@@ -6139,7 +6138,7 @@ MonoBehaviour:
     - 50
   buttons: []
   buffCheckFlag: 000000000000000000
-  bgm: {fileID: 0}
+  bgm: {fileID: 1915241528}
 --- !u!4 &1915241527
 Transform:
   m_ObjectHideFlags: 0
@@ -6161,34 +6160,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915241525}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Script: {fileID: 11500000, guid: ca232134a0a6e1b4faee2262a41a0a28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: event:/BGM/All/BGM_main
-  PlayEvent: 1
-  StopEvent: 2
-  CollisionTag: 
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 0.2
-  OverrideMaxDistance: 20
---- !u!114 &1915241529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1915241525}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3ec3cf6154c2e546b8265d36ee89cd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  volume: 0.3
+  parameter: 0
+  useLifeTime: 0
+  randomLifeTime: 0
+  lifeTime: 0
+  minLifeTime: 0
+  maxLifeTime: 0
   eventPath: event:/BGM/All/BGM_main
 --- !u!1 &1929329569
 GameObject:

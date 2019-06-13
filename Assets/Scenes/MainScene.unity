@@ -3200,7 +3200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca232134a0a6e1b4faee2262a41a0a28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume: 0.5
+  volume: 1
   parameter: 0
   useLifeTime: 0
   randomLifeTime: 0
@@ -5632,6 +5632,7 @@ MonoBehaviour:
   lifeTime: 0
   minLifeTime: 0
   maxLifeTime: 0
+  autoPlay: 0
   eventPath: event:/Amb/Unknow/Amb_unknow
 --- !u!1 &1902923775
 GameObject:
@@ -5984,6 +5985,7 @@ MonoBehaviour:
   lifeTime: 0
   minLifeTime: 0
   maxLifeTime: 0
+  autoPlay: 0
   eventPath: event:/SFX/UI/SFX_change
 --- !u!1001 &1928130896042252031
 PrefabInstance:

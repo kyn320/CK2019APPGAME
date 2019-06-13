@@ -217,7 +217,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   linkStates: 
   groundChecker: {fileID: 6579502119900014246}
-  chEventPath: 
+  chEventPath: event:/SFX/Zeus/SFX_dead_zeus
 --- !u!114 &938475941059754566
 MonoBehaviour:
   m_ObjectHideFlags: 0
