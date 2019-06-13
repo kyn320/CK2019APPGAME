@@ -22,8 +22,7 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
 
     private float playTime = Min * 1;
     public bool isBegin;
-
-    public Camera backViewCamera;
+    
     public Camera quarterViewCamera;
 
     public GameObject backViewController;
@@ -61,9 +60,7 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
                 , Vector3.zero
                 , Quaternion.identity).GetComponent<UnitManager>();
         }
-        backViewCamera.transform.parent = localPlayer.transform;
         localPlayer.Respawn(Vector3.down * 25);
-        backViewCamera.enabled = false;
         quarterViewCamera.enabled = true;
         quarterViewCamera.transform.eulerAngles += localPlayer.transform.eulerAngles;
     }
@@ -133,10 +130,8 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
 
     public void SwapCamera()
     {
-        backViewCamera.enabled = !backViewCamera.enabled;
         quarterViewCamera.enabled = !quarterViewCamera.enabled;
-
-        backViewController.SetActive(backViewCamera.enabled);
+        
         quarterViewController.SetActive(quarterViewCamera.enabled);
     }
 

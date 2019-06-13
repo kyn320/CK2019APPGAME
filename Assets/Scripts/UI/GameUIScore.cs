@@ -34,6 +34,38 @@ public class GameUIScore : MonoBehaviour
         }
     }
 
+    public void UpdateScore()
+    {
+        foreach (Image img in scores)
+        {
+            img.sprite = otherGoldSprite;
+        }
+
+        int buttonCount = 0;
+        int otherCount = 0;
+
+        foreach (ButtonManager button in GameManager.Instance.buttons)
+        {
+            if (button.occupationTarget == GameManager.Instance.localPlayer)
+            {
+                buttonCount++;
+            }
+            else if (button.occupationTarget != null)
+            {
+                otherCount++;
+            }
+        }
+
+        for(int i = 0; i < buttonCount; i++)
+        {
+            scores[localIndex + i].sprite = localSprite;
+        }
+        for(int i = 0; i < otherCount; i++)
+        {
+            scores[otherIndex - i].sprite = localSprite;
+        }
+    }
+
     public void UpdateScore(ButtonManager changeButton, bool nonTarget)
     {
         if (changeButton.isHidden)
