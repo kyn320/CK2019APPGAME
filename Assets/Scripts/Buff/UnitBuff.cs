@@ -68,6 +68,7 @@ public class UnitBuff : MonoBehaviourPunCallbacks
     {
         target.stat.AddStat(statCode, addValue);
         medieval.start();
+        target.buff_medieval.start();
     }
 
     public void End()

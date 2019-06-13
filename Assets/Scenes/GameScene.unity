@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18171698, g: 0.22737816, b: 0.3074202, a: 1}
+  m_IndirectSpecularColor: {r: 0.18171723, g: 0.22737847, b: 0.3074209, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statCode: 0
   addValue: 5
-  eventPath: event:/SFX/SFX_buff
+  eventPath: event:/SFX/Play/SFX_buff
 --- !u!114 &105140790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -882,7 +882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statCode: 0
   addValue: 5
-  eventPath: event:/SFX/SFX_buff
+  eventPath: event:/SFX/Play/SFX_gold
 --- !u!114 &412059486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1469,7 +1469,7 @@ PrefabInstance:
     - target: {fileID: 1116314010669870356, guid: 7b71a5b9f7012ed4d9d91d537e90a26e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1116314010669773108, guid: 7b71a5b9f7012ed4d9d91d537e90a26e,
         type: 3}
@@ -2697,6 +2697,12 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8ce531d2d14ff44cacaa6782b8d43c2, type: 3}
+--- !u!1 &733469703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 591200612, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 733469702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &733469704 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8483542265870222986, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
@@ -2844,6 +2850,27 @@ MonoBehaviour:
   nonSprite: {fileID: 21300000, guid: 1c02de2aec5baa44eaf64fe6eca98d71, type: 3}
   localGoldSprite: {fileID: 21300000, guid: 8c3cd09244217674bbf7d9371e2b53bd, type: 3}
   otherGoldSprite: {fileID: 21300000, guid: 696c00004c0284149bbd4ebf483a02af, type: 3}
+--- !u!114 &733469716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733469703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb98ff3d5838a3946a15bdc0c2a438c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 0.3
+  parameter: 0
+  useLifeTime: 0
+  randomLifeTime: 0
+  lifeTime: 0
+  minLifeTime: 0
+  maxLifeTime: 0
+  autoPlay: 1
+  eventPath: event:/SFX/Play/SFX_playstart
 --- !u!1 &756325749
 GameObject:
   m_ObjectHideFlags: 0
@@ -2897,7 +2924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statCode: 0
   addValue: 5
-  eventPath: event:/SFX/SFX_buff
+  eventPath: event:/SFX/Play/SFX_buff
 --- !u!114 &756325752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3097,7 +3124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statCode: 0
   addValue: 5
-  eventPath: event:/SFX/SFX_buff
+  eventPath: event:/SFX/Play/SFX_buff
 --- !u!114 &769009435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3526,7 +3553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statCode: 0
   addValue: 5
-  eventPath: event:/SFX/SFX_buff
+  eventPath: event:/SFX/Play/SFX_buff
 --- !u!64 &941913103
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3741,7 +3768,7 @@ PrefabInstance:
     - target: {fileID: 6211478671317612643, guid: 7369857a410d8ee4193518754f2e2524,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6211478671317443651, guid: 7369857a410d8ee4193518754f2e2524,
         type: 3}
@@ -4598,7 +4625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statCode: 0
   addValue: 5
-  eventPath: event:/SFX/SFX_buff
+  eventPath: event:/SFX/Play/SFX_buff
 --- !u!114 &1352683707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4905,7 +4932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statCode: 0
   addValue: 5
-  eventPath: event:/SFX/SFX_buff
+  eventPath: event:/SFX/Play/SFX_buff
 --- !u!114 &1429403910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5162,7 +5189,7 @@ PrefabInstance:
     - target: {fileID: 8082258385933322368, guid: 86279e5610e270344a404d7354efd12d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2336177969453265087, guid: 86279e5610e270344a404d7354efd12d,
         type: 3}
@@ -5400,7 +5427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statCode: 0
   addValue: 5
-  eventPath: event:/SFX/SFX_buff
+  eventPath: event:/SFX/Play/SFX_buff
 --- !u!114 &1672072863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5811,7 +5838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statCode: 0
   addValue: 5
-  eventPath: event:/SFX/SFX_buff
+  eventPath: event:/SFX/Play/SFX_buff
 --- !u!114 &1813309566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6085,7 +6112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsDontDestroy: 0
-  offline: 0
+  offline: 1
   localPlayer: {fileID: 0}
   otherPlayer: {fileID: 0}
   maxPlayTime: 3
@@ -6112,6 +6139,7 @@ MonoBehaviour:
     - 50
   buttons: []
   buffCheckFlag: 000000000000000000
+  bgm: {fileID: 0}
 --- !u!4 &1915241527
 Transform:
   m_ObjectHideFlags: 0
@@ -6133,7 +6161,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915241525}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
@@ -6156,7 +6184,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915241525}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3ec3cf6154c2e546b8265d36ee89cd0, type: 3}
   m_Name: 
@@ -6378,6 +6406,75 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 2055581806}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2055581808 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3494248177759481210, guid: 52fa8b08d6d1a2c4fa4110cff20255ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 2055581806}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2055581809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055581808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9cd488900341f545b9ae36808a6e275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 0.3
+  parameter: 0
+  useLifeTime: 1
+  randomLifeTime: 1
+  lifeTime: 0
+  minLifeTime: 3
+  maxLifeTime: 4
+  autoPlay: 0
+  eventPath: event:/Amb/All/Amb_wind
+--- !u!114 &2055581810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055581808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9cd488900341f545b9ae36808a6e275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 0.3
+  parameter: 0
+  useLifeTime: 1
+  randomLifeTime: 1
+  lifeTime: 0
+  minLifeTime: 5
+  maxLifeTime: 8
+  autoPlay: 0
+  eventPath: event:/Amb/All/Amb_statue
+--- !u!114 &2055581811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055581808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9cd488900341f545b9ae36808a6e275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 0.3
+  parameter: 0
+  useLifeTime: 0
+  randomLifeTime: 0
+  lifeTime: 0
+  minLifeTime: 0
+  maxLifeTime: 0
+  autoPlay: 0
+  eventPath: event:/Amb/All/Amb_cloud
 --- !u!1 &2093770031
 GameObject:
   m_ObjectHideFlags: 0

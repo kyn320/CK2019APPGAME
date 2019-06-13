@@ -28,6 +28,14 @@ public class ResultUIEvent : MonoBehaviour
 
     public Sprite[] heraSprites, zeusSprites;
 
+    public BGMPlayer bgm;
+    public SFXPlayer sfx;
+
+    [FMODUnity.EventRef]
+    public string heraBgm, zeusBgm;
+    [FMODUnity.EventRef]
+    public string heraSfx, zeusSfx;
+
     private void Start()
     {
         ViewResult();
@@ -53,10 +61,14 @@ public class ResultUIEvent : MonoBehaviour
                 case 1:
                     ColorUtility.TryParseHtmlString(zeusColorHex, out color);
                     illustSlot.sprite = zeusSprites[GameResult];
+                    bgm.eventPath = zeusBgm;
+                    sfx.eventPath = zeusSfx;
                     break;
                 case 2:
                     ColorUtility.TryParseHtmlString(heraColorHex, out color);
                     illustSlot.sprite = heraSprites[GameResult];
+                    bgm.eventPath = heraBgm;
+                    sfx.eventPath = heraSfx;
                     break;
             }
             illustSlot.SetNativeSize();
@@ -68,11 +80,14 @@ public class ResultUIEvent : MonoBehaviour
             {
                 case 1:
                     illustSlot.sprite = zeusSprites[GameResult];
+                    bgm.eventPath = zeusBgm;
                     break;
                 case 2:
                     illustSlot.sprite = heraSprites[GameResult];
+                    bgm.eventPath = heraBgm;
                     break;
             }
+            sfx.useLifeTime = false;
 
             illustSlot.SetNativeSize();
             loseTitle.SetActive(true);

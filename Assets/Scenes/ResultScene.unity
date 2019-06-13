@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -157,6 +157,12 @@ MonoBehaviour:
   zeusSprites:
   - {fileID: 21300000, guid: 5249347d9c1f447418c7c08da9e65426, type: 3}
   - {fileID: 21300000, guid: a47f9c1f27a2dcf47bde367cbbf24907, type: 3}
+  bgm: {fileID: 998878064}
+  sfx: {fileID: 998878063}
+  heraBgm: event:/BGM/Hera/BGM_hera
+  zeusBgm: event:/BGM/Zeus/BGM_zeus
+  heraSfx: event:/Amb/Hera/Amb_fire
+  zeusSfx: event:/Amb/Zeus/Amb_light
 --- !u!114 &267393137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1019,6 +1025,7 @@ GameObject:
   - component: {fileID: 715853330}
   - component: {fileID: 715853332}
   - component: {fileID: 715853331}
+  - component: {fileID: 715853333}
   m_Layer: 5
   m_Name: UI_Header_Win
   m_TagString: Untagged
@@ -1082,6 +1089,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715853329}
   m_CullTransparentMesh: 0
+--- !u!114 &715853333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715853329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9cd488900341f545b9ae36808a6e275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 0.3
+  parameter: 0
+  useLifeTime: 0
+  randomLifeTime: 0
+  lifeTime: 0
+  minLifeTime: 0
+  maxLifeTime: 0
+  eventPath: event:/SFX/Play/SFX_win
 --- !u!1 &800294922
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,6 +1120,7 @@ GameObject:
   - component: {fileID: 800294923}
   - component: {fileID: 800294925}
   - component: {fileID: 800294924}
+  - component: {fileID: 800294926}
   m_Layer: 5
   m_Name: UI_Header_Lose
   m_TagString: Untagged
@@ -1156,6 +1184,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800294922}
   m_CullTransparentMesh: 0
+--- !u!114 &800294926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800294922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9cd488900341f545b9ae36808a6e275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 0.3
+  parameter: 0
+  useLifeTime: 0
+  randomLifeTime: 0
+  lifeTime: 0
+  minLifeTime: 0
+  maxLifeTime: 0
+  eventPath: event:/SFX/Play/SFX_lose
 --- !u!1 &820081463
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,6 +1451,8 @@ GameObject:
   - component: {fileID: 998878062}
   - component: {fileID: 998878061}
   - component: {fileID: 998878060}
+  - component: {fileID: 998878064}
+  - component: {fileID: 998878063}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1474,6 +1524,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &998878063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998878059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9cd488900341f545b9ae36808a6e275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 0.3
+  parameter: 0
+  useLifeTime: 1
+  randomLifeTime: 1
+  lifeTime: 0
+  minLifeTime: 7
+  maxLifeTime: 10
+  eventPath: event:/Amb/Unknow/Amb_unknow
+--- !u!114 &998878064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998878059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca232134a0a6e1b4faee2262a41a0a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 0.3
+  parameter: 1
+  useLifeTime: 0
+  randomLifeTime: 0
+  lifeTime: 0
+  minLifeTime: 0
+  maxLifeTime: 0
+  eventPath: 
 --- !u!1 &1051254961
 GameObject:
   m_ObjectHideFlags: 0

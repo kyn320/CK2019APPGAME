@@ -16,8 +16,15 @@ public class SFXPlayer : MonoBehaviour
     public float minLifeTime, maxLifeTime;
     float currentLifeTime;
 
+    public bool autoPlay;
+
     [FMODUnity.EventRef]
     public string eventPath;
+
+    private void Start()
+    {
+        if (autoPlay) Play();
+    }
 
     public virtual void Play()
     {

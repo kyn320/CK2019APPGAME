@@ -33,7 +33,9 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
     public BuffData[] buffStatValue = new BuffData[(int)UnitStatCode.SIZE];
     public List<ButtonManager> buttons = new List<ButtonManager>();
     public bool[] buffCheckFlag = new bool[(int)UnitStatCode.SIZE * 3];
-    
+
+    public BGMPlayer bgm;
+
     protected override void Awake()
     {
         base.Awake();
@@ -59,7 +61,7 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
                 , Vector3.zero
                 , Quaternion.identity).GetComponent<UnitManager>();
         }
-
+        bgm.eventPath = localPlayer.bgmPath;
         backViewCamera.transform.parent = localPlayer.transform;
         localPlayer.Respawn(Vector3.down * 25);
         backViewCamera.enabled = false;

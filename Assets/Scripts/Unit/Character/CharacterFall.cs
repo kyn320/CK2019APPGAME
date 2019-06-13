@@ -10,6 +10,10 @@ public class CharacterFall : UnitFall
     private Collider collider;
     private Collider groundCollider;
 
+    [FMODUnity.EventRef]
+    public string chEventPath;
+    public FMOD.Studio.EventInstance ch_medieval;
+
     public override void Awake()
     {
         base.Awake();
@@ -18,12 +22,17 @@ public class CharacterFall : UnitFall
 
         collider = GetComponent<Collider>();
         groundCollider = groundChecker.GetComponent<Collider>();
+
+
+        ch_medieval = FMODUnity.RuntimeManager.CreateInstance(chEventPath);
+        ch_medieval.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.transform));
     }
 
     public override void Enter()
     {
         base.Enter();
         groundCollider.material = collider.material;
+        ch_medieval.start();
     }
 
     public override void Exit()

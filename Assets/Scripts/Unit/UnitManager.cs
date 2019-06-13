@@ -36,6 +36,13 @@ public class UnitManager : MonoBehaviourPunCallbacks
     public UnitStat stat;
     public ItemManager haveItem;
 
+    [FMODUnity.EventRef]
+    public string bgmPath;
+
+    [FMODUnity.EventRef]
+    public string buffEventPath;
+    public FMOD.Studio.EventInstance buff_medieval;
+
     private void Awake()
     {
         states[UnitStateCode.IDLE] = GetComponent<UnitIdle>();
@@ -51,10 +58,8 @@ public class UnitManager : MonoBehaviourPunCallbacks
         animator = GetComponentInChildren<Animator>();
         haveItem = null;
 
-        //if (!photonView.IsMine)
-        //{
-        //    //rigidbody.useGravity = false;
-        //}
+        buff_medieval = FMODUnity.RuntimeManager.CreateInstance(buffEventPath);
+        buff_medieval.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.transform));
     }
 
     // Start is called before the first frame update

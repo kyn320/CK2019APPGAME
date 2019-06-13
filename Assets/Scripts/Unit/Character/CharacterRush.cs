@@ -8,6 +8,10 @@ public class CharacterRush : UnitRush
     public string eventPath;
     public FMOD.Studio.EventInstance medieval;
 
+    [FMODUnity.EventRef]
+    public string chEventPath;
+    public FMOD.Studio.EventInstance ch_medieval;
+
     public override void Awake()
     {
         base.Awake();
@@ -18,6 +22,9 @@ public class CharacterRush : UnitRush
 
         medieval = FMODUnity.RuntimeManager.CreateInstance(eventPath);
         medieval.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.transform));
+
+        ch_medieval = FMODUnity.RuntimeManager.CreateInstance(chEventPath);
+        ch_medieval.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.transform));
     }
 
     public override void Enter()
@@ -27,6 +34,7 @@ public class CharacterRush : UnitRush
         manager.rigidbody.velocity = manager.ctrlRushDir * manager.ctrlRushDistance * manager.stat.rushPower.Value;
 
         medieval.start();
+        ch_medieval.start();
     }
 
     public override void Exit()

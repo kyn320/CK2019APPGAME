@@ -110,6 +110,8 @@ MonoBehaviour:
   ctrlRushDistance: 0
   stat: {fileID: 3765277642106180531}
   haveItem: {fileID: 0}
+  bgmPath: event:/BGM/Zeus/BGM_zeus
+  buffEventPath: event:/SFX/Zeus/SFX_take_zeus
 --- !u!114 &3765277642106180531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   linkStates: 
-  eventPath: event:/SFX/SFX_walk
+  eventPath: event:/SFX/Character/SFX_walk
 --- !u!114 &6579502118363895853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +185,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   linkStates: 
   groundChecker: {fileID: 6579502119900014246}
-  eventPath: event:/SFX/SFX_jump
+  eventPath: event:/SFX/Character/SFX_jump
 --- !u!114 &6579502118363895890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +200,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   linkStates: 
-  eventPath: event:/SFX/SFX_rush
+  eventPath: event:/SFX/Character/SFX_rush
+  chEventPath: event:/SFX/Zeus/SFX_vo_zeus
 --- !u!114 &6579502118363895891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +217,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   linkStates: 
   groundChecker: {fileID: 6579502119900014246}
+  chEventPath: 
 --- !u!114 &938475941059754566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   linkStates: 
-  eventPath: event:/SFX/SFX_attack
+  eventPath: event:/SFX/Character/SFX_attack
 --- !u!114 &2813298536168341356
 MonoBehaviour:
   m_ObjectHideFlags: 0
