@@ -110,7 +110,6 @@ MonoBehaviour:
   ctrlRushDistance: 0
   stat: {fileID: 8843946088345168962}
   haveItem: {fileID: 0}
-  bgmPath: event:/BGM/Hera/BGM_hera
   buffEventPath: event:/SFX/Hera/SFX_take_hera
 --- !u!114 &8843946088345168962
 MonoBehaviour:

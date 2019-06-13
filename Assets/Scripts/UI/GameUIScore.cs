@@ -38,7 +38,7 @@ public class GameUIScore : MonoBehaviour
     {
         foreach (Image img in scores)
         {
-            img.sprite = otherGoldSprite;
+            img.sprite = nonSprite;
         }
 
         int buttonCount = 0;
@@ -62,7 +62,19 @@ public class GameUIScore : MonoBehaviour
         }
         for(int i = 0; i < otherCount; i++)
         {
-            scores[otherIndex - i].sprite = localSprite;
+            scores[otherIndex - i].sprite = otherSprite;
+        }
+    }
+
+    public void UpdateGoldScore(bool isLocal)
+    {
+        if (isLocal)
+        {
+            goldScore.sprite = localGoldSprite;
+        }
+        else
+        {
+            goldScore.sprite = otherGoldSprite;
         }
     }
 

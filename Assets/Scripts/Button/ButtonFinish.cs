@@ -41,7 +41,15 @@ public class ButtonFinish : ButtonState
         manager.occupationTarget = manager.target;
         manager.occupationTime = manager.reoccupationTime;
         manager.buff.Set(manager.occupationTarget);
-        GameObject.FindWithTag("DisplayBoard").GetComponent<GameUIScore>().UpdateScore(manager, nonTarget);
+
+        if (manager.isHidden)
+        {
+            GameObject.FindWithTag("DisplayBoard").GetComponent<GameUIScore>().UpdateGoldScore(manager.occupationTarget == GameManager.Instance.localPlayer);
+        }
+        else
+        {
+            GameObject.FindWithTag("DisplayBoard").GetComponent<GameUIScore>().UpdateScore();
+        }
 
         string path;
 

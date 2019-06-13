@@ -6116,7 +6116,6 @@ MonoBehaviour:
   otherPlayer: {fileID: 0}
   maxPlayTime: 3
   isBegin: 0
-  backViewCamera: {fileID: 0}
   quarterViewCamera: {fileID: 2055581807}
   backViewController: {fileID: 0}
   quarterViewController: {fileID: 0}
@@ -6172,7 +6171,7 @@ MonoBehaviour:
   lifeTime: 0
   minLifeTime: 0
   maxLifeTime: 0
-  eventPath: event:/BGM/All/BGM_main
+  eventPath: event:/BGM/Character/BGM_character
 --- !u!1 &1929329569
 GameObject:
   m_ObjectHideFlags: 0

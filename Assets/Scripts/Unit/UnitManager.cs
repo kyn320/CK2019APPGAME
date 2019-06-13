@@ -37,9 +37,6 @@ public class UnitManager : MonoBehaviourPunCallbacks
     public ItemManager haveItem;
 
     [FMODUnity.EventRef]
-    public string bgmPath;
-
-    [FMODUnity.EventRef]
     public string buffEventPath;
     public FMOD.Studio.EventInstance buff_medieval;
 

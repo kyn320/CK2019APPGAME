@@ -52,7 +52,6 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
             localPlayer = PhotonNetwork.Instantiate(PhotonNetwork.LocalPlayer.CustomProperties["Type"] + "Player"
                 , Vector3.zero
                 , Quaternion.identity).GetComponent<UnitManager>();
-            //localPlayer.transform.position = localPlayer.spawnPosition + Vector3.up * 25;
         }
         else
         {
@@ -67,7 +66,6 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
 
     void Start()
     {
-        //bgm.eventPath = localPlayer.bgmPath;
         playTime = Min * maxPlayTime;
     }
 

@@ -25,7 +25,6 @@ MonoBehaviour:
   - {fileID: 114925888422536290}
   - {fileID: 114264222754667500}
   - {fileID: 114221819066657222}
-  - {fileID: 114488355717524776}
   - {fileID: 114086781487723406}
   - {fileID: 114613199440274606}
   - {fileID: 114932048701516826}
@@ -50,20 +49,19 @@ MonoBehaviour:
   - {fileID: 114935802232189978}
   - {fileID: 114761410484262876}
   - {fileID: 114901703835519344}
-  - {fileID: 114182677846917196}
   - {fileID: 114484461681263358}
-  - {fileID: 114253344396813086}
   - {fileID: 114353111096422992}
   - {fileID: 114051641786519846}
   - {fileID: 114427282859483426}
   - {fileID: 114456927470989858}
   - {fileID: 114823216374751342}
   - {fileID: 114460225664893330}
+  - {fileID: 114341370086268782}
   MasterBanks:
   - {fileID: 114159065408002026}
   StringsBanks:
   - {fileID: 114615636643708990}
-  stringsBankWriteTime: 636960228218300116
+  stringsBankWriteTime: 636960611880000000
   cacheVersion: 3
 --- !u!114 &114003345863599198
 MonoBehaviour:
@@ -129,11 +127,11 @@ MonoBehaviour:
   - {fileID: 114240287158792730}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
+  MinDistance: 0.9
+  MaxDistance: 6.6
+  Length: 3500
 --- !u!114 &114075742564091072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +351,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 590
 --- !u!114 &114159065408002026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,11 +365,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\equse\Documents\CK2019APPGAME\Assets\FMOD\Desktop\Master Bank.bank
-  lastModified: 636923385520000000
+  lastModified: 636960611860000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 12474
+    Value: 14314
   - Name: Mobile
     Value: 12474
   Exists: 1
@@ -506,7 +504,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 856
 --- !u!114 &114221819066657222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,7 +525,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114443051057530380}
+  - {fileID: 114878618231371358}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -588,13 +586,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\equse\Documents\CK2019APPGAME\Assets\FMOD\Desktop\Amb.bank
-  lastModified: 636960228218190172
+  lastModified: 636960611880000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 521088
-  - Name: Mobile
-    Value: 1178688
+    Value: 537952
   Exists: 1
 --- !u!114 &114252429821413706
 MonoBehaviour:
@@ -703,7 +699,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 1299
 --- !u!114 &114278425078016238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -725,6 +721,22 @@ MonoBehaviour:
   - Name: Mobile
     Value: 2355392
   Exists: 1
+--- !u!114 &114288090108303700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: intensity
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &114294679780208496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,6 +760,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 439
+--- !u!114 &114341370086268782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/BGM/Character/BGM_character
+  guid: c63e9db139aee24682fdb3b7713dab35
+  Banks:
+  - {fileID: 114575171260386656}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114288090108303700}
+  MinDistance: 6.6
+  MaxDistance: 1000
+  Length: 178819
 --- !u!114 &114353111096422992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,11 +802,11 @@ MonoBehaviour:
   - {fileID: 114240287158792730}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 11861
+  Length: 15000
 --- !u!114 &114359078027848720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -814,7 +850,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 411
 --- !u!114 &114362798347569304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -981,7 +1017,7 @@ MonoBehaviour:
   - {fileID: 114240287158792730}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -1041,11 +1077,11 @@ MonoBehaviour:
   - {fileID: 114240287158792730}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 5.5499997
   MaxDistance: 50
-  Length: 1097
+  Length: 6000
 --- !u!114 &114458278056580020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1068,7 +1104,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 775
 --- !u!114 &114460225664893330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1087,10 +1123,10 @@ MonoBehaviour:
   - {fileID: 114240287158792730}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 1
   Length: 125
 --- !u!114 &114480487443671256
 MonoBehaviour:
@@ -1129,7 +1165,7 @@ MonoBehaviour:
   guid: abb16312b722b644b2b5128dfb780627
   Banks:
   - {fileID: 114575171260386656}
-  IsStream: 1
+  IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters: []
@@ -1225,7 +1261,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 655
 --- !u!114 &114541710118565630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1248,7 +1284,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 1172
 --- !u!114 &114551561550920308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1283,13 +1319,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\equse\Documents\CK2019APPGAME\Assets\FMOD\Desktop\BGM.bank
-  lastModified: 636960228218290118
+  lastModified: 636960611880000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1154336
-  - Name: Mobile
-    Value: 2355392
+    Value: 4224704
   Exists: 1
 --- !u!114 &114608039249273276
 MonoBehaviour:
@@ -1353,11 +1387,11 @@ MonoBehaviour:
   - {fileID: 114724235672615978}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1000
+  Length: 4000
 --- !u!114 &114615636643708990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1371,13 +1405,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD\Desktop\Master Bank.strings.bank
-  lastModified: 636960228218300116
+  lastModified: 636960611880000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2592
+    Value: 2610
   - Name: Mobile
-    Value: 2592
+    Value: 2610
   Exists: 1
 --- !u!114 &114654473646881244
 MonoBehaviour:
@@ -1536,13 +1570,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\equse\Documents\CK2019APPGAME\Assets\FMOD\Desktop\SFX.bank
-  lastModified: 636960228218330090
+  lastModified: 636960611940000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 320160
-  - Name: Mobile
-    Value: 622784
+    Value: 461440
   Exists: 1
 --- !u!114 &114725862854534054
 MonoBehaviour:
@@ -1589,7 +1621,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 9
+  Length: 8
 --- !u!114 &114754226213404132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1724,7 +1756,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 1624
 --- !u!114 &114840453633005944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1747,7 +1779,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 1670
 --- !u!114 &114842506440715518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1770,7 +1802,23 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 1369
+--- !u!114 &114878618231371358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fast_sound
+  Min: 1
+  Max: 3
+  Default: 1
 --- !u!114 &114895155447602812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1925,7 +1973,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 646
 --- !u!114 &114935802232189978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1971,7 +2019,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 266
 --- !u!114 &114961002146749078
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -110,7 +110,7 @@ MonoBehaviour:
   ctrlRushDistance: 0
   stat: {fileID: 3765277642106180531}
   haveItem: {fileID: 0}
-  bgmPath: event:/BGM/Zeus/BGM_zeus
+  bgmPath: event:/BGM/Character/BGM_character
   buffEventPath: event:/SFX/Zeus/SFX_take_zeus
 --- !u!114 &3765277642106180531
 MonoBehaviour:
