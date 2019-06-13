@@ -739,6 +739,7 @@ GameObject:
   - component: {fileID: 431924980}
   - component: {fileID: 431924982}
   - component: {fileID: 431924981}
+  - component: {fileID: 431924983}
   m_Layer: 5
   m_Name: UI_Board
   m_TagString: Untagged
@@ -810,6 +811,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431924979}
   m_CullTransparentMesh: 0
+--- !u!114 &431924983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431924979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb98ff3d5838a3946a15bdc0c2a438c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 0.3
+  parameter: 0
+  useLifeTime: 0
+  randomLifeTime: 0
+  lifeTime: 0
+  minLifeTime: 0
+  maxLifeTime: 0
+  autoPlay: 0
+  eventPath: event:/SFX/UI/SFX_touch
 --- !u!1 &635388018
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,6 +913,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 267393136}
         m_MethodName: GameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 431924983}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1108,6 +1141,7 @@ MonoBehaviour:
   lifeTime: 0
   minLifeTime: 0
   maxLifeTime: 0
+  autoPlay: 0
   eventPath: event:/SFX/Play/SFX_win
 --- !u!1 &800294922
 GameObject:
@@ -1203,6 +1237,7 @@ MonoBehaviour:
   lifeTime: 0
   minLifeTime: 0
   maxLifeTime: 0
+  autoPlay: 0
   eventPath: event:/SFX/Play/SFX_lose
 --- !u!1 &820081463
 GameObject:
@@ -1543,6 +1578,7 @@ MonoBehaviour:
   lifeTime: 0
   minLifeTime: 7
   maxLifeTime: 10
+  autoPlay: 0
   eventPath: event:/Amb/Unknow/Amb_unknow
 --- !u!114 &998878064
 MonoBehaviour:
@@ -2330,6 +2366,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 267393136}
         m_MethodName: GoToMain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 431924983}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

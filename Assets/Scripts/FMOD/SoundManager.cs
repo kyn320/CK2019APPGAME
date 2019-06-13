@@ -19,15 +19,34 @@ public class SoundManager : Singleton<SoundManager>
     protected override void Awake()
     {
         base.Awake();
-    }
 
-    private void Start()
-    {
         SFXPlayer.soundManager = BGMPlayer.soundManager = this;
 
         muteBGM = PlayerPrefs.GetInt("muteBGM", 0) == 0 ? false : true;
         muteBGS = PlayerPrefs.GetInt("muteBGS", 0) == 0 ? false : true;
+    }
 
+    public void MuteBGM(bool work) {
+        muteBGM = work;
+        PlayerPrefs.SetInt("muteBGM",work == true ? 1 : 0);
+
+        if (work)
+        {
+            medievalBGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        }
+        else {
+            medievalBGM.start();
+        }
+    }
+
+    public void MuteBGS(bool work) {
+        muteBGS = work;
+        PlayerPrefs.SetInt("muteBGS", work == true ? 1 : 0);
+
+        if (work)
+        {
+            medievalBGS.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        }
     }
 
     public void PlayBGM(string eventPath, GameObject g, float volume, int parameter = 0)
