@@ -7,8 +7,8 @@ public class SFXUIPlayer : SFXPlayer
     
     public override void Play()
     {
-        if (Camera.main == null)
-            return;
+        //if (Camera.main == null)
+        //    return;
 
         soundManager.PlayBGS(eventPath, Camera.main.gameObject, volume);
 

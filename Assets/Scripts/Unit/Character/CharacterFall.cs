@@ -14,6 +14,14 @@ public class CharacterFall : UnitFall
     public string chEventPath;
     public FMOD.Studio.EventInstance ch_medieval;
 
+    [FMODUnity.EventRef]
+    public string reEventPath;
+    public FMOD.Studio.EventInstance re_medieval;
+
+    [FMODUnity.EventRef]
+    public string rechEventPath;
+    public FMOD.Studio.EventInstance rech_medieval;
+
     public override void Awake()
     {
         base.Awake();
@@ -23,9 +31,14 @@ public class CharacterFall : UnitFall
         collider = GetComponent<Collider>();
         groundCollider = groundChecker.GetComponent<Collider>();
 
-
         ch_medieval = FMODUnity.RuntimeManager.CreateInstance(chEventPath);
         ch_medieval.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.transform));
+
+        re_medieval = FMODUnity.RuntimeManager.CreateInstance(reEventPath);
+        re_medieval.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.transform));
+
+        rech_medieval = FMODUnity.RuntimeManager.CreateInstance(rechEventPath);
+        rech_medieval.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.transform));
     }
 
     public override void Enter()
@@ -54,6 +67,8 @@ public class CharacterFall : UnitFall
         Collider[] cols = Physics.OverlapSphere(groundChecker.position, 0.25f, LayerMask.GetMask("Ground"));
         if (cols.Length > 0)
         {
+            re_medieval.start();
+            rech_medieval.start();
             manager.SetState(UnitStateCode.IDLE);
         }
     }

@@ -8,6 +8,8 @@ public class CharacterMove : UnitMove
     public string eventPath;
     public FMOD.Studio.EventInstance medieval;
 
+    public float soundTimer;
+
     public override void Awake()
     {
         base.Awake();
@@ -26,6 +28,7 @@ public class CharacterMove : UnitMove
     {
         base.Enter();
         medieval.start();
+        soundTimer = 0.0f;
     }
 
     public override void Exit()
@@ -40,7 +43,12 @@ public class CharacterMove : UnitMove
         medieval.getPlaybackState(out soundState);
         if (soundState == FMOD.Studio.PLAYBACK_STATE.STOPPED)
         {
-            medieval.start();
+            soundTimer += Time.deltaTime;
+            if (soundTimer > 0.32f)
+            {
+                soundTimer = 0.0f;
+                medieval.start();
+            }
         }
 
         int dir = (manager.spawnRotation.y > 100.0f)? -1 : 1;

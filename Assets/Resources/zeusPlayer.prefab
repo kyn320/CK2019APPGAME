@@ -110,7 +110,6 @@ MonoBehaviour:
   ctrlRushDistance: 0
   stat: {fileID: 3765277642106180531}
   haveItem: {fileID: 0}
-  bgmPath: event:/BGM/Character/BGM_character
   buffEventPath: event:/SFX/Zeus/SFX_take_zeus
 --- !u!114 &3765277642106180531
 MonoBehaviour:
@@ -218,6 +217,8 @@ MonoBehaviour:
   linkStates: 
   groundChecker: {fileID: 6579502119900014246}
   chEventPath: event:/SFX/Zeus/SFX_dead_zeus
+  reEventPath: event:/SFX/Character/SFX_respawn
+  rechEventPath: event:/SFX/Zeus/SFX_live_zeus
 --- !u!114 &938475941059754566
 MonoBehaviour:
   m_ObjectHideFlags: 0

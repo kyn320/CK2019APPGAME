@@ -57,16 +57,17 @@ public class SoundManager : Singleton<SoundManager>
         StopBGM();
 
         medievalBGM = RuntimeManager.CreateInstance(eventPath);
-        medievalBGM.getParameter("Parameter", out locationBGM);
+        medievalBGM.getParameter("intensity", out locationBGM);
         medievalBGM.set3DAttributes(RuntimeUtils.To3DAttributes(g));
-        medievalBGM.setVolume(volume);
+        //medievalBGM.setVolume(volume);
         locationBGM.setValue(parameter);
 
         medievalBGM.start();
     }
 
     public void ChangeParameter(int parameter) {
-        medievalBGM.getParameter("Parameter", out locationBGM);
+        medievalBGM.getParameter("intensity", out locationBGM);
+        locationBGM.setValue(parameter);
     }
 
     public void StopBGM()
@@ -84,7 +85,7 @@ public class SoundManager : Singleton<SoundManager>
         medievalBGS = RuntimeManager.CreateInstance(eventPath);
         medievalBGS.getParameter("Parameter", out locationBGS);
         medievalBGS.set3DAttributes(RuntimeUtils.To3DAttributes(g));
-        medievalBGS.setVolume(volume);
+        //medievalBGS.setVolume(volume);
         locationBGS.setValue(parameter);
         medievalBGS.start();
     }

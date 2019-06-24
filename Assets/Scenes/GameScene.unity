@@ -640,6 +640,7 @@ MonoBehaviour:
   nameSlot: {fileID: 543677795}
   zeusNameSlot: {fileID: 21300000, guid: 5725fbbb0a933524d80d048b5c4acb3d, type: 3}
   heraNameSlot: {fileID: 21300000, guid: 44a40f383bfba1a4d836f13bc35b2086, type: 3}
+  nameText: {fileID: 556478505}
   RushIcon: {fileID: 15946985}
   RollIcon: {fileID: 1295749753}
   MoveIcon: {fileID: 272081819}
@@ -1357,6 +1358,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &556478505 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2263827210870140914, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 733469702}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &559506761
@@ -2695,14 +2708,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: d9a84b7d2c7d38549a18ab4bd9ef020e,
         type: 3}
+    - target: {fileID: 591200616, guid: c8ce531d2d14ff44cacaa6782b8d43c2, type: 3}
+      propertyPath: startSFX
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 591200616, guid: c8ce531d2d14ff44cacaa6782b8d43c2, type: 3}
+      propertyPath: countSFX
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 591200616, guid: c8ce531d2d14ff44cacaa6782b8d43c2, type: 3}
+      propertyPath: countPath
+      value: event:/SFX/Play/SFX_count
+      objectReference: {fileID: 0}
+    - target: {fileID: 591200616, guid: c8ce531d2d14ff44cacaa6782b8d43c2, type: 3}
+      propertyPath: startPath
+      value: event:/SFX/Play/SFX_playstart
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8ce531d2d14ff44cacaa6782b8d43c2, type: 3}
---- !u!1 &733469703 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 591200612, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
-    type: 3}
-  m_PrefabInstance: {fileID: 733469702}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &733469704 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8483542265870222986, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
@@ -2850,27 +2873,6 @@ MonoBehaviour:
   nonSprite: {fileID: 21300000, guid: 1c02de2aec5baa44eaf64fe6eca98d71, type: 3}
   localGoldSprite: {fileID: 21300000, guid: 8c3cd09244217674bbf7d9371e2b53bd, type: 3}
   otherGoldSprite: {fileID: 21300000, guid: 696c00004c0284149bbd4ebf483a02af, type: 3}
---- !u!114 &733469716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733469703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb98ff3d5838a3946a15bdc0c2a438c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volume: 0.3
-  parameter: 0
-  useLifeTime: 0
-  randomLifeTime: 0
-  lifeTime: 0
-  minLifeTime: 0
-  maxLifeTime: 0
-  autoPlay: 1
-  eventPath: event:/SFX/Play/SFX_playstart
 --- !u!1 &756325749
 GameObject:
   m_ObjectHideFlags: 0
@@ -5079,6 +5081,18 @@ MonoBehaviour:
   viewIdField: 6
   InstantiationId: 6
   isRuntimeInstantiated: 0
+--- !u!114 &1513739569 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2755494704976420000, guid: c8ce531d2d14ff44cacaa6782b8d43c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 733469702}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1582534292
 GameObject:
   m_ObjectHideFlags: 0
@@ -5611,6 +5625,7 @@ MonoBehaviour:
   nameSlot: {fileID: 1396274569}
   zeusNameSlot: {fileID: 21300000, guid: 5725fbbb0a933524d80d048b5c4acb3d, type: 3}
   heraNameSlot: {fileID: 21300000, guid: 44a40f383bfba1a4d836f13bc35b2086, type: 3}
+  nameText: {fileID: 1513739569}
   RushIcon: {fileID: 632201665}
   RollIcon: {fileID: 486503064}
   MoveIcon: {fileID: 1690141837}
@@ -6159,13 +6174,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915241525}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca232134a0a6e1b4faee2262a41a0a28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   volume: 0.3
-  parameter: 0
+  parameter: 1
   useLifeTime: 0
   randomLifeTime: 0
   lifeTime: 0

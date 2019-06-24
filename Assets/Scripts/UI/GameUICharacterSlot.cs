@@ -4,6 +4,7 @@ using UnityEngine;
 
 using Photon.Pun;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameUICharacterSlot : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class GameUICharacterSlot : MonoBehaviour
     public Image nameSlot;
     public Sprite zeusNameSlot;
     public Sprite heraNameSlot;
+    public TextMeshProUGUI nameText;
 
     public Image RushIcon;
     public Image RollIcon;
@@ -28,19 +30,23 @@ public class GameUICharacterSlot : MonoBehaviour
     void Start()
     {
         Color color = new Color();
-        int characterType = ((PhotonNetwork.LocalPlayer.CustomProperties["Type"].Equals("zeus")) == isLocal)? 1 : 2;
+        int characterType;
         if (PhotonNetwork.OfflineMode) characterType = (isLocal)? 1 : 2;
+        else
+            characterType = ((PhotonNetwork.LocalPlayer.CustomProperties["Type"].Equals("zeus")) == isLocal)? 1 : 2;
         switch (characterType)
         {
             case 1:
                 ColorUtility.TryParseHtmlString(zeusColorHex, out color);
                 illustSlot.sprite = zeusillust;
                 nameSlot.sprite = zeusNameSlot;
+                nameText.text = "Zeus";
                 break;
             case 2:
                 ColorUtility.TryParseHtmlString(heraColorHex, out color);
                 illustSlot.sprite = heraillust;
                 nameSlot.sprite = heraNameSlot;
+                nameText.text = "Hera";
                 break;
         }
         GetComponent<Image>().color = color;

@@ -217,6 +217,8 @@ MonoBehaviour:
   linkStates: 
   groundChecker: {fileID: 6579502119900014246}
   chEventPath: event:/SFX/Hera/SFX_dead_hera
+  reEventPath: event:/SFX/Character/SFX_respawn
+  rechEventPath: event:/SFX/Hera/SFX_live_hera
 --- !u!114 &8926968255025877162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,14 +352,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6579502118363895844}
     m_Modifications:
-    - target: {fileID: 13700004, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c5017c40aa700f44b984210d87a246e4, type: 2}
     - target: {fileID: 100000, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
       propertyPath: m_Name
       value: hera_model
       objectReference: {fileID: 0}
+    - target: {fileID: 13700004, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c5017c40aa700f44b984210d87a246e4, type: 2}
     - target: {fileID: 400000, guid: d4110ede9a11d5d45b4418e0ee21c675, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0

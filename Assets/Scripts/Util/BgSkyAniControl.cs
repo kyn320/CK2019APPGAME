@@ -31,7 +31,9 @@ public class BgSkyAniControl : MonoBehaviour
                 {
                     cg.temperature.value = workingTemperature[currentWorking];
                     currentWorking++;
-                    GameManager.Instance.bgm.parameter = currentWorking;
+                    SoundManager.Instance.ChangeParameter(currentWorking + 1);
+                    //GameManager.Instance.bgm.parameter = currentWorking + 1;
+                    //GameManager.Instance.bgm.Play();
                 }
             }
         }
