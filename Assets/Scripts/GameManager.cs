@@ -94,6 +94,7 @@ public class GameManager : Singleton<GameManager>, IInRoomCallbacks, IMatchmakin
         }
     }
 
+    //게임 종료 시 게임 데이터 PlayerPrefs에 저장
     public void LeaveRoom()
     {
         int characterType = (PhotonNetwork.LocalPlayer.CustomProperties["Type"].Equals("zeus"))? 1 : 2;

@@ -9,6 +9,7 @@ namespace Resume.Network
 {
     public class Launcher : MonoBehaviourPunCallbacks
     {
+        //Room 최대 인원
         [SerializeField]
         private byte maxPlayersPerRoom = 2;
 
@@ -28,8 +29,10 @@ namespace Resume.Network
         public void Connect()
         {
             isConnecting = true;
+            //연결상태 확인
             if (PhotonNetwork.IsConnected)
             {
+                //생선된 방 중 아무거나 입장
                 PhotonNetwork.JoinRandomRoom();
             }
             else
@@ -43,6 +46,7 @@ namespace Resume.Network
         {
             Debug.Log("OnConnectedToMaster");
 
+            //중복 입장 예외처리
             if (isConnecting)
             {
                 PhotonNetwork.JoinRandomRoom();
@@ -71,8 +75,10 @@ namespace Resume.Network
         {
             Debug.Log("OnPlayerEnteredRoom()");
 
+            //마스터 클라이언트가 해당 방에 유저가 다 들어오면 게임 시작
             if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
+                //시작 전 캐릭터 타입 동기화
                 int randType = Random.Range(1, 3);
 
                 ExitGames.Client.Photon.Hashtable table = new ExitGames.Client.Photon.Hashtable();

@@ -63,6 +63,7 @@ public class ItemManager : MonoBehaviourPunCallbacks
         photonView.RPC("PunItemSetState", RpcTarget.Others, currentState, targetViewId);
     }
 
+    //SetState()에서 RPC를 뺀 버전
     public void PunSetState(ItemStateCode stateCode)
     {
         if (currentState == stateCode) return;
@@ -77,6 +78,7 @@ public class ItemManager : MonoBehaviourPunCallbacks
         states[currentState].Enter();
     }
 
+    //상대방 클라이언트에서 상태변경이 없을 경우를 대비해 동기화
     [PunRPC]
     public void PunItemSetState(ItemStateCode stateCode, int targetViewId)
     {

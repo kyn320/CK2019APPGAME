@@ -72,6 +72,7 @@ public class ButtonManager : MonoBehaviourPunCallbacks
             photonView.RPC("PunButtonSetState", RpcTarget.Others, currentState);
     }
 
+    //SetState()에서 RPC를 뺀 버전
     public void PunSetState(ButtonStateCode stateCode)
     {
         if (currentState == stateCode) return;
@@ -86,6 +87,7 @@ public class ButtonManager : MonoBehaviourPunCallbacks
         states[currentState].Enter();
     }
 
+    //상대방 클라이언트에서 상태변경이 없을 경우를 대비해 동기화
     [PunRPC]
     public void PunButtonSetState(ButtonStateCode stateCode)
     {

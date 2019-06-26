@@ -98,9 +98,11 @@ public class UnitManager : MonoBehaviourPunCallbacks
         states[currentState].Enter();
         animator.SetInteger("currentState", (int)currentState);
 
+        //상대방 클라이언트에 자신의 상태 변경
         photonView.RPC("PunUnitSetState", RpcTarget.Others, currentState);
     }
 
+    //상대방 클라이언트에 자신의 Unit은 강제로 상태 변경
     [PunRPC]
     void PunUnitSetState(UnitStateCode stateCode)
     {
